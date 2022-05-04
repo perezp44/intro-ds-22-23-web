@@ -1,0 +1,870 @@
+---
+title: "Introducción (Tema 1)"
+subtitle: "Programación y manejo de datos con R (slides 01)"  
+author: 
+  - "Pedro J. Pérez"
+  #- "2020, septiembre"
+date: "(actualizadas en `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    seal: false   #- puedes tunear la primera página de las slides    
+    lib_dir: libs
+    css: 
+      - ../assets/xaringan-themer.css
+      - ../assets/my_css_file_xaringan_verdes.css  #- good (funciona lo de justify)
+    nature:
+      highlightStyle: github  #- solarized-light ; googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      #after_body: [css/insert-logo.html]
+      in_header: 
+        - !expr here::here("assets", "favicon-yo.html") 
+        #- !expr here::here("assets", "google-analytics.html") 
+#      in_header: ["favicon-yo.html", "google-analytics.html"]
+---
+
+```{r xaringan-extra, include = FALSE}
+xaringanExtra::use_xaringan_extra(c("tile_view", "logo", "tachyons", "animate_css", "scribble"))
+#xaringanExtra::use_share_again()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_fit_screen()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = FALSE)
+xaringanExtra::use_panelset()
+```
+
+```{r xaringan-themer, include = FALSE, warning = FALSE}
+library(xaringanthemer)
+style_mono_light(
+  base_color = "#1c5253", 
+  colors = c(red = "#f34213", purple = "#3e2f5b", orange = "#ff8811", 
+             green = "#136f63", white = "#FFFFFF", base = "#1c5253",
+             gray = "#708090", salmon = "#ff8c69", indianred = "#cd5c5c"),
+  link_color = "steelblue",
+  #header_font_google = google_font("Josefin Sans"),  #- https://fonts.google.com/
+  #text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"))
+```
+
+```{r chunk-setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE,
+                      #results = "hold",
+                      cache = FALSE, cache.path = "/caches/", comment = "#>",
+                      #fig.width = 7, #fig.height= 7,
+                      #out.width = 7, out.height = 7,
+                      collapse = TRUE,  fig.show = "hold", fig.retina = 4,
+                      fig.asp = 7/9, out.width = "95%", fig.align = "center")
+options(scipen = 999) #- para quitar la notación científica
+#- para mejorar los gráficos, bueno en realidad para que se vean igual en distintos SO
+#- https://www.jumpingrivers.com/blog/r-knitr-markdown-png-pdf-graphics/
+knitr::opts_chunk$set(dev = "png", dev.args = list(type = "cairo-png"))
+#options(htmltools.dir.version = FALSE) #- lo pongo en setup
+#xaringan::inf_mr() 
+```
+
+```{r, include = FALSE}
+library(flipbookr)
+library(tidyverse)
+```
+
+```{css, include = FALSE}
+.remark-code{line-height: 1.5; font-size: 80%}
+@media print {
+  .has-continuation {
+    display: block;
+  }
+```
+
+
+class: inverse, center, middle
+
+<br>
+
+#### `r rmarkdown::metadata$subtitle`
+
+## `r rmarkdown::metadata$title`
+
+<br>
+
+### `r rmarkdown::metadata$author`
+
+#### 2021, mayo
+
+###### (actualizadas el `r format(Sys.time(), '%d-%m-%Y')`)
+
+
+<br><br>
+
+#### e-mail: [pedro.j.perez@uv.es](mailto:pedro.j.perez@uv.es)
+ 
+#### Web del curso: [https://perezp44.github.io/intro-ds-20-21-web](https://perezp44.github.io/intro-ds-21-22-web)
+
+```{r echo = FALSE}
+xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket") )
+```
+
+
+---
+class: inverse, center, middle
+
+### 1. Para analizar datos, ¿realmente necesito aprender R?
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=996px></html>
+
+<br>
+
+--
+
+#### Bueno ... estamos en la era del Big Data y para hacer "Ciencia de Datos" es necesario programar.
+
+#### Además, R es, junto con Phyton, el principal lenguaje para hacer DS.
+
+
+---
+
+##### Era del Big Data
+
+- Estamos inmersos en una época de cambio tecnológico acelerado, conocida como la **era del Big Data**.
+
+- Una parte importante de esos avances están relacionados con la **abundancia de datos**.
+
+- Los datos masivos han posibilitado grandes avances en un campo de investigación como es el **Machine Learning/Deep Learning**
+
+--
+
+##### Datos másivos (Big data)
+
+- "The world’s **most valuable resource** is no longer oil, but **data**" (The Economist, 2017).
+
+- Necesidad de convertir datos en información que aporte valor a las corporaciones.
+
+- Pero ... no siempre es fácil, por ejemplo: las tres **v**’s del Big Data: **v**olumen, **v**elocidad y **v**ariedad.
+
+- Ha llevado a la aparición de un nuevo campo de conocimiento que está irrumpiendo con fuerza en muchos planes de estudio: la **Ciencia de Datos**
+
+- Los datos masivos también han hecho surgir una serie de retos: privacidad, **sesgos en los algoritmos**.
+
+
+
+---
+
+##### IA, ML y DL 
+
+- Los datos masivos han posibilitado grandes avances en un campo de investigación como es el **Machine Learning/Deep Learning**.
+
+- La idea fundamental en que se basa la **Inteligencia Artificial** es conseguir que una computadora resuelva un problema complejo como lo haría un humano
+
+- 3 etapas: inicios, sistemas expertos y ML/DL
+
+--
+
+- En ML/DL no hay que codificar las reglas, sino que se provee a un algoritmo con suficientes datos y este **encuentra las reglas por si mismo**; es decir, en cierto sentido "aprende".
+
+- Este enfoque ha posibilitado que muchas tareas "humanas" se hayan **automatizado**.
+
+- Un sistema/programa de ML es entrenado más que explicitamente programado.
+
+--
+
+- **Deep Learning** es un subconjunto del ML. Utiliza técnicas/algoritmos más complejas en términos computacionales y, por lo tanto, necesitan para aprender un mayor volumen de datos, pero su filosofía es la misma: proveer datos para que el ordenador aprenda a resolver y automatizar una tarea concreta.
+
+---
+
+##### ¿Qué es la Ciencia de Datos?
+
+- Disciplina cuyo objetivo es **obtener información/conocimiento** de los datos que genere valor.
+
+- Más simple: "usar datos para contestar preguntas" (??)
+
+- Pero ...  ¿ese no es también el objetivo de la estadística?
+
+
+--
+
+##### Estadística versus Data Science (DS). ¿Es lo mismo? 
+
+- Bueno ..., sí y no. 
+
+
+```{r, echo = FALSE, eval = TRUE, out.width = "45%", fig.align = "center", caption = "<https://twitter.com/ReginaNuzzo/status/1156936438451064832>"}
+knitr::include_graphics(here::here("imagenes", "ss_02_img_01_stats-vs-DS_02.png") ) 
+```
+
+
+---
+##### para nosotros la DS será ...
+
+- Todo el proceso, todo lo que ocurre, desde que se importan unos datos hasta que se presentan los resultados.
+
+
+```{r, echo = FALSE, eval = TRUE , out.width = "85%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "ss_02_img_02_DSa.png") ) 
+```
+
+
+---
+
+##### para ser "científico de datos", ¿qué necesito saber?
+
+- "The **data scientist** is the **sexiest job** of the century" (Harvard Business Review). 
+
+- Para un data scientist son muy importantes las hackings skills (programación)
+
+<br>
+
+```{r, echo = FALSE, eval = TRUE, out.width = "35%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "ss_02_img_03_DS-venn.png") ) 
+```
+
+
+
+---
+
+##### ¿Que sotfware usar?
+
+--
+
+.pull-left[
+##### Point & click programs
+- Facilidad de uso  (a través de .orange2[menús])
+
+
+<br>
+
+```{r, echo = FALSE,  eval = TRUE,  fig.asp = 2/4,  out.width = "90%",fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "error_Excel_01.png"))
+```
+]
+
+--
+
+.pull-right[
+##### Lenguajes de prográmación
+
+- Flexibilidad y `r icons::fontawesome("r-project")`eproducibilidad  (con .orange2[código])
+
+<br>
+
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Misión imposible: revisar +8000 pdf&#39;s, para sacar variables como edad, nacionalidad, sexo, etc. <br><br>Estaba a punto de empezar a mano con el excel de toda la vida, cuando descubrí pdftools y tesseract... llevo +3000 en menos de 24 hrs.<br><br>I love <a href="https://twitter.com/hashtag/RStats?src=hash&amp;ref_src=twsrc%5Etfw">#RStats</a> 🤓💙<br><br>p.d.: sugerencias? <a href="https://t.co/i8kzh7dNMK">pic.twitter.com/i8kzh7dNMK</a></p>&mdash; Daniel Quinteros (@dquinterosr) <a href="https://twitter.com/dquinterosr/status/1356575289791418370?ref_src=twsrc%5Etfw">February 2, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+]
+
+---
+
+.pull-left[
+##### Una pequeña broma. Broma pero ...
+
+<br>
+
+```{r, echo = FALSE,  eval = TRUE,  fig.asp = 3/2, out.width = "100%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "ss_02_img_06_R-como-cars.jpeg"))
+```
+
+]
+
+--
+
+.pull-right[
+##### Programar cuesta (al principio), pero permite hacer muchas cosas nuevas
+
+- Por ejemplo, [este trabajo](https://nosan5.github.io/trabajo_BigData_equipo/) se elaboró dentro de una asignatura optativa del grado de Economía.
+
+- Tenéis que visitar estas 2 páginas:
+
+    - [R-bloggers](https://www.r-bloggers.com/)   
+
+    - [R weekly](https://rweekly.org/)
+
+- Más recursos:
+
+    - [CRAN package by task](https://cran.r-project.org/web/views/)
+
+    - ["Top-40" new CRAN R packages](https://rviews.rstudio.com/2021/03/19/february-2021-top-40-new-cran-packages/)
+
+    - [Awesome list of R resources](https://github.com/iamericfletcher/awesome-r-learning-resources)
+
+    - [Otra Awesome R list](https://github.com/qinwf/awesome-R)
+
+    - [Big Book of R](https://www.bigbookofr.com/)
+
+]
+
+---
+##### OK, medio convencido, pero ... ¿tengo que aprender a programar?
+
+- **SÍ**. Todo lo que puedas.
+
+--
+
+- Una de las competencias importantes en DS es saber programar, pero … **requiere tiempo**; y  .orange2[al principio te sientes] **inútil**
+
+.pull-left[
+
+
+```{r, echo = FALSE, eval = TRUE, out.width = "85%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "ss_02_img_05_salt.png") ) 
+```
+
+]
+
+--
+
+.pull-right[
+
+```{r, echo = FALSE, eval = TRUE, out.width = "83%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "ss_02_img_04_automation.png") ) 
+```
+]
+
+
+---
+
+.pull-left[
+
+##### OK, medio convencido. Aunque ...
+
+```{r, echo = FALSE,  eval = TRUE,  fig.asp = 2/4,  out.width = "100%",fig.align = "center", fig.cap = 'From https://twitter.com/kareem_carr/status/1371836385133531155'}
+knitr::include_graphics(here::here("imagenes", "ss_00_R--excel.png"))
+```
+]
+
+--
+
+.pull-right[
+
+##### ¿tendríamos que introducir la programación desde primero? 🤔
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Too many young students are having their time and money wasted by being forced to use out of date tools like SPSS because their professors are scared of the new stuff. There. I said it. <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/python?src=hash&amp;ref_src=twsrc%5Etfw">#python</a> <a href="https://twitter.com/hashtag/datascience?src=hash&amp;ref_src=twsrc%5Etfw">#datascience</a>.</p>&mdash; Keith McNulty (@dr_keithmcnulty) <a href="https://twitter.com/dr_keithmcnulty/status/1382870396408627202?ref_src=twsrc%5Etfw">April 16, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+]
+
+---
+
+##### Investigación reproducible y software libre 
+
+- Para que un análisis con datos sea **reproducible**, no sólo es necesario que los datos utilizados han de ser accesibles, sino que cómo mínimo debería:
+
+    - proporcionar los datos originales (obviamente documentar las fuentes)
+
+    - efectuar todo el proceso a través de código (scripts)
+
+    - documentar el proceso de trabajo (por ejemplo el orden en que se ejecutaron los scripts)
+
+--
+<br>
+
+- Además debería utilizar **software libre**
+
+- En el curso usaremos **R**
+
+
+
+---
+class: inverse, center, middle
+
+
+### 2. OK, convencido, pero ... ¿por qué R?
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+<br>
+
+#### Sacrílego!!!!  🧙🧙 🔥🔥
+
+#### Por muchas cosas!!! Lo mejor de `r icons::icon_style(icons::fontawesome("r-project"), fill = "white")` su comunidad!!
+
+
+---
+
+##### ¿por qué R?
+
+- **R is the data language**: en Ciencia de datos it’s THE language to beat. 
+
+- Sólo tiene un rival serio: Phyton. Si no me crees puedes leer sobre ello [aquí](http://nadaesgratis.es/fernandez-villaverde/r), [aquí](https://www.r-bloggers.com/why-r-is-the-best-data-science-language-to-learn-today/), o [aquí](https://shirinsplayground.netlify.com/2017/09/ode_to_r/)
+
+- Entre las compañías que usan R están: Google, Facebook, Twitter, Microsoft, IBM, Uber, Ford, Airbnb, American Express, Barclays Bank, Bank of America ...  Puedes encontrar un listado más completo [aquí](https://www.listendata.com/2016/12/companies-using-r.html)
+
+- Evidentemente, no a todo el mundo le gusta R; por ejemplo [aquí](http://arrgh.tim-smith.us/) o el clásico [R-inferno](http://www.burns-stat.com/documents/books/the-r-inferno/)
+
+--
+
+##### pero ... ¿y Phyton?
+
+
+- Phyton es un lenguaje de programación más general, R is more domain specific. Puedes consultar algunas clasificaciones [aquí](https://www.r-bloggers.com/pypl-language-rankings-python-ranks-1-r-at-7-in-popularity/)
+
+- Hay muchas opiniones sobre el debate **R vs Phyton** pero .... mira [esta](http://mchow.com/posts/data-science-cbk/), o [esta](https://twitter.com/bhanukjhingan/status/1395410754929520644).
+
+<br>
+
+- Aunque yo creo que después de lo que dijo Elmo, el debate está zanjado
+
+
+---
+
+.pull-left[
+
+##### Elmo prefiere R
+
+
+- Yo creo que después de lo que dijo Elmo, el debate entre R y Phyton está zanjado
+
+```{r, echo = FALSE,  eval = TRUE,  fig.asp = 3/2, out.width = "57%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "ss_00_Elmo.png"))
+```
+
+]
+
+--
+
+.pull-right[
+
+##### ... además, ¿quien fue el ganador del primer campeonato #SLICED  de DS?  🏅 😃
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">CONGRATULATIONS to the <a href="https://twitter.com/hashtag/SLICED?src=hash&amp;ref_src=twsrc%5Etfw">#SLICED</a> season one winner: <a href="https://twitter.com/drob?ref_src=twsrc%5Etfw">@drob</a>!!! 📊🔪 <br><br>Catch the replay of last night&#39;s action-packed showdown between <a href="https://twitter.com/drob?ref_src=twsrc%5Etfw">@drob</a> and <a href="https://twitter.com/EthanCDouglas?ref_src=twsrc%5Etfw">@EthanCDouglas</a> on Twitch: <a href="https://t.co/Uh61pGpbtW">https://t.co/Uh61pGpbtW</a><br><br>Huge thanks from me and <a href="https://twitter.com/nickwan?ref_src=twsrc%5Etfw">@nickwan</a> to all of our contestants, supporters, and viewers! <a href="https://t.co/B39G9w7bc8">pic.twitter.com/B39G9w7bc8</a></p>&mdash; Meg Risdal 👾 (@MeganRisdal) <a href="https://twitter.com/MeganRisdal/status/1428039365008060424?ref_src=twsrc%5Etfw">August 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+]
+
+---
+class: inverse, center, middle
+
+
+### 3.Primeras ideas , ¿qué es esto de R?
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+<br>
+
+#### Conviene saber algunas cosas sobre el universo `r icons::icon_style(icons::fontawesome("r-project"), fill = "white")`
+
+#### (R, RStudio, paquetes, tidyverse, Rmarkdown, ....)
+ 
+
+---
+background-image: url(imagenes/ss_00_RR_icono.jpeg)
+background-position: 99% 1%
+background-size: 6%
+
+
+##### ¿qué es R?
+
+- Es un **entorno** para hacer **análisis estadísticos**; de hecho, la página oficial de R se llama [The R Project for Statistical Computing](https://www.r-project.org/)
+
+- También es un **lenguaje de programación**
+
+- R se distribuye bajo la licencia GNU GPL; o sea, es **software libre**
+
+<br>
+
+##### ¿cuando fue creado?
+
+- En 1993, por **R. Ihaka** y **R. Gentleman** de la Universidad de Auckland
+
+- En 1997 el desarrollo de R se traspasó a un grupo de programadores conocidos como **"The R-core team"** ... 
+
+- ... pero actualmente, el entorno R es el resultado de la colaboración de la **comunidad de usuarios de R**
+
+
+
+---
+background-image: url(imagenes/ss_00_RStudio.png)
+background-position: 99% 1%
+background-size: 6%
+<br>
+
+##### ¿qué es RStudio?
+
+- Técnicamente es un **IDE** (Integrated development environment) diseñado especialmente para R
+
+- Intuitivamente es un **programa que nos facilita dar nuestras ordenes a R**.
+
+<br>
+
+##### Diferencias entre R y RStudio
+
+- Es importante entender la diferencia entre R y RStudio: R es un entorno/programa para hacer análisis estadísticos y también es un lenguaje de programación; mientras que RStudio es un programa que sirve para poder usar R de manera más cómoda y eficiente.
+
+<br>
+
+- Para entender la diferencia entre ellos es útil esta **analogía**: si fueran un coche, R sería el motor y RStudio sería el volante y los pedales; es decir, R es el motor que hará los cálculos que le ordenemos a través de RStudio. **Desde RStudio enviaremos nuestras ordenes a R**.
+
+---
+
+##### ¿qué son los paquetes?
+
+- Con R, con la instalación básica de R, se pueden hacer una gran variedad de análisis estadísticos pero sus capacidades aumentan si instalamos paquetes adicionales.
+
+- Los paquetes en R son **colecciones de funciones y datos** desarrollados por la comunidad R que podemos usar una vez los hayamos instalado.
+
+- **Analogía**: si R fuese un teléfono móvil, los paquetes serían las aplicaciones que instalamos en el móvil. Con R se pueden hacer muchas cosas sin instalar paquetes adicionales, pero si instalamos paquetes aumentan sus funcionalidades.
+
+<br>
+
+--
+
+#####  los paquetes hay que instalarlos (una vez sólo) y ...
+
+<br>
+
+##### ... una vez instalados se han de cargar en memoria para poder usarlos
+
+---
+##### Instalando paquetes
+
+- Los paquetes están en repositorios. El repositorio oficial se llama [**CRAN**](https://cran.r-project.org/).
+
+- En enero de 2017 [CRAN alcanzó los 10.000 paquetes](http://blog.revolutionanalytics.com/2017/01/cran-10000.html)
+
+- Para **instalar** un paquete de CRAN haremos: .bg-orange[install.packages("nombre-del-paquete")]
+
+- Hay más repositorios. El más usado es `Github`.
+
+<br>
+
+--
+
+##### ¿Cómo usar un paquete?
+
+- Aunque hayamos instalado un paquete **no podremos usarlo hasta que lo abramos**, hasta que lo "hagamos visible" a R, hasta que lo carguemos en memoria.
+
+- Es decir, **cada vez** que vayamos a usar un paquete que ya tenemos instalado, hay que ejecutar .bg-orange[library("nombre-del-paquete")]
+
+- **Analogía**: al igual que para usar las aplicaciones de un móvil, primero hay que instalarlas y luego abrirlas, para usar los paquetes de R primero hay que instalarlos en nuestro PC y después, cada vez que los necesitemos para hacer un análisis, hay que “abrirlos” con **library("nombre-del-paquete")**.
+
+
+
+---
+class: inverse, center, middle
+
+
+### 4. Historia reciente de R
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+<br>
+
+### R-base  vs.  tidyverse
+
+
+---
+
+##### a kind of revolution in `r icons::icon_style(icons::fontawesome("r-project"), fill = "purple")`: Hadley y el tidyverse
+
+- R era un lenguaje "oscuro" para estadísticos y académicos, pero ...
+
+- ... recientemente ha habido una especie de revolución en el universo `r icons::fontawesome("r-project")`
+
+--
+
+.pull-left[
+
+- [Hadley Wickham](http://hadley.nz/), científico jefe de RStudio, [revolucionó el universo](https://priceonomics.com/hadley-wickham-the-man-who-revolutionized-r/?utm_campaign=Data%2BElixir&utm_medium=email&utm_source=Data_Elixir_46) `r icons::fontawesome("r-project")`, creando el '*Hadleyverse*'
+
+
+```{r, echo = FALSE,  eval = TRUE,  fig.asp = 2/2, out.width = "76%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "ss_02_img_07_Hadley.jpg"))
+```
+
+
+]
+
+--
+
+.pull-right[
+
+- El '*Hadleyverse*', se ha convertido en el [tidyverse](https://www.tidyverse.org/) gracias a un grupo de desarrolladores, por ejemplo:
+
+
+```{r, echo = FALSE,  eval = TRUE,  fig.asp = 2/4, out.width = "95%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "ss_02_img_08_gente-tidyverse.jpg"))
+```
+]
+
+---
+background-image: url(imagenes/ss_05_img_03_tidyverse-hex.png)
+background-position: 99% 1%
+background-size: 6%
+
+##### ¿qué es el tidyverse?
+
+- Una nueva forma de escribir código y afrontar el análisis de datos con R.
+
+- Según su propia página web, el [tidyverse](https://www.tidyverse.org/) es: 
+
+```{r, echo = FALSE,  eval = TRUE,  fig.asp = 2/2, out.width = "65%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "ss_05_img_05_pkgs-tidyverse.png"))
+```
+
+
+- **Traducido**, es un grupo de paquetes que se han diseñado con los mismos principios y que, por tanto, trabajan bien juntos y que han cambiado mucho, y a mejor, la forma de programar y afrontar el análisis de datos con R.
+
+- Ahora mismo, el **tidyverse ya es el estándar**
+
+---
+background-image: url(imagenes/ss_05_img_03_tidyverse-hex.png)
+background-position: 99% 1%
+background-size: 6%
+
+##### R-base vs. tidyverse
+
+- Podemos pensar que hay 2 formas de escribir código en `r icons::fontawesome("r-project")`: R-base y tidyverse. 
+
+- Nosotros escribiremos **à la tidyverse**.
+
+- Escribir *à la tidyverse* **tiene ventajas** y, además, es que ya **es el estándar**.
+
+--
+
+##### tiene ventajas, por ejemplo ...
+
+
+En [este tweet](https://twitter.com/andrewheiss/status/1359583543509348356?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1359583543509348356%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=file%3A%2F%2F%2Fhome%2Fpjpv%2FEscritorio%2Fslides_curso-R_2021_ok%2Fslides_01_intro_a.html1) se ve claramente una de las ventajas: la **claridad y facilidad a la hora de leer el código**.
+
+- R-base way:
+
+
+```{r, eval = FALSE}
+leave_house(get_dressed(get_out_of_bed(wake_up(me, time = "8:00"), side = "correct"), 
+                        pants = TRUE, shirt = TRUE), car = TRUE, bike = FALSE)
+```
+
+--
+
+- à la tidyverse:
+
+```{r, eval = FALSE}
+me %>% 
+  wake_up(time = "8:00") %>% 
+  get_out_of_bed(side = "correct") %>% 
+  get_dressed(pants = TRUE, shirt = TRUE) %>% 
+  leave_house(car = TRUE, bike = FALSE)
+```
+
+
+---
+background-image: url(imagenes/ss_05_img_03_tidyverse-hex.png)
+background-position: 99% 1%
+background-size: 5%
+
+##### The philosophy of the tidyverse
+
+Puedes leer el  [tidy tools manifesto](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html), pero estas 4 ideas capturan su esencia:
+
+<br>
+
+- Encadenar funciones con **the pipe** (` %>% `)
+  
+<br>
+
+- "Programs must be written for people to read, and only incidentally for machines to execute"  --- Hal Abelson
+
+<br>
+
+ - "If I had one thing to tell biologists learning bioinformatics, it would be write **code for humans**, write **data for computers**" --- Vince Buffalo
+  
+<br>
+  
+- "An important aspect of writing data for computers is to **make your data TIDY**" --- Jenny Bryan
+
+---
+background-image: url(imagenes/ss_05_img_03_tidyverse-hex.png)
+background-position: 99% 1%
+background-size: 5%
+
+##### Tidyverse workflow & Reproducible Research
+
+
+```{r , echo=FALSE, eval = TRUE, fig.asp = 2/2, out.width = "60%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "tt_06_img_01_explore-visualice.png"))
+```
+
+--
+
+```{r , echo=FALSE, eval = TRUE, fig.asp = 2/2, out.width = "60%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "tidy_worflo_infografic.png"))
+```
+
+
+
+---
+background-image: url(imagenes/ss_00_RR_icono.jpeg)
+background-position: 99% 1%
+background-size: 4%
+
+##### Nueva versión: R-4.1.x 
+
+La versión 4.1.0 de R fue publicada el 18 de mayo. [Aquí](https://cran.r-project.org/doc/manuals/r-devel/NEWS.html) tienes sus novedades y aquí un [post](https://www.jumpingrivers.com/blog/new-features-r410-pipe-anonymous-functions/) sobre los cambios más relevantes. La novedad más importante es la aparición de una .orange2[pipe nativa**] : .orange2[|>]
+
+
+##### R-4.1. ¿qué pasará en el futuro?
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">May the pipe wars begin <a href="https://twitter.com/hashtag/RStats?src=hash&amp;ref_src=twsrc%5Etfw">#RStats</a> <a href="https://t.co/nyGxEvRukq">pic.twitter.com/nyGxEvRukq</a></p>&mdash; Christopher McMaster (@DrCMcMaster) <a href="https://twitter.com/DrCMcMaster/status/1395017265058226179?ref_src=twsrc%5Etfw">May 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+
+---
+class: inverse, center, middle
+
+### 5. Investigación reproducible y Rmarkdown
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+<br>
+
+#### En mi opinión R está varios pasos por delante en cuanto a investigación reproducible
+
+
+---
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 5%
+
+##### Tidyverse workflow e investigación reproducible
+
+```{r , echo=FALSE, eval = TRUE, fig.asp = 2/2, out.width = "60%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "tt_06_img_01_explore-visualice.png"))
+```
+
+--
+
+##### Para ello ...
+
+
+- Utilizaremos [Rprojects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
+
+- Todo el análisis se hará con código (con scripts o ficheros `.R`)
+
+- Haremos informes o documentos reproducibles con **Rmarkdown** (ficheros `.Rmd`)
+
+
+---
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 5%
+
+##### ¿qué es Rmarkdown?
+
+- Podemos pensar que es **una forma de escribir** nuestros informes/análisis directamente desde R. No nos hará falta salir de R, todo se hace en R, desde los cálculos estadísticos, los gráficos, el texto o narrativa y la maquetación.
+
+--
+
+##### Ventaja principal
+
+- Nuestros informes serán **reproducibles**. Puede ver [este video](https://www.youtube.com/watch?v=s3JldKoA0zw) o leer [este post](https://rfortherestofus.com/2019/03/r-killer-feature-rmarkdown/)
+
+<br>
+
+##### un poco de marketing (Rmarkdown es lo más!!)
+
+-  En mi opinión R está varios pasos por delante en cuanto a herramientas para la investigación reproducible.
+
+-  **Rmarkdown** & friends (blogdown, packagedown, bookdown, flex-dashboards, shiny ...)
+
+- Puedes verlo visitando [this gallery](https://rmarkdown.rstudio.com/gallery.html). 
+
+- Para aprender como hacer estos documentos reproducibles puedes ir [aquí](https://rmarkdown.rstudio.com/lesson-1.html) o [aquí](https://bookdown.org/yihui/rmarkdown/)
+
+
+
+---
+class:: inverse2
+
+<br><br><br>
+
+### Antes de abrir RStudio: sé que todos somos mayores y que casí sois Graduados pero aún así ... un par de consejos
+
+<br>
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=996px></html>
+
+<br><br>
+
+#####  En serio!! Completamente en serio!!
+ 
+
+---
+class: center
+
+###  1. Es muy-muy importante la actitud!!!
+
+--
+.pull-left[
+##### Hay que intentar no agobiarse ...
+
+```{r, echo = FALSE}
+knitr::include_graphics(here::here("imagenes", "ss_03_img_01_angry-computer.jpg"))
+```
+]
+
+--
+.pull-right[
+
+#### ... mejor dejarse llevar
+
+```{r, echo = FALSE}
+knitr::include_graphics(here::here("imagenes", "ss_03_img_02_baby-surf.jpg") )
+```
+]
+
+---
+class: center
+
+#####  2. Igual, sólo igual, nos hace falta otra forma de aprender (WTF!!!)
+
+--
+
+.pull-left[
+
+```{r , echo=FALSE, eval = TRUE, fig.asp = 4/4, out.width = "100%", fig.align = "left"}
+knitr::include_graphics(here::here("imagenes", "01_Rob-you-use-R.png"))
+```
+
+--
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I have been using Python for 15 years and have been a matplotlib core developer for over 10. I google things about the library all the time.</p>&mdash; Ryan May (@dopplershift) <a href="https://twitter.com/dopplershift/status/1271614146312908800?ref_src=twsrc%5Etfw">June 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+]
+
+--
+
+.pull-right[
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">My <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> learning path:<br><br>1. Install R<br>2. Install RStudio<br>3. Google &quot;How do I [THING I WANT TO DO] in R?&quot;<br><br>Repeat step 3 ad infinitum.</p>&mdash; Jesse Mostipak (@kierisi) <a href="https://twitter.com/kierisi/status/898534740051062785?ref_src=twsrc%5Etfw">August 18, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+]
+
+
+---
+
+##### bueno ... igual no basta solo con googlear, pero es un buen comienzo
+
+
+.pull-left[
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">My 10 Tips for Getting Help in R: <a href="https://t.co/OxK1iilbsr">https://t.co/OxK1iilbsr</a><br>TL;DR:<br>📖Read the docs<br>🔍Google the error<br>🧠Search smarter not harder<br>🔥Burn it all down<br>🔁Make a reprex<br>🐦Ask Twitter w/ <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a><br>☎️Phone a friend<br>😴Sleep on it<br>💬Ask your q on an online community<br>🙋File an issue on GitHub</p>&mdash; Dr. Sam Tyner (@sctyner) <a href="https://twitter.com/sctyner/status/1206986161434058752?ref_src=twsrc%5Etfw">December 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+- Quizás lo mejor sea pedir ayuda en foros mediante un [reprex](https://www.tidyverse.org/blog/2021/02/reprex-1-0-0/) , pero ... aún no
+]
+
+
+.pull-right[
+
+- Sí, saber **buscar información** es una **competencia clave**:
+
+> **La educación debería apoyarse no en libros de texto, sino en el desarrollo de la capacidad de búsqueda y cualificación de información en la red** ... la verdad no está entre las páginas de un libro ... la verdad está ahí fuera, y solo mediante los adecuados mecanismos activos y conscientes de contraste y verificación aprendemos a capturarla -- Enrique Dans en [El problema de las noticias falsas está en la educación](https://www.enriquedans.com/2018/03/el-problema-de-las-noticias-falsas-esta-en-la-educacion.html)
+
+- Enrique Dans también dice que hay que [matar el libro de texto](https://www.enriquedans.com/2012/10/matar-al-libro-de-texto-mi-columna-en-expansion.html)
+
+]
+
+---
+background-image: url(imagenes/ss_03_img_02_baby-surf.jpg)
+background-size: cover
+
+
+### Vengaaaa, vamos allá!!!!
+
+#### Nadie se ahogará. Promise!!!
+

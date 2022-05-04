@@ -1,0 +1,577 @@
+---
+title: "Primeros pasos con R"
+subtitle: "Programación y manejo de datos con R (Slides 02)"  
+author: 
+  - "Pedro J. Pérez"
+  #- "2020, septiembre"
+date: "(actualizadas en `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    seal: false   #- puedes tunear la primera página de las slides    
+    lib_dir: libs
+    css: 
+      - ../assets/xaringan-themer.css
+      - ../assets/my_css_file_xaringan_verdes.css  #- good (funciona lo de justify)
+    nature:
+      highlightStyle: github  #- solarized-light ; googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      #after_body: [css/insert-logo.html]
+      in_header: 
+        - !expr here::here("assets", "favicon-yo.html") 
+        #- !expr here::here("assets", "google-analytics.html") 
+#      in_header: ["favicon-yo.html", "google-analytics.html"]
+---
+
+
+```{r xaringan-extra, include = FALSE}
+xaringanExtra::use_xaringan_extra(c("tile_view", "logo", "tachyons", "animate_css", "scribble"))
+#xaringanExtra::use_share_again()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_fit_screen()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = FALSE)
+xaringanExtra::use_panelset()
+```
+
+```{r xaringan-themer, include = FALSE, warning = FALSE}
+library(xaringanthemer)
+style_mono_light(
+  base_color = "#1c5253", 
+  colors = c(red = "#f34213", purple = "#3e2f5b", orange = "#ff8811", 
+             green = "#136f63", white = "#FFFFFF", base = "#1c5253",
+             gray = "#708090", salmon = "#ff8c69", indianred = "#cd5c5c"),
+  link_color = "steelblue",
+  #header_font_google = google_font("Josefin Sans"),  #- https://fonts.google.com/
+  #text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"))
+```
+
+```{r chunk-setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE,
+                      #results = "hold",
+                      cache = FALSE, cache.path = "/caches/", comment = "#>",
+                      #fig.width = 7, #fig.height= 7,
+                      #out.width = 7, out.height = 7,
+                      collapse = TRUE,  fig.show = "hold", fig.retina = 4,
+                      fig.asp = 7/9, out.width = "95%", fig.align = "center")
+options(scipen = 999) #- para quitar la notación científica
+#- para mejorar los gráficos, bueno en realidad para que se vean igual en distintos SO
+#- https://www.jumpingrivers.com/blog/r-knitr-markdown-png-pdf-graphics/
+knitr::opts_chunk$set(dev = "png", dev.args = list(type = "cairo-png"))
+#options(htmltools.dir.version = FALSE) #- lo pongo en setup
+#xaringan::inf_mr() 
+```
+
+```{r, include = FALSE}
+library(flipbookr)
+library(tidyverse)
+```
+
+```{css, include = FALSE}
+.remark-code{line-height: 1.5; font-size: 80%}
+@media print {
+  .has-continuation {
+    display: block;
+  }
+```
+
+
+class: inverse, center, middle
+
+<br>
+
+#### `r rmarkdown::metadata$subtitle`
+
+## `r rmarkdown::metadata$title`
+
+<br>
+
+### `r rmarkdown::metadata$author`
+
+#### 2021, mayo
+
+###### (actualizadas el `r format(Sys.time(), '%d-%m-%Y')`)
+
+
+<br><br>
+
+#### e-mail: [pedro.j.perez@uv.es](mailto:pedro.j.perez@uv.es)
+  
+#### Web del curso: [https://perezp44.github.io/intro-ds-20-21-web](https://perezp44.github.io/intro-ds-21-22-web)
+
+```{r echo = FALSE}
+xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket") )
+```
+
+
+---
+class: center
+
+### Recuerda que es muy importante la actitud!!!
+
+--
+.pull-left[
+##### No hay que agobiarse ...
+
+```{r, echo = FALSE}
+knitr::include_graphics(here::here("imagenes", "ss_03_img_01_angry-computer.jpg"))
+```
+]
+
+--
+.pull-right[
+
+#### ... mejor dejarse llevar
+
+```{r, echo = FALSE}
+knitr::include_graphics(here::here("imagenes", "ss_03_img_02_baby-surf.jpg"))
+```
+]
+
+
+---
+class: inverse, center, middle
+
+### Dar órdenes a R
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### Es lo primero que hemos de aprender
+
+
+---
+
+##### Durante el curso daremos ordenes a R de varias maneras:
+
+--
+
+1) En la **consola**: solo hay que escribir la orden y pulsar la tecla .white.bg-green[ENTER]  
+
+--
+  - .white.bg-indianred[ Tarea: ] en la consola, intenta darle a R la orden de sumar `2+2`
+
+<br>
+
+--
+
+2) Usando un script o **fichero .R**: hay que crear un fichero `.R` siguiendo esta ruta de menús: `File > New file > R Script`. Una vez has creado el fichero, escribes la instrucción y pulsas las teclas .white.bg-green[CONTROL]  + .white.bg-green[ENTER] 
+
+
+--
+
+  - .white.bg-indianred[ Tarea: ] dale a R la orden de sumar `2+2`, pero esta vez desde un **script** o fichero .R  
+  
+--
+
+  - .white.bg-indianred[ Tarea: ] guarda el fichero que has creado. Ponle el nombre "prueba-01.R". ¿Donde se ha guardado?
+
+<br>
+
+--
+
+3) Usando un fichero Rmarkdown o **fichero .Rmd**: tienes que crear un fichero `.Rmd` siguiendo esta ruta de menús: File > New file > R Markdown... 
+
+  - Esta forma la veremos en un ratito, ahora NO.
+
+---
+
+##### Seguimos dando ordenes a R, para ello haz la siguiente .white.bg-indianred[ Tarea:]
+
+1. Cierra RStudio
+    
+1. Ejecuta las siguientes lineas de código en R
+
+```{r, eval = FALSE}
+# operaciones básicas con R
+2 + 2    
+2 - 2    
+2 * 2    
+2 / 2 
+
+# Potenciación (se puede hacer con el operador ^ o con **)
+3^2    
+3**2
+
+# raíz cuadrada
+sqrt(9)
+```
+
+-----------------------------
+
+--
+- ¿Cómo lo has hecho? ¿Qué ha ocurrido?
+
+- ¿Las has ejecutado todas de golpe o una a una? 
+
+- ¿Alguien se ha atascado? No ... a ver quien puede hacer que R se atasque.
+
+
+---
+class: inverse, center, middle
+
+### Creación de Rprojects
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### Siempre trabajaremos dentro de un Rproject, así que hay que saber crearlos
+
+
+---
+##### Durante el curso siempre trabajaremos desde/con Rprojects
+
+Para **crear un Rproject** has de:
+
+1. Abrir RStudio
+
+2. Seguir la siguiente ruta de menús: File > New Project > New Directory > New Project
+
+3. Guardar el RProject; para ello has de ponerle un nombre y decidir la ruta donde se creará el RProject.
+
+--
+
+<br>
+
+-----------------------------------------
+
+.white.bg-indianred[ Tarea: ] Crea un Rproject en el escritorio/Desktop de tu ordenador. Ponle el nombre: "my-proyecto-01"
+
+----------------------------------------
+
+<br>
+--
+
+- ¿Qué ha pasado?
+
+- ¿Qué pensáis que es el Rproject que habéis creado?
+
+
+---
+
+##### Vamos a trabajar la creación de Rprojects con la siguiente .white.bg-indianred[ Tarea: ]
+
+1. Cierra RStudio
+    
+2. Borra la carpeta del Rproject "my-proyecto-01"
+
+3. Crea un nuevo Rproject llamado "my-proyecto-02"
+
+4. Cierra RStudio
+
+5. Abre el proyecto "my-proyecto-02".   (**Aprender a abrir correctamente un RProject es muy importante!!**)
+
+--------------------------------
+
+--
+
+##### Aprender a abrir correctamente un RProject es muy importante!!
+
+Hay 2 formas de abrirlo:   
+
+  - La primera es abrir la carpeta del RProject y hacer doble-click en el archivo con extensión `.Rproj` (sí el fichero con el icono de un cubo azulito)
+  
+  - La segunda forma es abrir RStudio y pinchar en el desplegable que hay en la esquina superior-derecha.
+ 
+
+
+---
+class: inverse, center, middle
+
+
+### Creación de archivos y carpetas dentro de un Rproject
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+--
+
+#### Los Rprojects son carpetas normales y corrientes para tu sistema operativo, por lo tanto puedes manejarlas desde tu sistema operativo 
+
+--
+
+#### ... pero también puedes manejar la carpeta del Rproject desde dentro de RStudio
+
+--
+
+####  ... además, al tener el fichero con la extensión ".Rproj" RStudio las reconoce como un Rproject (facilitándonos algunas cosas)
+
+---
+
+##### Organizando nuestro Rproject
+
+Los Rprojects son carpetas donde guardaremos todos los ficheros que nos hagan falta para un análisis de datos. Generalmente nos harán falta datos, imágenes, etc ... y es mejor ser organizado y guardar los datos en una carpeta, las imágenes en otra, etc ...
+
+--
+
+##### En un Rproject podemos crear carpetas de 2 maneras:
+
+- Desde tu sistema operativo. Seguro que has creado carpetas!!!
+
+- Desde RStudio. En el panel inferior-derecha. En la pestaña "Files", verás un icono que pone "New Folder". Pínchalo y ...
+
+--
+
+
+-----------------------------------------
+
+.white.bg-indianred[ Tarea: ] crea dos subcarpetas dentro de tu Rproject. Una que se llame "datos" y otra que se llame "imagenes". Crea cada carpeta de una forma diferente.
+
+----------------------------------------
+
+--
+
+-----------------------------------------
+
+.white.bg-indianred[ Tarea: ] borra la subcarpeta "imagenes"
+
+----------------------------------------
+
+--
+
+- ¿Cómo la has borrado? hay dos maneras (bueno más, pero ....)
+
+---
+class: inverse, center, middle
+
+### Dar órdenes a R (otra vez)
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+####  Sí, esto fue lo primero que hicimos, pero ahora vamos a dar ordenes a R desde dentro del Rproject (realmente es igual, pero ... estamos empezando)
+
+---
+
+```{r, echo = FALSE}
+countdown::countdown(minutes = 0, seconds = 45)
+```
+
+##### .white.bg-indianred[ Tarea: ] dando ordenes a R desde un Rproject
+
+1. Cierra RStudio
+
+1. Vuelve a abrir el Rproject "my-proyecto-02"
+    
+1. Desde el RProject, ejecuta las siguientes lineas de código en R
+
+1. No las ejecutes desde la consola, sino desde un archivo .R. Guarda el archivo y llámalo "mis-calculos-01.R"
+
+```{r, eval = FALSE}
+  #- Ante la duda usa los paréntesis
+  6 + 2 * 5   
+  (6 + 2) * 5
+
+  #- Operaciones de varias lineas
+  2  + 2 + 2 + 2 + 2 +
+  10 + 
+  30
+```
+
+-----------------------------
+
+
+--
+
+<br>
+
+- ¿Donde has guardado el archivo "mis-calculos-01.R"?
+
+
+---
+
+class: inverse, center, middle
+
+### Gestionar los archivos de nuestro RProject
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### Hay que aprender a borrar, crear y mover archivos dentro del Rproject (es fácil)
+
+---
+
+##### recuerda que puedes gestionar (borrar, crear, mover, renombrar, ...) los archivos de tu RProject con tu sistema operativo o desde RStudio
+
+
+<br>
+
+- **se puede hacer de las 2 maneras**, pero la siguiente la siguiente tarea la vamos a hacer desde RStudio (nos tenemos que familiarizar con él!!!)
+
+
+--
+
+
+---------------
+
+.white.bg-indianred[ Tarea: ]
+
+- Borra el archivo "mis-calculos-01.R"  
+
+- Crea otro archivo llamado "mis-calculos-02.R" en la carpeta "datos". En este archivo tienes que escribir una linea de comentario y una linea con una expresión/orden de R.
+
+- Mueve el archivo "mis-calculos-02.R" de la carpeta "datos" a la carpeta raíz del RProject.
+
+
+```{r, echo = FALSE}
+countdown::countdown(minutes = 0, seconds = 35)
+```
+
+-----------------------------
+
+--
+
+- Bueno, pues yo creo que enough de aprender a manejarse con RStudio. ¿Recordáis que es RStudio?  ¿Qué es un Rproject?
+
+- ¿Y la consola? ¿Y los ficheros. R?  
+
+
+---
+class: inverse, center, middle
+
+### Algunos ejemplos
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### Vamos a ver algunos ejemplos para ir familiarizándonos con RStudio, los Rprojects y un poco de la sintaxis de R.
+
+---
+
+##### un primer ejemplo: vamos a hacer un meme con R
+
+<br>
+
+.white.bg-indianred[ Tarea: ]
+
+- Crea un nuevo RProject llamado `my-ejemplos-01`
+
+- En el Rproject que has creado ejecuta en un fichero .R el siguiente código
+
+
+
+```{r, echo = TRUE, eval = FALSE}
+#- repo del paquete:  https://github.com/GuangchuangYu/meme/
+
+library(meme)    #- install.packages("meme")
+
+my_foto <- system.file("success.jpg", package = "meme")
+
+meme(my_foto, "SÍ q puedes!!!", "Tú puedes aprender R!!", size = 2.0, color = "purple")
+```
+
+
+---
+
+##### Otra tarea: vamos a hacer otro meme, pero ahora con una foto de internet
+
+<br>
+
+.panelset[
+.panel[.panel-name[Tarea]
+
+En la url de abajo hay una foto. Úsala para hacer un meme.
+
+<br>
+
+https://imgs.xkcd.com/comics/bad_map_projection_the_greenland_special.png
+
+]
+
+.panel[.panel-name[Solución]
+
+<br>
+
+- Ni se te ocurra mirar la solución hasta que lo hayas intentado!!! 
+
+- te rindes? Bueno, a veces hay que rendirse, mira en el siguiente tab.
+]
+
+.panel[.panel-name[Más]
+
+- Te has rendido, bueno ....
+
+```{r, echo = TRUE, eval = FALSE}
+my_url <- "https://imgs.xkcd.com/comics/bad_map_projection_the_greenland_special.png"
+
+my_foto <- my_url
+
+meme::meme(my_foto, 
+           upper = "Haremos mapas!!!", 
+           lower = "Sí, y sabremos lo q es una proyección!!", 
+           size = 1.0 , 
+           color = "purple", 
+           vjust = 0.25)
+
+```
+
+]
+]
+
+---
+class: inverse, center, middle
+
+### Vamos a por más ejemplos
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### Pero  ahora no vamos a ir tan pausados, os voy a tirar un poco a la piscina. Recuerda lo de la actitud!!!
+
+
+---
+
+##### vamos a descargar un Rproject de internet
+
+1. cierra RStudio
+
+2. abre RStudio pinchando en su icono. (No lo abras a través de un Rproject)
+
+3. Este paso lo haré yo, así que esperad a que lo haga yo y después hacedlo vosotros: ir a Global options (para ver el default working directory)
+
+4. Copia y ejecuta el código de abajo
+
+```{r, eval = FALSE}
+file_to_download <- "clase_01.zip" 
+url <- paste0("https://github.com/perezp44/intro-ds-21-22-web/raw/master/guiones-de-clase/", file_to_download)
+download.file(url, destfile = file_to_download)
+unzip(zipfile = file_to_download)
+file.remove(file_to_download)
+```
+
+-------------------------
+
+<br>
+
+--
+
+- Al ejecutar las anteriores lineas de código hemos descargado un Rproject
+
+- Usaremos este Rproject durante el resto de la clase
+
+
+
+---
+
+##### vamos a usar el Rproject "clase_01"
+
+- Con él haremos algunos ejemplos más
+
+
+<br>
+
+.white.bg-indianred[ Tarea: ] 
+
+- **Abre el Rproject**  "clase_01" (recuerda que se abre desde el fichero .Rproj)
+
+- Dentro del Rproject **abre el fichero** "ej_00_ejemplo-inicial.R
+
+--
+
+<br>
+
+- Ve leyendo el código del fichero  e intenta adivinar que hace cada instrucción
+
+- Ejecuta el código linea por linea e intenta entender que está haciendo
+
+
+

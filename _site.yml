@@ -1,0 +1,50 @@
+name: "Curso R"
+navbar:
+  title: "Programación y manejo datos con R (2021-22)"
+  type: inverse
+  left:
+    - icon: fa-home
+      href: index.html
+  right:
+    - text: "Guía del curso"
+      icon: fa-graduation-cap
+      href: 01-guia-del-curso.html
+    - text: "Logística"
+      icon: fa-laptop
+      href: 02-logistica.html
+    - text: "Calendario"
+      href: 03-calendario.html
+      icon: fa-calendar-alt
+    - text: "Tutoriales"
+      icon: fa-book
+      href: 04-tutoriales.html
+    - text: "Slides"
+      href: 05-slides.html
+    - text: "MáS"
+      icon: fa-download
+      href: 06-mas-cosas.html
+    - text: "Trabajos"
+      icon: fa-user-graduate
+      href: 07-trabajos.html
+output_dir: "docs"
+output:
+  html_document:
+    theme: united          #- verde: flatly
+    highlight: monochrome  #- pygments  textmate
+    includes:
+      after_body: assets/footer.html
+      in_header: ["google-analytics.html", "favicon.html"]
+---
+
+    #css: styles.css
+   # textmate
+   #     theme: united
+#output:
+#  html_document:
+#    theme:
+#      bootswatch: minty
+
+
+  html_document:
+    theme: sandstone
+    highlight: pygments

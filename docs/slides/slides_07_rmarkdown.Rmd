@@ -1,0 +1,597 @@
+---
+title: "Rmarkdown (primeras ideas)"
+subtitle: "Programación y manejo de datos con R (Slides 07)"  
+author: 
+  - "Pedro J. Pérez"
+  #- "2020, septiembre"
+date: "(actualizadas en `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    seal: false   #- puedes tunear la primera página de las slides    
+    lib_dir: libs
+    css: 
+      - ../assets/xaringan-themer.css
+      - ../assets/my_css_file_xaringan_verdes.css  #- good (funciona lo de justify)
+    nature:
+      highlightStyle: github  #- solarized-light ; googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      #after_body: [css/insert-logo.html]
+      in_header: 
+        - !expr here::here("assets", "favicon-yo.html") 
+        #- !expr here::here("assets", "google-analytics.html") 
+#      in_header: ["favicon-yo.html", "google-analytics.html"]
+---
+
+
+```{r xaringan-extra, include = FALSE}
+xaringanExtra::use_xaringan_extra(c("tile_view", "logo", "tachyons", "animate_css", "scribble"))
+#xaringanExtra::use_share_again()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_fit_screen()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = FALSE)
+xaringanExtra::use_panelset()
+```
+
+```{r xaringan-themer, include = FALSE, warning = FALSE}
+library(xaringanthemer)
+style_mono_light(
+  base_color = "#1c5253", 
+  colors = c(red = "#f34213", purple = "#3e2f5b", orange = "#ff8811", 
+             green = "#136f63", white = "#FFFFFF", base = "#1c5253",
+             gray = "#708090", salmon = "#ff8c69", indianred = "#cd5c5c"),
+  link_color = "steelblue",
+  #header_font_google = google_font("Josefin Sans"),  #- https://fonts.google.com/
+  #text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"))
+```
+
+```{r chunk-setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE,
+                      #results = "hold",
+                      cache = FALSE, cache.path = "/caches/", comment = "#>",
+                      #fig.width = 7, #fig.height= 7,
+                      #out.width = 7, out.height = 7,
+                      collapse = TRUE,  fig.show = "hold", fig.retina = 4,
+                      fig.asp = 7/9, out.width = "95%", fig.align = "center")
+options(scipen = 999) #- para quitar la notación científica
+#- para mejorar los gráficos, bueno en realidad para que se vean igual en distintos SO
+#- https://www.jumpingrivers.com/blog/r-knitr-markdown-png-pdf-graphics/
+knitr::opts_chunk$set(dev = "png", dev.args = list(type = "cairo-png"))
+#options(htmltools.dir.version = FALSE) #- lo pongo en setup
+#xaringan::inf_mr() 
+```
+
+```{r, include = FALSE}
+library(flipbookr)
+library(tidyverse)
+```
+
+```{css, include = FALSE}
+.remark-code{line-height: 1.5; font-size: 80%}
+@media print {
+  .has-continuation {
+    display: block;
+  }
+```
+
+
+class: inverse, center, middle
+
+<br>
+
+#### `r rmarkdown::metadata$subtitle`
+
+### `r rmarkdown::metadata$title`
+
+<br>
+
+### `r rmarkdown::metadata$author`
+
+#### 2020, septiembre
+
+###### (actualizadas el `r format(Sys.time(), '%d-%m-%Y')`)
+
+
+<br><br>
+  
+#### e-mail: [pedro.j.perez@uv.es](mailto:pedro.j.perez@uv.es)
+  
+#### Web del curso: [https://perezp44.github.io/intro-ds-20-21-web](https://perezp44.github.io/intro-ds-21-22-web)
+
+```{r echo = FALSE}
+xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket") )
+```
+
+
+
+---
+class: inverse, center, middle
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 5%
+
+
+### La última étapa de un análisis es ... comunicar
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### Lo haremos con Rmarkdown
+
+```{r,  echo = FALSE, eval = TRUE, fig.asp = 4/2, out.width = "69%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "tt_06_img_01_explore-visualice.png"))
+```
+
+
+---
+class: inverse, center, middle
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 5%
+
+### ¿Qué es Rmarkdown? ¿Para que sirve?
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+<br>
+
+#### Podemos pensar que es un ["entorno"](https://vimeo.com/178485416) para hacer informes/publicaciones/transparencias REPRODUCIBLES.
+
+
+<br>
+
+
+.center[Is an authoring framework for data science, combining your code, its results, and your prose. R Markdown documents are fully reproducible and support dozens of output formats, like PDFs, Word files, slideshows, and more]
+
+<br>
+
+---
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### ¿de verdad necesito conocer Rmarkdown?
+
+- **SÍ!!** Puede [transformar tu forma de trabajar](https://rfortherestofus.com/2019/03/r-killer-feature-rmarkdown/)
+
+- Todos tenemos que hacer documentos con algún contenido estadístico: informes o transparencias o .... **`Rmarkdown`** hace posible que podamos hacer esos documentos **directamente desde R**. Además, nuestros informes serán [Reproducibles!!](https://www.youtube.com/watch?v=s3JldKoA0zw)
+
+##### además, con Rmd se pueden generar multitud de outputs
+
+- Por ejemplo, visita [está galería](https://rmarkdown.rstudio.com/gallery.html) o [este listado](https://rmarkdown.rstudio.com/formats.html)
+
+--
+
+<br>
+
+##### le damos una oportunidad a **R**markdown?? 🤔  ok, vale!!!
+
+- Vamos a trabajar con .bg-orange[documentos Rmd]; es decir, con documentos con **extensión** .bg-orange[extensión .Rmd]
+
+<br>
+
+##### ¿cómo se crea un fichero .Rmd?
+
+- Por menús de RStudio: **File > New File > R Markdown ...**
+
+
+---
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### los documentos `.Rmd` tienen 3 partes
+
+1. Encabezamiento (yaml header)  
+2. Trozos de código R (R chunks)  
+3. Texto (narratives)
+
+--
+
+##### Un ejemplo
+
+.pull-left[
+
+```{r echo = FALSE, comment = "",  out.width = '85%', fig.align = 'center'}
+cat(htmltools::includeText(here::here("imagenes", "rmarkdown_ejemplos", "ejemplo_1.Rmd")))
+```
+
+]
+
+--
+
+.pull-right[
+
+- Cada .Rmd file se compila en su sesión.   
+
+```{r echo = FALSE, comment = "", out.width = '100%', fig.align = 'center'}
+knitr::include_graphics(here::here("imagenes", "rmarkdown_ejemplos", "imagenes", "ejemplo_1_imagen.PNG") )
+```
+
+- El wd es donde está el archivo .Rmd
+
+]
+
+
+---
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### (I) El encabezamiento o "yaml header"
+
+- Se (suele) poner al ppio del documento, entre estas marcas: `---`
+
+- En el yaml son importantes los espacios y la indentación
+
+- [Aquí](https://scienceloft.com/technical/useful-yaml-options-for-generating-html-reports-in-r/) puedes aprender más sobre el `yaml`, o en el [manual de Pandoc](https://pandoc.org/MANUAL.html)
+
+##### Otro ejemplo de yaml
+
+
+```{r echo = FALSE, comment = "",  out.width = '90%', fig.align = 'center'}
+cat(htmltools::includeText(here::here("imagenes", "rmarkdown_ejemplos", "ejemplo_yaml_1.Rmd")))
+```
+
+
+
+---
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### (IIa) Código R (chunks) 
+
+- Para que `knitr` sepa que partes del .Rmd es código R, deben ir dentro de estas marcas: 
+
+````
+```{r}`r ''`   
+
+```    
+````
+
+##### Por ejemplo
+
+````
+```{r}`r ''`   
+# Se pueden poner comentarios (de la forma habitual)
+aa <- c(1, 4, 16, 64)
+sqrt(aa)
+```    
+````
+
+- Cuando `knitr` procese el chunk, lo interpretará como código R y ejecutará las instrucciones y mostrará en el documento final el output generado por el chunk.
+
+
+##### Por ejemplo, el anterior chunk generará el siguiente output:
+
+```{r, echo = TRUE}
+# Se pueden poner comentarios (de la forma habitual)
+aa <- c(1, 4, 16, 64)
+sqrt(aa)
+```
+
+
+---
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### Los chunks pueden tener opciones
+
+- Estas opciones permiten una mayor flexibilidad a la hora de cómo mostrar el código y los resultados en el documento final. Las opciones más usadas son: `echo` y `eval`. 
+
+- Por ejemplo:
+
+.pull-left[
+````
+```{r, echo = TRUE, eval = TRUE}`r ''`   
+library(tidyverse)
+iris %>% summarise(across(1:3, mean))
+```
+````
+]
+
+.pull-right[
+````
+```{r, echo = TRUE, eval = FALSE}`r ''` 
+library(tidyverse)
+iris %>% summarise(across(1:3, mean))
+```    
+````
+]
+
+--
+
+
+.pull-left[
+```{r, echo = TRUE, eval = TRUE}
+library(tidyverse)
+iris %>% summarise(across(1:3, mean))
+```
+]
+
+.pull-right[
+```{r, echo = TRUE, eval = FALSE}
+library(tidyverse)
+iris %>% summarise(across(1:3, mean))
+```    
+]
+
+
+<br>
+
+- Una opción más a conocer es : .yellow-h[results = "hide"]
+
+- Si quieres ver las opciones disponibles para los chunks tendrás que ir a la [página web de knitr](https://yihui.name/knitr/options/), a la [cheat sheet sobre Rmarkdown](https://raw.githubusercontent.com/rstudio/cheatsheets/master/rmarkdown-2.0.pdf), o a la [Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+
+
+---
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### chunk inicial con "global settings"
+
+- Sí, los documentos `.Rmd` suelen tener un chunk inicial con las opciones por defecto para los siguientes chunks.
+
+
+- Por ejemplo, el chunk inicial que suelo usar es parecido a este:
+
+````
+```{r chunk-setup, include = FALSE}`r ''`
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE,
+                      collapse = TRUE,
+                      #fig.width = 7, #fig.height= 7,
+                      fig.asp = 7/9, out.width = "95%", 
+                      fig.align = "center", fig.show = "hold")
+                      
+options(scipen = 999) #- para quitar la notación científica
+```
+````  
+
+- Con [knitr v1.35](https://github.com/yihui/knitr/releases) se ha habilitado una nueva sintaxis para las opciones de los chunks:
+
+
+````
+```{r}`r ''`
+#| echo = FALSE, fig.width = 10,
+#| fig.cap = "This is a long caption."
+
+plot(cars)
+```
+````  
+
+
+---
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### (II b) Código R ... pero ... inline 
+
+- La mayoría del código suele ir en los chunks, pero a veces necesitamos .yellow-h[inline code]; es decir, codigo R dentro de nuestro texto.
+
+
+##### Por ejemplo
+
+- Si quiero describir un df puedo hacerlo así: "El data.frame iris  tiene 150 filas y 5 variables" 
+
+
+- Pero es mejor hacerlo con .yellow-h[inline code]. Para ello tienes que poner el código R dentro de estas marcas:  <span style="background-color: #e5e5e5; border-radius: 3px; padding: 4px; font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace;"><code>&grave;r &grave;</code></span> 
+
+
+
+
+---
+background-image: url(imagenes/ss_00_new_logo_rmd.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### (III) El texto (o narratives)
+
+- Todo lo que no es el yaml o un chunk, es texto. El texto se escribe en [Markdown](https://es.wikipedia.org/wiki/Markdown)
+
+##### ¿qué narices es esto de Markdown?
+
+- **Markdown** es un lenguaje de marcas diseñado para escribir fácilmente para la web y que sea también fácilmente legible.
+
+- Markdown fue creado por Jhon Grueber y [Aaron Swartz](https://es.wikipedia.org/wiki/Aaron_Swartz). Para saber más sobre Aaron Swartz puedes ver [este documental](https://www.youtube.com/watch?v=vXr-2hwTk58)
+
+-  La ventaja de escribir en Markdown es que es un lenguaje muy fácil de aprender y que como está basado en un formato de texto plano, es y será compatible con la mayoría de plataformas.
+
+- En este otro [tutorial  de Markdown](https://www.markdowntutorial.com/), se puede leer lo siguiente:
+
+> Markdown is a way to write for the web. It’s written in what nerds like to call “plaintext”. Plaintext is just the regular alphabet, with a few familiar symbols. Unlike cumbersome word processing applications, text written in Markdown can be easily shared between computers, mobile phones, and people. It’s quickly becoming the writing standard for academics, scientists, writers, and many more. Websites like GitHub and reddit use Markdown to style their comments.
+
+
+---
+background-image: url(imagenes/1920px-Markdown-mark.svg.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### Para aprender Rmarkdown podéis usar un [editor on-line de Markdown](https://vuejs.org/v2/examples/) y probar a escribir algo.
+ 
+```{r echo = FALSE, comment = "",  out.width = '58%', fig.align = 'center'}
+knitr::include_graphics(here::here("imagenes", "rmarkdown_ejemplos", "imagenes", "imagen_ejemplo_markdown.PNG") )
+```
+
+---
+background-image: url(imagenes/1920px-Markdown-mark.svg.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### más cosas sobre cómo escribir **texto** en Markdown
+
+- Mardown es un lenguaje **estoico**
+
+- R Markdown sigue la sintáxis de [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)
+
+<br>
+
+- Si en una frase/linea de texto hay 2 espacios o más, estos se reducen a un espacio.
+
+
+- Para que una linea pase a ser de verdad otra linea, hay que dejar 2 o más espacios al final.
+
+- Una (o mas lineas) en blanco generan un nuevo párrafo.
+
+<br>
+
+- Para crear más espacio entre párrafos (una linea en blanco extra): `<br>`
+
+- Si queremos dejar extra espacio entre 2 palabras: `&nbsp;` `&ensp;` o `&nbsp;`
+
+
+<br>
+
+- Los espacios de lineas que empiezan con `|` se mantienen (🤓)
+
+
+---
+background-image: url(imagenes/1920px-Markdown-mark.svg.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### más cosas sobre Rmarkdown
+
+<br>
+
+- **Ecuaciones**: admite ecuaciones en Latex si van entre **$** para ecuaciones inline y **$$** para ecuaciones independientes. [Aquí](http://www.sciweavers.org/free-online-latex-equation-editor) tienes un editor de ecuaciones en latex online, y [aquí](https://dereksonderegger.github.io/570L/16-rmarkdown-tricks.html) algunos ejemplos de ecuaciones escritas en Latex.
+
+<br>
+
+- **Hyperlinks**: Si escribes **`<https://www.rstudio.com/>`** o **`[Web de RStdudio](https://www.rstudio.com/)`**, cuando los procese `knitr`, se convertirán en hyperlinks.
+
+<br>
+
+- **Notas al pie**: si quieres poner una nota al pie aquí`^[el texto que quieres en la nota al pie]`
+
+<br>
+
+- **Tablas**: por ejemplo `knitr::kable(df)`, o `gt::gt(df)`, o `DT::datatable(df)` y más. Si te interesa el tema de las tablas puedes visitar [esto](https://perezp44.github.io/intro-ds-20-21-web/tutoriales/tt_08_tablas-Rmarkdown.html) o [esto](https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/)
+
+
+
+---
+background-image: url(imagenes/1920px-Markdown-mark.svg.png)
+background-position: 99% 1%
+background-size: 4%
+
+##### tuneando tu informe .html
+
+- Puedes cambiar algunos aspectos de tu documento html. Puedes verlo [aquí](https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style.)
+
+- Con CSS se puede personalizar completamente el aspecto de los documentos html que se generan con Rmarkdown. Aunque no sepas CSS tienes una gran variedad de formatos predefinidos. Puedes ver un listado [aquí](https://www.datadreaming.org/post/r-markdown-theme-gallery/),  [aquí](https://github.com/gadenbuie/cleanrmd)o [aquí](https://github.com/juba/rmdformats).
+
+- El paquete [bslib](https://rstudio.github.io/bslib/) facilita el tuneado de los html.
+
+- El paquete [thematic](https://rstudio.github.io/thematic/) puede hacer que los gráficos reflejen el theme de RStudio que estas usando: sólo hay que hacer `thematic_on()`
+
+
+---
+
+##### Imágenes
+
+.pull-left[
+Se pueden insertar así: `![](ruta a-la-imagen-chula)`,
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/A_la_pla%C3%A7a%21_Guanyem_Barcelona_%2817927128471%29.jpg/300px-A_la_pla%C3%A7a%21_Guanyem_Barcelona_%2817927128471%29.jpg)
+]
+
+.pull-right[
+... aunque yo prefiero hacerlo así:
+
+````
+```{r,  echo = FALSE, eval = TRUE, fig.asp = 4/2, out.width = "69%", fig.align = "center"}`r ''`
+knitr::include_graphics(here::here("imagenes", "mola-mazo.jpg")
+```    
+````
+
+```{r,  echo = FALSE, eval = TRUE, fig.asp = 4/2, out.width = "34%", fig.align = "center"}
+knitr::include_graphics(here::here("imagenes", "mola-mazo.png"))
+```   
+
+]
+
+--
+
+##### Videos
+
+````
+```{r, echo = FALSE, eval = TRUE}`r ''`
+library("vembedr")
+embed_url("https://www.youtube.com/watch?v=ACv9zaBa1A4")
+```
+````
+
+
+---
+ 
+##### 2+2 supervideos de NV
+
+.pull-left[
+
+```{r, echo = FALSE, eval = TRUE}
+library("vembedr")
+embed_url("https://www.youtube.com/watch?v=ACv9zaBa1A4")
+```
+
+```{r, echo = FALSE, eval = TRUE}
+library("vembedr")
+embed_url("https://www.youtube.com/watch?v=ZkECLuuRwTg")
+```
+]
+
+.pull-right[
+
+```{r, echo = FALSE, eval = TRUE}
+library("vembedr")
+embed_url("https://www.youtube.com/watch?v=WRAODfBlrPU") %>%
+  use_align("center")
+```
+
+
+```{r, echo = FALSE, eval = TRUE}
+library("vembedr")
+embed_url("https://www.youtube.com/watch?v=NOPBudtl9z4") %>%
+  use_align("center")
+```
+]
+
+
+---
+
+#### Referencias
+
+- **R Markdown: The Definitive Guide (Xie et al., 2019)**: <https://bookdown.org/yihui/rmarkdown/>
+
+- **Rmarkdown Cookbook (Xie et al., 2021)**: <https://bookdown.org/yihui/rmarkdown-cookbook/>
+
+- **RMD for scientists (Tierney 2020)**: <https://rmd4sci.njtierney.com/>
+
+<br>
+
+
+- Tutoriales de RStudio: <https://rmarkdown.rstudio.com/articles.html>
+
+- Vídeos de RStudio: <https://rmarkdown.rstudio.com/lesson-1.html>
+
+<br>
+
+- Rmarkdown cheat sheet: <https://raw.githubusercontent.com/rstudio/cheatsheets/master/rmarkdown-2.0.pdf>
+
+- Rmarkdown Reference: <https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf>
+
+- Página web de `knitr`: <https://yihui.org/knitr/options/>
+
+
+
+
+

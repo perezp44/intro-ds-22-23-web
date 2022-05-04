@@ -1,0 +1,85 @@
+---
+output:
+  html_document:
+    #css: !expr here::here("assets", "styles_pjp.css") 
+    css: assets/styles_pjp.css
+    #theme: cerulean  #o flatly(gris)  united (naranja) spacelab(azulito) o yeti o faltly o sandstone
+    #highlight: kate 
+    self_contained: yes
+    number_sections: no
+    #includes:
+       #in_header: google-analytics.html
+    toc: true
+    toc_float: true
+    #code_folding: show
+    #self_contained: TRUE
+---
+
+
+<div class = "blue">
+En esta sección pondré **cosas varias** como: 
+</div>
+
+
+
+```{r klippy, echo = FALSE}
+klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/klippy")
+```
+
+
+<br>
+
+### **Guiones de clase**
+
+------------------------------
+
+En cada sesión/clase vamos a usar un Rproject con ejemplos y alguna cosa más: son los **guiones de clase**
+
+
+Para descargaros el Rproject con el guión de cada sesión tienes que ejecutar en RStudio las siguientes instrucciones:
+
+```{r, eval = FALSE}
+file_to_download <- "curso_R_2022.zip" 
+url <- paste0("https://github.com/perezp44/intro-ds-21-22-web/raw/master/guiones-de-clase/", file_to_download)
+download.file(url, destfile = file_to_download)
+unzip(zipfile = file_to_download)
+file.remove(file_to_download)
+```
+
+No hace falta que lo hagas ahora, mejor si te esperas al primer día de clase, os lo explico un poco más y lo hacemos todos juntos.
+
+
+La mayoría de ejemplos/casos que trabajaremos durante el curso estarán alojados en los guiones de clase, otros provendrán de los propios tutoriales o slides.
+
+
+<br>
+
+### **Entrega de las tareas**
+
+-------------------
+
+
+Durante el curso, sobre todo las primeras semanas, os mandaré tareas, algunas para resolver en el aula y otras para resolver en casa. Estas tareas, generalmente, formarán parte de la evaluación continua. Abajo tenéis las instrucciones para la entrega de las tareas:
+
+- [Intrucciones de entrega de las tareas de la evaluación continua](./mas-recursos/04_como-entregar-las-tareas-uploader.html){target="_blank"}
+
+
+<br>
+
+### **Otros recursos**
+
+-------------------
+
+
+- [Guía de Instalación de R y RStudio](./mas-recursos/01_instrucciones-instalacion.html){target="_blank"}
+
+- [Listado de paquetes a instalar](./mas-recursos/pkgs_a_instalar_sfpie_2022.R)
+
+- [Descargar ficheros de Google Drive](./mas-recursos/05_bajar-google-drive.html){target="_blank"}. Este fichero es solo para mi. Para usarlo en el aula.
+
+
+
+
+<br><br>
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

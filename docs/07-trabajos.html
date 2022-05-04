@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>07-trabajos.knit</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/clipboard-1.7.1/clipboard.min.js"></script>
+<link href="site_libs/primer-tooltips-1.4.0/build.css" rel="stylesheet" />
+<link href="site_libs/klippy-0.0.0.9500/css/klippy.min.css" rel="stylesheet" />
+<script src="site_libs/klippy-0.0.0.9500/js/klippy.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71846326-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-71846326-8');
+</script>
+<link rel="icon" type="image/x-icon" href="https://perezp44.github.io/intro-ds-21-22-web/favicon.ico" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+<link rel="stylesheet" href="assets/styles_pjp.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Programación y manejo datos con R (2021-22)</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="01-guia-del-curso.html">
+    <span class="fa fa-graduation-cap"></span>
+     
+    Guía del curso
+  </a>
+</li>
+<li>
+  <a href="02-logistica.html">
+    <span class="fa fa-laptop"></span>
+     
+    Logística
+  </a>
+</li>
+<li>
+  <a href="03-calendario.html">
+    <span class="fa fa-calendar-alt"></span>
+     
+    Calendario
+  </a>
+</li>
+<li>
+  <a href="04-tutoriales.html">
+    <span class="fa fa-book"></span>
+     
+    Tutoriales
+  </a>
+</li>
+<li>
+  <a href="05-slides.html">Slides</a>
+</li>
+<li>
+  <a href="06-mas-cosas.html">
+    <span class="fa fa-download"></span>
+     
+    MáS
+  </a>
+</li>
+<li>
+  <a href="07-trabajos.html">
+    <span class="fa fa-user-graduate"></span>
+     
+    Trabajos
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<script>
+  addClassKlippyTo("pre.r, pre.markdown");
+  addKlippy('right', 'top', 'auto', '1', 'Copy code', 'Copied!');
+</script>
+<p><br></p>
+<div class="blue">
+<p><strong>Trabajos</strong>: los estudiantes del curso, como parte de
+la evaluación continua, tuvieron que presentar dos trabajos, uno
+individual y otro en equipo. Puedes verlos en los siguientes
+enlaces:</p>
+</div>
+<p><br><br></p>
+<div id="trabajos-en-equipo" class="section level2">
+<h2>Trabajos en equipo</h2>
+<p><br></p>
+<ul>
+<li><strong>Jesús Lloret Quero</strong>, <strong>Vicent Mompo
+Crespo</strong> y <strong>Francisco Martínez Caballero</strong>
+presentaron el trabajo <a
+href="https://fran2200.github.io/trabajo_BigData_equipo/"
+target="_blank">Inflación en tiempos de pandemia</a>. El repo del
+trabajo está <a
+href="https://github.com/fran2200/trabajo_BigData_equipo"
+target="_blank">aquí</a>. Las <code>slides</code> para la presentación
+están <a href="https://fran2200.github.io/trabajo_BigData_slides/"
+target="_blank">aquí</a>.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Pau Piera Palacios</strong>, <strong>Mario García
+Zamora</strong> y <strong>Pau Piera Palacios</strong> presentaron el
+trabajo <a href="https://paupiera23.github.io/trabajo_BigData_equipo/"
+target="_blank">Sistema de Pensiones Español</a>. El repo del trabajo
+está <a href="https://github.com/paupiera23/trabajo_BigData_equipo"
+target="_blank">aquí</a>. Las <code>slides</code> para la presentación
+están <a href="https://paupiera23.github.io/trabajo_BigData_slides/"
+target="_blank">aquí</a>.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Aleixandra Blasco</strong>, <strong>Alba Ibañez</strong> y
+<strong>Vanesa Regueiro Raña</strong> presentaron el trabajo <a
+href="https://vanesarr.github.io/trabajo_BigData_equipo/"
+target="_blank">Spotify en la actualidad y su espíritu navideño</a>. El
+repo del trabajo está <a
+href="https://github.com/vanesarr/trabajo_BigData_equipo"
+target="_blank">aquí</a>. Las <code>slides</code> para la presentación
+están <a href="https://vanesarr.github.io/trabajo_BigData_slides/"
+target="_blank">aquí</a>.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Teodoro D’Agostino</strong>, <strong>Jorge González</strong>
+y <strong>Aurora Lloret</strong> presentaron el trabajo <a
+href="https://joorge0603.github.io/trabajo_BigData_equipo/"
+target="_blank">Principales conclusiones de la piratería desde 1993
+hasta nuestros días</a>. El repo del trabajo está <a
+href="https://github.com/joorge0603/trabajo_BigData_equipo"
+target="_blank">aquí</a>. Las <code>slides</code> para la presentación
+están <a href="https://joorge0603.github.io/trabajo_BigData_slides/"
+target="_blank">aquí</a>.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Carlos García Castilla</strong>, <strong>Alejandro García
+Segarra</strong> y <strong>Cayetano Fernando Romero Monteagudo</strong>
+presentaron el trabajo <a
+href="https://cayetano108.github.io/trabajo_BigData_equipo/"
+target="_blank">Alt + Formula 1</a>. El repo del trabajo está <a
+href="https://github.com/cayetano108/trabajo_BigData_equipo"
+target="_blank">aquí</a>. Las <code>slides</code> para la presentación
+están <a href="https://cayetano108.github.io/trabajo_BigData_slides/"
+target="_blank">aquí</a>.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Galina Lopez Zinchuk</strong>, <strong>Fatima Makroud
+Saidi</strong> y <strong>Damian Pérez Soler</strong> presentaron el
+trabajo <a href="https://damianps14.github.io/trabajo_BigData_equipo/"
+target="_blank">Análisis del impacto medioambiental de la producción
+agrícola en Europa</a>. El repo del trabajo está <a
+href="https://github.com/damianps14/trabajo_BigData_equipo"
+target="_blank">aquí</a>. Las <code>slides</code> para la presentación
+están <a href="https://damianps14.github.io/trabajo_BigData_slides/"
+target="_blank">aquí</a>.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Julio Gonzalez Miralles</strong>, <strong>Pedro Julián López
+Mejías</strong> y <strong>Lawrence Daniel Phillips Bates</strong>
+presentaron el trabajo <a
+href="https://lorenzo1999.github.io/trabajo_BigData_equipo/"
+target="_blank">¿Se vive bien en la Comunidad Valenciana</a>. El repo
+del trabajo está <a
+href="https://github.com/lorenzo1999/trabajo_BigData_equipo"
+target="_blank">aquí</a>. Las <code>slides</code> para la presentación
+están <a href="https://lorenzo1999.github.io/trabajo_BigData_slides/"
+target="_blank">aquí</a>.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Carolina Espí García</strong>, <strong>José Pineda
+Torres</strong> y <strong>Jialing Zhang</strong> presentaron el trabajo
+<a href="https://Pitojo.github.io/trabajo_BigData_equipo/"
+target="_blank">Evolución del precio del crudo</a>. El repo del trabajo
+está <a href="https://github.com/Pitojo/trabajo_BigData_equipo"
+target="_blank">aquí</a>. Las <code>slides</code> para la presentación
+están <a href="https://Pitojo.github.io/trabajo_BigData_slides/"
+target="_blank">aquí</a>.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Anna Chesa Llorens</strong>, <strong>Lorenzo
+Chirchirillo</strong> y <strong>Alicja Młynek</strong> presentaron el
+trabajo <a href="https://AlicjaMl.github.io/trabajo_BigData_equipo/"
+target="_blank">Análisis de las mejores 100 universidades del mundo</a>.
+El repo del trabajo está <a
+href="https://github.com/AlicjaMl/trabajo_BigData_equipo"
+target="_blank">aquí</a>. Las <code>slides</code> para la presentación
+están <a href="https://AlicjaMl.github.io/trabajo_BigData_slides/"
+target="_blank">aquí</a>.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Alejandro Calderero</strong>, <strong>Mario de
+Benito</strong> y <strong>Alejandro Pérez</strong> presentaron el
+trabajo <a
+href="https://alejandrocp00.github.io/trabajo_BigData_equipo/"
+target="_blank">Análisis de criptomonedas, evolución y actualidad</a>.
+El repo del trabajo está <a
+href="https://github.com/alejandrocp00/trabajo_BigData_equipo"
+target="_blank">aquí</a>. Las <code>slides</code> para la presentación
+están <a href="https://alejandrocp00.github.io/trabajo_BigData_slides/"
+target="_blank">aquí</a>.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Alba Estela</strong>, <strong>Melanie Neufcour</strong> y
+<strong>Mireia Yangüez</strong> presentaron el trabajo <a
+href="https://meneuf.github.io/trabajo_BigData_equipo/"
+target="_blank">FAST FOOD. Análisis del restaurante McDonald’s</a>. El
+repo del trabajo está <a
+href="https://github.com/meneuf/trabajo_BigData_equipo"
+target="_blank">aquí</a>. Las <code>slides</code> para la presentación
+están <a href="https://meneuf.github.io/trabajo_BigData_slides/"
+target="_blank">aquí</a>.</li>
+</ul>
+<p><br></p>
+<p><br><br></p>
+</div>
+<div id="trabajos-individuales" class="section level2">
+<h2>Trabajos individuales</h2>
+<hr />
+<ul>
+<li><p><strong>Jesus Lloret Quero</strong> presentó el trabajo <a
+href="https://Jelloque.github.io/trabajo_BigData/" target="_blank">El
+Tour de Francia en datos</a>. El repo está <a
+href="https://github.com/Jelloque/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Pau Piera Palacios</strong> presentó el trabajo <a
+href="https://paupiera23.github.io/trabajo_BigData/"
+target="_blank">Análisis de los Juegos Olímpicos</a>. El repo está <a
+href="https://github.com/paupiera23/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Melanie Neufcour Barbosa</strong> presentó el trabajo <a
+href="https://Meneuf.github.io/trabajo_BigData/" target="_blank">Impacto
+del deporte en nuestro país</a>. El repo está <a
+href="https://github.com/Meneuf/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Cayetano Romero Monteagudo</strong> presentó el trabajo
+<a href="https://cayetano108.github.io/trabajo_BigData/"
+target="_blank">NBA a base de datos</a>. El repo está <a
+href="https://github.com/cayetano108/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Teodoro D’Agostino García</strong> presentó el trabajo <a
+href="https://teodgstno.github.io/trabajo_BigData/" target="_blank">Los
+puentes sobre el Danubio</a>. El repo está <a
+href="https://github.com/teodgstno/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Carlos García Castilla</strong> presentó el trabajo <a
+href="https://garcas8.github.io/trabajo_BigData/" target="_blank">LA
+BANDA SONORA DEL 2021</a>. El repo está <a
+href="https://github.com/garcas8/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Alba Estela García</strong> presentó el trabajo <a
+href="https://albaestela14.github.io/trabajo_BigData/"
+target="_blank">TOP PELICULAS</a>. El repo está <a
+href="https://github.com/albaestela14/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Vicent Mompó Crespo</strong> presentó el trabajo <a
+href="https://VicentMompo.github.io/trabajo_BigData/"
+target="_blank">Sostenibildad de la deuda pública española</a>. El repo
+está <a href="https://github.com/VicentMompo/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Jorge González Andrés</strong> presentó el trabajo <a
+href="https://joorge0603.github.io/trabajo_BigData/"
+target="_blank">¿Quíen es el GOAT del tenis?</a> El repo está <a
+href="https://github.com/joorge0603/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Mario García Zamora</strong> presentó el trabajo <a
+href="https://maretegz.github.io/trabajo_BigData/"
+target="_blank">Historia económica de Sudáfrica</a>. El repo está <a
+href="https://github.com/maretegz/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Alejandro Pérez</strong> presentó el trabajo <a
+href="https://alejandrouv.github.io/trabajo_BigData/"
+target="_blank">Analisis de la Educacion</a>. El repo está <a
+href="https://github.com/alejandrouv/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Vanesa Regueiro</strong> presentó el trabajo <a
+href="https://vanesarr.github.io/trabajo_BigData/"
+target="_blank">Evolución Universidad de Valencia en los últimos
+años</a>. El repo está <a
+href="https://github.com/vanesarr/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Carolina Espí</strong> presentó el trabajo <a
+href="https://caroleg18.github.io/trabajo_BigData/"
+target="_blank">Naciones Unidas: Datos sobre población</a>. El repo está
+<a href="https://github.com/caroleg18/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Alba Ibáñez Montagud</strong> presentó el trabajo <a
+href="https://albaibanyez8.github.io/trabajo_BigData/"
+target="_blank">Análisis de los Juegos Olímpicos</a>. El repo está <a
+href="https://github.com/albaibanyez8/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Aleixandra Blasco</strong> presentó el trabajo <a
+href="https://AleixandraB.github.io/trabajo_BigData/"
+target="_blank">Análisis de Disney y Marvel</a>. El repo está <a
+href="https://github.com/AleixandraB/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Francisco Martínez Caballero</strong> presentó el trabajo
+<a href="https://fran2200.github.io/trabajo_BigData/"
+target="_blank">Relevancia del sector turístico en la economía pre y
+post Covid-19</a>. El repo está <a
+href="https://github.com/fran2200/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Jialing Zhang</strong> presentó el trabajo <a
+href="https://jalizh.github.io/trabajo_BigData/"
+target="_blank">Población de los países miembros de la UE</a>. El repo
+está <a href="https://github.com/jalizh/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Anna Chesa Llorens</strong> presentó el trabajo <a
+href="https://annachesa.github.io/trabajo_BigData/"
+target="_blank">Análisis demográfico con datos de la OCDE</a>. El repo
+está <a href="https://github.com/annachesa/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Alicja Młynek</strong> presentó el trabajo <a
+href="https://alicjaml.github.io/trabajo_BigData/"
+target="_blank">Multimillonarios en el mundo</a>. El repo está <a
+href="https://github.com/AlicjaMl/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Alejandro García Segarra</strong> presentó el trabajo <a
+href="https://agarse4.github.io/trabajo_BigData/" target="_blank">El
+mercado de los videojuegos</a>. El repo está <a
+href="https://github.com/agarse4/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Rubén Campos Campos</strong> presentó el trabajo <a
+href="https://Rucamcam.github.io/trabajo_BigData/"
+target="_blank">Mejores ligas europeas de fútbol</a>. El repo está <a
+href="https://github.com/Rucamcam/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>José Pineda Torres</strong> presentó el trabajo <a
+href="https://pitojo.github.io/trabajo_BigData/" target="_blank">Calp en
+la Marina Alta</a>. El repo está <a
+href="https://github.com/pitojo/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Mireia Yangüez Oliva</strong> presentó el trabajo <a
+href="https://mireiayanguez.github.io/trabajo_BigData/"
+target="_blank">Análisis económico austríaco</a>. El repo está <a
+href="https://github.com/mireiayanguez/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Damián Pérez Soler</strong> presentó el trabajo <a
+href="https://damianps14.github.io/trabajo_BigData/"
+target="_blank">Índice de libertad económica</a>. El repo está <a
+href="https://github.com/damianps14/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+<li><p><strong>Alejandro Calderero Pierna</strong> presentó el trabajo
+<a href="https://alejandrocp00.github.io/trabajo_BigData/"
+target="_blank">Fútbol: La liga</a>. El repo está <a
+href="https://github.com/alejandrocp00/trabajo_BigData"
+target="_blank">aquí</a></p></li>
+<li><p><strong>Lawrence D. Phillips</strong> presentó el trabajo <a
+href="https://lorenzo1999.github.io/trabajo_BigData/" target="_blank">La
+epidemia de los opioides en Estados Unidos</a>. El repo está <a
+href="https://github.com/lorenzo1999/trabajo_BigData"
+target="_blank">aquí</a>.</p></li>
+</ul>
+<p><br><br></p>
+<hr />
+<div class="blue">
+<center>
+<a href="https://perezp44.github.io/intro-ds-20-21-web/07-trabajos.html"
+target="_blank">Aquí</a> puedes ver los trabajos de los estudiantes del
+curso pasado. Por ejemplo <a
+href="https://nosan5.github.io/trabajo_BigData_equipo/"
+target="_blank">este</a>.
+</center>
+</div>
+<hr />
+<div class="tocify-extend-page" data-unique="tocify-extend-page"
+style="height: 0;">
+
+</div>
+</div>
+
+<footer class="footer">
+  
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.  <div class="text-muted"><strong> Web</strong> creada por Pedro J. Pérez. &copy;  2021. If you find any bug please report them to <a href="mailto:pedro.j.perez@uv.es"> pedro.j.perez@uv.es</a>.</div>
+  
+</footer>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1335 @@
+---
+title: "R-base: algunas ideas básicas"
+subtitle: "Programación y manejo de datos con R (Slides 03)"  
+author: 
+  - "Pedro J. Pérez"
+  #- "2020, septiembre"
+date: "(actualizadas en `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    seal: false   #- puedes tunear la primera página de las slides    
+    lib_dir: libs
+    css: 
+      - ../assets/xaringan-themer.css
+      - ../assets/my_css_file_xaringan_verdes.css  #- good (funciona lo de justify)
+    nature:
+      highlightStyle: github  #- solarized-light ; googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      #after_body: [css/insert-logo.html]
+      in_header: 
+        - !expr here::here("assets", "favicon-yo.html") 
+        #- !expr here::here("assets", "google-analytics.html") 
+#      in_header: ["favicon-yo.html", "google-analytics.html"]
+---
+
+
+```{r xaringan-extra, include = FALSE}
+xaringanExtra::use_xaringan_extra(c("tile_view", "logo", "tachyons", "animate_css", "scribble"))
+#xaringanExtra::use_share_again()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_fit_screen()
+xaringanExtra::use_tile_view()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_extra_styles(hover_code_line = TRUE, mute_unhighlighted_code = FALSE)
+xaringanExtra::use_panelset()
+```
+
+```{r xaringan-themer, include = FALSE, warning = FALSE}
+library(xaringanthemer)
+style_mono_light(
+  base_color = "#1c5253", 
+  colors = c(red = "#f34213", purple = "#3e2f5b", orange = "#ff8811", 
+             green = "#136f63", white = "#FFFFFF", base = "#1c5253",
+             gray = "#708090", salmon = "#ff8c69", indianred = "#cd5c5c"),
+  link_color = "steelblue",
+  #header_font_google = google_font("Josefin Sans"),  #- https://fonts.google.com/
+  #text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"))
+```
+
+```{r chunk-setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE,
+                      #results = "hold",
+                      cache = FALSE, cache.path = "/caches/", comment = "#>",
+                      #fig.width = 7, #fig.height= 7,
+                      #out.width = 7, out.height = 7,
+                      collapse = TRUE,  fig.show = "hold", fig.retina = 4,
+                      fig.asp = 7/9, out.width = "95%", fig.align = "center")
+options(scipen = 999) #- para quitar la notación científica
+#- para mejorar los gráficos, bueno en realidad para que se vean igual en distintos SO
+#- https://www.jumpingrivers.com/blog/r-knitr-markdown-png-pdf-graphics/
+knitr::opts_chunk$set(dev = "png", dev.args = list(type = "cairo-png"))
+#options(htmltools.dir.version = FALSE) #- lo pongo en setup
+#xaringan::inf_mr() 
+```
+
+```{r, include = FALSE}
+library(flipbookr)
+library(tidyverse)
+```
+
+```{css, include = FALSE}
+.remark-code{line-height: 1.5; font-size: 80%}
+@media print {
+  .has-continuation {
+    display: block;
+  }
+```
+
+
+class: inverse, center, middle
+
+<br>
+
+#### `r rmarkdown::metadata$subtitle`
+
+## `r rmarkdown::metadata$title`
+
+<br>
+
+### `r rmarkdown::metadata$author`
+
+#### 2020, septiembre
+
+###### (actualizadas el `r format(Sys.time(), '%d-%m-%Y')`)
+
+
+<br><br>
+  
+#### e-mail: [pedro.j.perez@uv.es](mailto:pedro.j.perez@uv.es)
+  
+#### Web del curso: [https://perezp44.github.io/intro-ds-20-21-web](https://perezp44.github.io/intro-ds-21-22-web)
+
+
+```{r echo = FALSE}
+xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket") )
+```
+
+
+
+
+
+---
+class: inverse, center, middle
+
+## R-base (algunas ideas básicas)
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### Es muy importante *empezar* a entenderlas
+
+---
+##### Veremos conceptos/ideas como
+
+<br>
+
+- asignación
+
+- tipos de datos
+
+- estructuras de datos
+
+- funciones
+
+- paquetes: instalación y ayuda
+
+<br>
+
+
+---
+class: inverse, center, middle
+
+### Creación de objetos (asignación)
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### En R, la asignación se hace, generalmente, con el símbolo: .large[<-]
+
+---
+
+##### Creación de objetos y asignación (.large[<-])
+
+- El operador de asignación (`<-`) permite asignar datos/valores a variables/objetos. Con la asignación se **crean objetos**/variables que después podremos usar en otras operaciones.
+
+--
+
+- Es mucho más fácil explicarlo apoyándose en ejemplos:
+
+```{r, eval = FALSE}
+#- ¿Qué diferencias hay entre las siguientes 2 expresiones?
+2 + 2
+aa <- 2 + 2
+
+#- una vez hemos creado una variable, podemos usarla para efectuar nuevos cálculos
+aa + 1
+
+#- podemos cambiar el valor de una variable
+aa
+aa <- 10
+aa
+
+#- ¿Qué hacen las siguientes lineas de código? 
+aa <- 2 + 2
+bb <- 5 + aa
+cc <- 1 + aa * 2
+dd <- bb
+```
+
+
+---
+
+##### Se que te ha resultado muy fácil, pero vuelvo a insistir: 
+
+> En R, la forma genérica de una operación de asignación, o de “creación de objetos”, es: .white.bg-purple[nombre_del_objeto <- valor] , por ejemplo .white.bg-purple[aa <- 2 + 2]  [ 🌟 ] [🌶]
+
+<br>
+
+
+- Recuerda que para que un nombre sea **sintácticamente válido** en R sólo puede contener caracteres alfanuméricos (letras y números), puntos (.) y guiones bajos (_).
+
+- Además, hay **nombres reservados** (TRUE, NA, if, while, do , next, for ...)
+
+--
+
+--------------------------
+
+##### Global environment (primera referencia al)
+
+Cada vez que asignamos un nombre a un valor, **R crea un nuevo objeto en el Global environment**. Veámoslo:
+
+```{r, eval = FALSE}
+aa <- 2 + 2
+bb <- 5 + aa
+cc <- 1 + aa * 2
+dd <- bb
+
+ls()              #- muestra los objetos q hay en el  Global env. 
+rm(cc)            #- borra/elimina el objeto cc del Global env.
+rm(list = ls())   #- borra todos los objetos del Global env.
+```
+
+
+---
+class: inverse, center, middle
+
+### Tipos de datos
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### numéricos (enteros y doubles), lógicos y textuales
+
+---
+
+##### Tipos de datos
+
+- Hay **3 tipos principales**: numéricos, de texto y lógicos, pero en realidad R tiene 6 tipos de datos. 
+
+- Además, hay 4 valores especiales: NULL, NA, NaN, e infinito
+
+- Cada dato, valor o variable es de un tipo. 
+
+```{r, eval = FALSE}
+aa <- "La calle en la que vivo es"    #- texto (character)
+bb <- 4L                              #- número entero
+cc <- 4.3                             #- número decimal
+dd <- TRUE                            #- logical
+
+typeof(aa)
+typeof(dd)
+```
+
+<br>
+
+- **IMPORTANTE** [ 🌟 ]: El tipo de una variable determina las operaciones que se pueden hacer con él.
+
+---
+
+##### Operaciones con variables numéricas
+
+- Operaciones aritméticas
+
+```{r, eval = FALSE}
+2 + 2
+5 * 6
+```
+
+--
+
+- Operaciones de comparación
+
+```{r, eval = FALSE}
+2 < 4    # MENOR que: esta expresión chequea si 2 es MENOR que cuatro. Como es cierto, nos devuelve un TRUE
+
+2 > 4    # MAYOR que: esta expresión chequea si 2 es MAYOR que cuatro. Como es cierto, nos devuelve un TRUE
+
+5 >= 7   # MAYOR o IGUAL que.
+8 <= 8   # MENOR o IGUAL que.
+
+5 == 4  # == IGUAL: == chequea si dos valores son iguales, como no son iguales devolverá FALSE
+
+2 != 4   # NO IGUAL: como 2 no es igual a 4 nos devuelve TRUE
+5 != 5   # NO IGUAL: como 5 es igual a 5, nos devuelve FALSE 
+```
+
+
+- Fíjate que las expresiones de comparación al ser ejecutadas **devuelven un “boolean”**: el resultado de la comparación solo puede ser TRUE (si la afirmación es cierta) o FALSE.
+
+
+```{r, eval = FALSE}
+2 = 2    #- ¿qué ocurre? ¿xq se queja R?
+```
+
+---
+
+##### Operaciones con texto
+
+- En R hay muchas funciones para trabajar/operar sobre texto
+
+- Por ejemplo, la función `paste()` nos permite pegar o concatenar dos variables de tipo character:
+
+
+```{r, eval = FALSE}
+aa <- "mi nombre es"
+bb <- "pedro"
+
+paste(aa, bb)
+
+paste(aa, bb, sep = " ... ")
+
+# Prueba tú mismo que hace la función paste0()
+```
+
+
+
+```{r, eval = FALSE}
+toupper(aa)
+tolower(aa)
+
+stringr::str_to_sentence(aa)   #- stringr es un pkg del tidyverse
+
+nchar(bb)                      #- nchar() nos devuelve el número de caracteres de un string
+
+substring(bb, 2, nchar(bb))    #- substring() extrae caracteres de un string  [🌶🌶]
+```
+
+
+---
+
+##### Operaciones lógicas
+
+- Los 3 principales operadores lógicos son: ( **&** ), ( **|**) y ( **!** ). Son los operadores lógicos **AND**, **OR** y **NOT**
+
+```{r, eval = FALSE}
+TRUE & TRUE    #- AND: para q devuelva TRUE hace falta que TODAS las condiciones sean ciertas
+TRUE & FALSE
+FALSE & FALSE
+
+TRUE | TRUE   #- OR: devuelve TRUE si ALGUNA de las condiciones es cierta
+TRUE | FALSE
+FALSE | FALSE
+
+!TRUE         #- NOT: devuelve el valor contrario
+!FALSE
+```
+
+
+
+
+```{r, eval = FALSE}
+(4 > 3) & (3 < 2)  #- AND: como solo se cumple la primera condición, nos devuelve TRUE
+
+(1==2) | (2 >3)   #- OR: Como no se cumple ninguna de las 2 condiciones nos devuelve FALSE
+
+!(4 > 3)          #- NOT: 4 es mayor que 3 es TRUE, pero el ! delante de esa condición la niega y pasa a FALSE
+
+!!(4 > 3)         #- si niegas dos veces, vuelves al principio: TRUE
+
+```
+
+
+- Hay más operadores lógicos, por ejemplo: **xor()**, **all()**, **any()**, **&&** y **||** , pero es fácil que no los usemos ,y si los usamos ya los veremos.
+
+
+
+---
+class: inverse, center, middle
+
+## Estructuras de datos 
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### Es muy importante!!! [ 🌟 ] pero en realidad para el curso basta con una "ligera" idea, porque trabajaremos (casi siempre) con una sola estructura de datos: los *data.frame*
+
+
+---
+
+##### Estructuras de datos
+
+R sirve para hacer análisis estadísticos con datos, y los datos tienen que estar almacenados en alguna estructura. Las **principales estructuras de datos en R** son:
+
+  - vectores
+
+  - matrices
+
+  - arrays (matrices multidimensionales)
+
+  - listas
+
+  - **data.frames**
+
+--------------------------------
+
+--
+
+- Las que **más utilizaremos** en el curso son los* **data.frames**, y en segundo lugar las listas. 
+
+- Si, **pero** en realidad estas 2 estructuras (data.frames y listas) son en realidad agrupaciones de vectores; es decir, **la estructura básica, la más importante en R son los vectores**. 
+
+- Son los más importantes porque el resto de estructuras se construyen a partir de grupos de vectores o añadiendo alguna propiedad adicional, o atributo, a un vector.
+
+
+
+---
+class: inverse, center, middle
+
+## VECTORES
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### No los utilizaremos mucho-mucho, pero es la estructura de datos fundamental
+
+
+---
+
+##### Vectores
+
+- La estructura de datos fundamental en R es el vector. 
+
+- En R, un vector es una estructura de datos que sirve para almacenar un conjunto ordenado de valores o elementos. 
+
+- Un vector puede contener cualquier número de elementos; sin embargo, **todos los elementos deben ser del mismo tipo**. Por ejemplo, un vector no puede contener simultáneamente números y texto.
+
+---
+
+##### ¿Cómo crear un vector?
+
+- Con la función .white.bg-purple[c()]
+
+```{r, eval = FALSE}
+aa <- c(3, 22, 6)
+aa
+is.vector(aa)
+typeof(aa)
+```
+
+<br>
+
+--
+
+.panelset[
+.panel[.panel-name[Tarea]
+
+.white.bg-green[Tarea]: crea un vector de tipo character con 3 elementos
+
+]
+
+.panel[.panel-name[Solución]
+
+```{r, eval = FALSE}
+aa <- c("Hola", "número", "9")
+
+is.vector(aa)
+typeof(aa)
+```
+
+
+]
+]
+
+---
+
+##### Coerción (implicita)
+
+- Sabemos que un vector solo puede contener elementos de un tipo (es una **estructura homogénea**)
+
+- ¿Qué ocurre si intentamos mezclar en un vector elementos de distinto tipo? R convertirá (coercerá) los elementos para que sean del mismo tipo
+
+```{r, eval = FALSE}
+aa <- c(4, 6,  "Hola")  #- intentamos poner en aa elementos numéricos y character (¿?)
+
+is.vector(aa)
+typeof(aa)       #- ¿qué ha pasado?
+aa               #- ¿qué ha pasado?
+```
+
+
+- R convertirá todos los elementos al tipo más flexible: **`character > double > integer > logical`**. Por ejemplo, si en el vector hay un valor textual, todos los valores se convertirán al tipo character.
+
+--
+
+##### Coerción (explicita)
+
+- A veces tendremos un vector de un tipo, por ejemplo numérico, pero nos gustaría convertirlo a por ejemplo character.
+
+```{r, eval = FALSE}
+aa <- c(1:4)
+aa
+aa <- as.character(aa)
+aa
+```
+
+---
+
+##### Subsetting con vectores
+
+- En R podemos agrupar valores en vectores. Perfecto, pero habrá veces que necesitemos **manipular los vectores**. Por ejemplo necesitaremos acceder a determinados elementos de un vector. Este tipo de operaciones sobre los vectores se les conoce genéricamente como **subsetting**.
+
+- Para hacer subsetting se usan los **corchetes**:  **`[]`**
+
+- Vemos **3 tipos de subsetting**
+
+--
+
+---
+
+##### 3 tipos de subsetting
+
+###### 1. Seleccionar por posición
+
+```{r, eval = FALSE}
+aa <- c(10:1)
+aa[c(1:2)]        #- primer y segundo elemento del vector
+
+aa[c(1, 2, 9, 10)]   #- dos primeros y 2 últimos
+
+aa[c(1, 1, 10, 10)]  #- si repites el indice se repite el elemento del vector
+```
+  
+--
+ 
+###### 2. Eliminar por posición
+  
+```{r, eval = FALSE}
+aa <- c(10:1)
+aa[-2]
+
+aa[- c(1, 2, 9:10)]
+```
+  
+--
+
+###### 3. Subsetting lógico
+
+
+```{r, eval = FALSE}
+aa <- 1:10
+aa[aa >= 7]
+aa[aa < 4]
+
+aa[(aa >= 9) | (aa < 2)]
+aa[(aa >= 9) & (aa < 2)]
+```
+
+---
+
+##### Intenta entender bien el siguiente chunk. Es importante!!
+  
+```{r, eval = FALSE}
+aa <- 1:10
+aa <= 4
+aa[aa <= 4]
+aa <- aa[aa <= 4]
+aa
+```
+  
+--
+
+##### Modificando elementos de un vector
+
+```{r, eval = FALSE}
+aa <- c(1:10)
+aa[4] <- 88             #- el cuarto elemento de aa tomará el valor 88
+aa <- c(aa, 111, 112)   #- añadimos 2 elementos al vector aa
+```
+
+--
+
+##### Los vectores se pueden concatenar
+
+```{r, eval = FALSE}
+aa <- c(1:5)
+bb <- c(100:105)
+cc <- c(aa, bb)
+```
+
+---
+
+##### Operaciones con vectores
+
+- Generalmente son operaciones elemento a elemento
+
+```{r, eval = FALSE}
+aa <- 1:10
+bb <- 1:10
+aa + bb
+aa * bb
+```
+
+- Si quieres hacer álgebra matricial son otros operadores
+
+```{r, eval = FALSE}
+aa  %*% bb
+```
+
+<br>
+ 
+--
+
+--------------------------------------------------
+
+#####  Recycling
+
+```{r, eval = FALSE}
+aa <- 1:10
+aa + 1
+```
+
+---
+
+
+##### Funciones vectorizadas
+
+- La mayoría de funciones, y todos los operadores de R están vectorizados; es decir, si una función recibe como input un vector, se aplicará la función a cada uno de los elementos del vector.
+
+
+```{r, eval = FALSE}
+aa <- c(4, 9, 25)
+sqrt(aa)
+```
+
+-----------------------------
+
+--
+
+##### Operaciones de comparación
+
+```{r, eval = FALSE}
+aa <- 1:3
+bb <- 3:1
+
+aa == bb
+aa >= bb
+aa != bb
+```
+
+
+- En las operaciones de comparación también aplica el Recycling
+
+```{r, eval = FALSE}
+aa <- 1:3
+bb <- 2
+
+aa == bb
+aa >= bb
+aa != bb
+```
+
+
+---
+class: inverse, center, middle
+
+## LISTAS 
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### No las utilizaremos demasiado, pero ...
+
+
+---
+
+##### Lists
+
+- Esta estructura de datos, aunque en realidad se construye por **agrupación de vectores**, sí que se comporta de forma diferente a los vectores. 
+
+
+- Las listas son una estructura de datos heterogénea: sí **pueden contener elementos de distinto tipo**.
+
+- La mejor forma de entender como funciona una lista es pensar que es como una cajonera. En cada cajón podemos poner objetos de diferentes tipos.
+
+--
+
+--------------------------
+
+- Vamos a crear una lista. Se hace con `list()`
+
+```{r, eval = FALSE}
+# defino 3 vectores y una matriz
+vec_numerico <- c(1:8)
+vec_character <- c("Pedro", "Rebeca", "Susana")
+vec_logic <- c(TRUE, FALSE, TRUE)
+matriz <- matrix(1:6, nrow = 2, ncol = 3)
+
+# creo una lista con cuatro elementos
+my_list <- list(vec_numerico, vec_character, vec_logic, matriz)
+my_list
+```
+
+
+---
+
+##### más cosas sobre las listas
+
+- Las listas son **sumamente flexibles** porque un elemento de una lista puede ser otra lista.
+
+
+- Como son tan flexibles, se usan para muchas cosas, por ejemplo para almacenar los resultados de la estimación de modelos estadísticos. (por ejemplo, los gráficos de ggplot internamente son listas)
+
+--
+
+- Un ejemplo:
+
+```{r, eval = FALSE}
+my_list_2 <- list(primer_slot = c(44:47), segundo_slot = my_list)
+my_list_2
+```
+
+<br>
+
+
+--
+
+--------------------------------------
+
+##### Subsetting con listas
+
+- Ya lo veremos cuando lo necesitemos!!
+
+
+---
+class: inverse, center, middle
+
+## DATA FRAMES 
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### Estaremos todos el curso trabajando con DATA FRAMES
+
+
+---
+
+##### DATA FRAME's
+
+-  Son otra **estructura de R para almacenar datos**. Se utiliza para almacenar datos tabulares, tablas de datos
+
+- En el fondo, un data.frame es una lista. Al ser una lista **puede almacenar elementos de distinto tipo** (numéricos, carácter etc…). 
+
+
+- PERO es una **lista especial**: está restringida a que sus elementos/slots son vectores con la misma longitud; de forma que, al final tenemos una tabla de datos, donde **cada columna será una variable**
+
+- Otra propiedad de los data.frames es que sus vectores (o columnas)  tienen que tener un nombre: será el nombre de la variable.
+
+
+---
+
+##### Creación de data frame's
+
+- Generalmente no crearemos data.frames sino que los importaremos de repositorios de datos, por ejemplo de Eurostat o del INE, pero hoy vamos a crear uno con la función **`data.frame()`**
+
+```{r, eval = FALSE}
+aa <- c(4, 8, 6, 3)
+bb <- c("Juan", "Paz", "Adrian", "Marquitos")
+cc <- c(FALSE, TRUE, TRUE, FALSE)
+
+df <- data.frame(aa, bb, cc)
+```
+
+--
+
+<br>
+
+- Podemos ponerle otros nombres a las columnas, nombres que tengan sentido y que nos recuerden las variables que contienen:
+
+```{r, eval = FALSE}
+df <- data.frame(Nota = aa, Nombre = bb, Aprobado = cc)
+```
+
+
+---
+
+##### Subsetting en data frames
+
+Generalmente, cuando tengamos que hacer subsetting en un data frame, lo haremos **à la tidyverse**, pero conviene al menos conocer lo básico de como hacer subsetting con R-base.
+
+Varias formas de subsetting:
+
+- como si fuera una matriz, usando el corchete; o sea,  **con [**.
+
+- como si fuera una lista. De hecho un df es una clase especial de lista. **Podemos usar 3 operadores: [, [[ y $**.
+
+
+<br>
+
+------------------------------
+
+--
+
+##### subsetting como si fuera matriz (con [ )
+
+
+```{r, eval = FALSE}
+df_s <- df[,1]        #- seleccionamos la primera columna. devuelve un vector !!!
+df_s <- df[,c(2,3)]   #- seleccionamos la segunda y tercera columna. devuelve un df
+df_s <- df[1, ]       #- seleccionamos primera fila de todas las variables. devuelve un df. ¿xq no devuelve un vector? Preguntad si no lo sabéis
+df_s <- df[c(1,4), ]  #- seleccionamos primera y cuarta fila. devuelve un df
+df_s <- df[2, 3]      #- seleccionamos segunda observación de la tercera variable. Devuelve un vector.
+```
+
+
+---
+
+##### data.frames: subsetting como si fuera una lista (con [, [[, $)
+
+
+#### Como lista con [
+
+- siempre devuelve un df
+
+
+```{r, eval = FALSE}
+df_s <- df[3]        #- devuelve un df. Good!!
+df_s <- df[c(1,2)]
+
+#- también se puede hacer por nombre
+df_s <- df["Name"]                #- devuelve un df
+df_s <- df[c("Name", "Grade")]   
+```
+
+--
+
+#### Como lista con [[
+
+
+```{r, eval = FALSE}
+df_s <- df[[2]]   #- Extraemos la segunda columna. Devuelve un vector, concretamente un factor. Ahhhh!!!!!
+```
+
+--
+
+#### Como lista con $
+
+
+```{r, eval = FALSE}
+df_s <- df$Name   #- Extraemos la columna con nombre "Name". Devuelve un vector, concretamente un factor. Ahhhh!!!!!
+df_s <- df$Grade  #- Extraemos la columna con nombre "Grade". Devuelve un vector numérico
+```
+
+
+---
+class: inverse, center, middle
+
+# FUNCIONES  
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### Quizás lo más importante del curso sea entender bien cómo "funciona" una función
+
+---
+
+##### Entender qué es una función y ...
+
+##### ... cómo “funciona una función” es muuuuy importante!!!
+
+- Repito, es muy importante entender qué es y cómo usar una función. De hecho, todo lo que ocurre/pasa en R es porque has llamado a una función. Si algo ocurre en R es porque has hecho una llamada a una función, una “function call”.
+
+>  To understand computations in R, two slogans are helpful:  
+>     - Everything that exists is an object.  
+>     - Everything that happens is a function call.  
+>   — John Chambers  (creador de S)
+
+-----------------------------------
+
+--
+
+- **¿Qué es una función?** Una función no es más un trozo de código R, unas instrucciones de R, a las que les hemos puesto/asignado un nombre; entonces, cuando invoquemos ese nombre, esa función, se ejecutarán esas lineas de código. (!!!)
+
+- Como no creo que lo anterior os diga mucho, voy a usar 5 minutos para crear nuestra primera función. Vamos a R.
+
+---
+
+##### Creamos nuestra primera función [🌶🌶🌶]
+
+
+.panelset[
+.panel[.panel-name[Tarea]
+
+.white.bg-green[Tarea]: crea una función que permita sumar 2 números
+
+]
+
+.panel[.panel-name[Pistas]
+
+**Pista**: Las funciones en R se crean con la función llamada `function()`. Sí, un poco trabalenguas.
+
+**Pista**: La función que vamos a crear será un objeto de R, así que le tenemos que asignar un nombre
+
+**Pista**: Los argumentos de la función van dentro de los parentesis separados por comas
+
+**Pista**: El código que queramos que se ejecute cuando llamemos a la función va entre llaves
+
+Por lo tanto, en genérico, una función en R se crea así:
+
+```
+nombre_de_mi_funcion <- function(primer_argumento, segundo_argumento, ...) {
+  <el-codigo-q-quiero-q-se-ejecute-cuando-se-invoque-a-la-función>
+}
+```
+
+
+Sí lo conseguís sois genios o ya habéis visto esto en otro lenguaje
+
+
+]
+.panel[.panel-name[Solución]
+
+```{r, eval = FALSE}
+#- creamos una función llamada "my_suma()". Lo hacemos con la función de R llamada "function()"
+my_suma <- function(n1 , n2){
+  n1 + n2
+}
+
+#- para usar la función que hemos creado
+my_suma(3 , 5)
+my_suma(n1 = 3 , n2 = 5)
+
+aa <- my_suma(30 , 50)
+```
+
+]
+]
+
+--
+
+<br><br><br>
+
+##### entiendes mejor ahora qué es una función?
+
+- Tras haber creado nuestra primera función, yo creo que ahora entenderás mejor que una función no es más que un trozo de instrucciones/código en R que alguien ha creado para ser usada. Solo tenemos que invocar su nombre y dar valores a sus argumentos.
+
+
+---
+
+##### seguimos con las funciones
+
+
+- Vamos a profundizar en nuestro conocimiento de las funciones usando una: usando la función `sqrt()`. Resulta que alguien se ha preocupado de construir una función llamada `sqrt()` que sirve para calcular raíces cuadradas. Vamos a usarla!! Cómo??
+
+---------------------------
+
+--
+
+##### saber consultar la ayuda de una función is VERY important [ 🌟 ]
+
+- Para saber como usar una función lo que hay que hacer es **consultar la ayuda de la función**; sí cada función de R tiene una página de ayuda interna. 
+
+- Para abrir la ayuda de una función tienes que situar el cursor en el nombre de la función y pinchar en .white.bg-purple[F1]. También puedes hacer:
+
+```{r, eval = FALSE}
+help(sqrt)
+```
+
+- Pufff!!! la ayuda de la función parece muy complicada. Sí, eso parece: hay que aprender a leer las ayudas de las funciones. **Esto es MUY IMPORTANTE!!!!** si quieres aprender a manejarte con R. Enseguida lo vemos
+
+---
+
+##### seguimos con las funciones 
+
+- Aunque no lo entiendas del todo, tienes que saber que, cuando vamos a usar una función, su estructura es:  .white.bg-purple[nombre_de_la_funcion(argumento_1, argumento_2, ....) ] . Luego volveremos a este punto.
+
+<br>
+
+- .white.bg-green[Tarea:]Ejecuta estas instrucciones e intenta entender que ocurre.
+
+```{r, eval = FALSE}
+sqrt(9)
+sqrt(9, 4)   #- no funciona ¿por qué? ¿cuantos argumentos tiene la f. sqrt()?
+sqrt("9")    #- no funciona, ¿por qué? ¿Cómo, de que tipo, ha de ser el argumento?
+```
+
+<br>
+
+---
+
+##### seguimos con las funciones (más detalles) [🌶🌶🌶]
+
+- En realidad, cuando vamos a usar una función, **cada argumento de la función tiene 2 elementos**: el **nombre** del argumento y un **valor** para el argumento
+  
+```
+nombre_de_la_funcion(name_argumento_1 = valor_1, name_argumento_2 = valor_2, ....)
+```
+
+- El nombre de la función sqrt() es `sqrt`, ok, pero ¿cuales son sus argumentos? La ayuda nos dice que sólo tiene un argumento, cuyo nombre es x; además, el valor del argumento debe ser numérico. (!!!). 
+
+
+```{r, eval = FALSE}
+sqrt(9)       #- en realidad "no hace falta" poner el nombre del argumento
+sqrt(x = 9)   #- 
+sqrt(x = 4)
+```
+
+--
+
+--------------------------
+
+- Vamos a aprender a diferenciar el nombre y el valor del argumento de una función:
+
+```{r, eval = FALSE}
+sqrt(9)
+sqrt(x = 9)
+
+x <- 25
+sqrt(x)
+
+sqrt(x = x)          #- !!!
+sqrt(x = un_valor)   #- !!!
+sqrt(nn = 9)         #- !!!
+```
+
+
+---
+
+##### seguimos con las funciones (ya casí lo tenemos!!)
+
+
+- .white.bg-green[Tarea:] calculad con R el logaritmo de 1000 en base 10.  
+
+    Para ello tenéis que usar la función log(), y cómo no sabéis cómo se usa, no sabéis cómo es su sintaxis, no sabéis cuales son sus argumentos, os tocará **mirar la ayuda de la función**.
+    
+
+--
+
+.panelset[
+.panel[.panel-name[Tarea]
+    
+- Venga, que os ayudo: `log(1000)` no va a funcionar. ¿Por qué? para saberlo tendrás que mirar la ayuda de la función `log()`
+
+```{r, eval = FALSE}
+help(log)
+```
+]
+
+.panel[.panel-name[Solución]
+
+
+```{r, echo = TRUE, eval = FALSE}
+log(1000)  #- como no especificamos el valor del argumento "base",
+           #- R lo fija a su valor x defecto; es decir, base = exp(1) 
+           #- así que estamos tomando logaritmos naturales
+```
+
+
+```{r, echo = TRUE, eval = FALSE}
+log(x = 1000, base = 10)    #- GOOD
+
+log(1000, base = 10)        #- es equivalente
+log(x = 1000, 10)           #- es equivalente
+log(1000, 10)               #- es equivalente
+
+log(1000, bas = 10)         #- funciona, pero ...
+```
+
+¿Por qué no podemos usar la expresión de abajo?
+
+```{r, eval = FALSE}
+log(10, 1000)
+```
+
+
+```{r, eval = FALSE}
+log(base = 10, 1000)
+```
+
+]
+]
+
+---
+
+##### Para finalizar (de momento) con las funciones, 3 cosas:
+
+- Leeros el **apéndice A.1.1** del libro [Data Visualization
+A practical introduction](https://socviz.co/index.html#preface) de Kieran Healy. El apéndice está (aquí)[https://socviz.co/appendix.html#a-little-more-about-r], y se llama **"How to read an R help page"**. 
+
+
+--
+
+------------------
+
+- En casa, podéis **ver [[este video]](https://www.youtube.com/watch?v=pXA350-o0v8)**: en él nos cuentan que, cuando creas una función, su estructura general es:
+
+
+  ```{r, eval = FALSE}
+    function_name <- function(my_args) {
+    # process the arguments
+    # return some value
+    }
+  ```
+
+--
+
+
+Por ejemplo, podríamos crear una función para sumar 1 a un número:
+
+```{r, eval = FALSE}
+add1 <- function(my_number) {
+  my_number + 1
+}
+```
+
+--
+
+--------------------------
+
+- Para finalizar de verdad con las funciones, tenéis una **nueva tarea**: cread una función que sume tres números (!!)
+
+
+
+---
+
+##### venga a hacer la tarea para finalizar con las funciones!! [🌶🌶🌶🌶]
+
+.panelset[
+.panel[.panel-name[Tarea 1]
+    
+- Os recuerdo la **tarea:** tenéis que crear una **función que sume 3 números**
+
+- Venga, que os ayudo: Hay que utilizar la f. llamada `function()` y poner entre llaves el código que quieres que implemente la función.  
+
+- Recuerda que has de poner un nombre a tu función.   
+
+- Recuerda que has de poner el nombre de los argumentos de tu función dentro del paréntesis, separados por comas.  Nuestra función tendrá 3 argumentos 
+ 
+ <br>
+ 
+Quedará algo así:
+
+
+```{r, eval = FALSE}
+name_of_my_function <- function(<los argumentos van AQUI>){
+  #- aquí tienes que poner el código de la función
+}
+```
+
+]
+
+.panel[.panel-name[Solución]
+
+Esta vez no hay solución.
+
+<br><br><br><br>
+
+```{r, echo = FALSE}
+countdown::countdown(minutes = 0, seconds = 45)
+```
+
+]
+
+.panel[.panel-name[Tarea 2]
+
+Como ya hemos creado nuestra función que suma 3 números, vamos a mejorarla un poco: vamos a poner **valores por defecto a los argumentos** (por si alguien se olvida de introducir los valores a nuestra función).
+
+  - Por ejemplo que el valor por defecto del primer argumento sea 4, el del segundo que sea 6, y el del tercero que sea 3.
+
+]
+
+.panel[.panel-name[Solución 2]
+
+Venga, os doy una solución parcial. Solo tenéis que rellenar los 7 sitios en los que aparece "..."
+
+```{r, eval = FALSE}
+... <- function(n1 = ... , ... = 6, ... = ... ){
+   ... + n2 + ...
+}
+```
+
+<br><br><br><br><br><br>
+
+```{r, echo = FALSE}
+countdown::countdown(minutes = 0, seconds = 45)
+```
+
+
+]
+.panel[.panel-name[NO MIRAR!!]
+
+##### Solución a la primera tarea
+
+```{r, eval = FALSE}
+my_suma <- function(n1 , n2, n3){
+   n1 + n2 + n3
+}
+
+#- vamos a usar nuestra función
+my_suma(2, 2, 2)
+my_suma(2)        #- xq no funciona
+```
+
+
+##### Solución a la segunda tarea
+
+```{r, eval = FALSE}
+my_suma <- function(n1 = 4 , n2 = 6, n2 = 3){
+   n1 + n2 + n3
+}
+
+#- vamos a usar nuestra función
+my_suma(2, 2, 2)
+my_suma(2)        #- xq ahora sí funciona
+```
+
+]
+
+]
+
+
+
+---
+class: inverse, center, middle
+
+## Paquetes: instalación y ayuda
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+#### Es importante entender la diferencia entre paquetes en CRAN y en otros repositorios, y sobre todo, saber buscar la ayuda de un paquete.
+
+---
+
+##### Paquetes (primeras ideas)
+
+<br>
+
+- **¿Qué son los paquetes?** trozos/porciones de código R que podemos **instalar** en nuestro ordenador
+
+- **¿Qué ganamos instalando un paquete?** Los paquetes nos proveen de nuevas funciones o nuevos datos; es decir incrementa la funcionalidad de R: por ejemplo, con el pkg `meme` podemos hacer memes.
+
+<br>
+
+--
+
+- Los paquetes suelen estar en **repositorios**
+
+- R tiene un **repositorio oficial** llamado [**CRAN**](https://cran.r-project.org/). Ahora mismo tiene 16.273 paquetes. [Aquí](https://cran.r-project.org/web/packages/index.html) puedes ver el listado de paquetes ordenados alfabéticamente y por fecha, y [aquí](https://cran.r-project.org/web/views/) ordenados por tópico. 
+
+- Hay otros repositorios: Github, Gitlab, Bioconductor, ...
+
+---
+
+##### ¿Cómo me instalo un paquete? (Forma habitual)
+
+
+- Para instalar un **paquete que está en CRAN** hay que usar: 
+
+```{r, eval = FALSE}
+install.packages("dplyr")    #- instalamos el pkg dplyr en nuestro ordenador
+library(dplyr)               #- cargamos dplyr en memoria de R para así poder usarlo
+```
+
+
+- Para instalar un **paquete que está en GitHub** hay que tener instalado el paquete `remotes` o el paquete `devtools` y hacer: 
+
+
+```{r, eval = FALSE}
+install.packages("remotes")    #- previamente hay que instalar el pkg remotes
+remotes::install_github("tidyverse/dplyr")   #- instalamos la versión de github del pkg dplyr
+```
+
+
+----------------------------
+
+--
+
+- Recuerda que, una vez instalado un paquete, **cada vez que queramos usar ese paquete** hay que cargarlo en memoria con
+
+```{r, eval = FALSE}
+library(dplyr)    #- cargamos dplyr en memoria de R para así poder usarlo
+```
+
+- Recuerda que los paquetes se **instalan una sola vez**, pero que cada vez que queramos usarlo hay que "cargarlo" en memoria con `library()`
+
+---
+
+##### Obtener ayuda de un paquete
+
+- Los paquetes que están en CRAN, tienen obligatoriamente un manual en pdf, pero **son mucho más didácticas las vignettes** (que no son obligatorias).
+
+- Por ejemplo, el paquete **`dplyr`** está en CRAN en [esta dirección](https://cran.r-project.org/web/packages/dplyr/index.html). Como podéis ver tiene un manual en pdf y un listado de viñetas.
+
+- Si el paquete tiene vignettes, también puedes consultarlas desde RStudio usando cualquiera de las 2 expresiones de abajo: 
+
+```{r, eval = FALSE}
+help(package = "dplyr")
+browseVignettes("dplyr")
+```
+
+
+--
+
+--------------------
+
+- Generalmente los paquetes, incluso los que están en CRAN, tienen una **versión de desarrollo en Github**. Por ejemplo, [aquí](https://github.com/tidyverse/dplyr) tienes el link al repo de dplyr en Github. 
+
+- Además, cada vez es más frecuente que los paquetes tengan una **pagina web propia**. Por ejemplo [aquí](https://dplyr.tidyverse.org/) tienes la pagina web de `dplyr`. Generalmente tienen una sección llamada "Articles" donde tienes las vignettes.
+
+--
+
+- Aunque la verdad, muchas veces, la forma más rápida de aprender a usar un paquete es buscar en Google, y generalmente encuentras un **post** con una buena introducción al paquete.
+
+---
+
+##### Ejemplo: vamos a buscar ayuda para poder usar el paquete "explore"
+
+.panelset[
+.panel[.panel-name[Tarea]
+
+.white.bg-green[Tarea]: imagina que queremos usar el paquete **`explore`** ya que parece que facilita el análisis rápido de datos. **Trata de usar este paquete** para analizar un conjunto de datos; p.ej.  el conjunto de datos `iris` o el conjunto de datos `penguins` del paquete `palmerpenguins`.
+
+
+##### Dialogo ficcional en el aula:
+
+  - *Yo*: Sí, ya sé que llevas poco tiempo con R y que no has usado nunca ese paquete...  pero sabes que generalmente los paquetes tienen vignettes y que igual en algún post describen su uso. Venga a ello!!!
+
+  - *Tú*:  casi mejor me espero a que lo  hagas tú.
+  
+  - *Yo*: No way!!
+  
+  - *Tú*: pero es que estoy cansado, y da pereza, y **no voy  a saber!!**
+  
+  - *Yo*: Venga a buscar información de ese paquete!! Ni se te ocurra mirar la "solución".
+
+]
+
+.panel[.panel-name[Solución]
+
+```{r, echo = TRUE, eval = FALSE}
+#- post: https://rolkra.github.io/start-to-explore/
+#- CRAN: https://cran.r-project.org/web/packages/explore/index.html
+#- Github: https://github.com/rolkra/explore
+
+#- install.packages("explore")                 #- instalamos la versión de CRAN
+#- devtools::install_github("rolkra/explore")  #- instalamos la versión de Github
+
+#- vamos a usar el paquete con el conjunto de datos `iris`
+library(explore)
+explore(iris)
+
+#- vamos a usar explore para analizar `penguins`
+library(palmerpenguins)
+library(explore)
+explore(penguins)
+```
+
+]
+]

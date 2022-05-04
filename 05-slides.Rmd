@@ -1,0 +1,59 @@
+---
+output:
+  html_document:
+    #css: !expr here::here("assets", "styles_pjp.css") 
+    css: assets/styles_pjp.css
+    #theme: cerulean  #o flatly(gris)  united (naranja) spacelab(azulito) o yeti o faltly o sandstone
+    #highlight: kate 
+    self_contained: yes
+    number_sections: no
+    #includes:
+       #in_header: google-analytics.html
+    #toc: true
+    #toc_float: true
+    #code_folding: show
+    #self_contained: TRUE
+---
+
+
+
+<br>
+
+
+<div class = "blue">
+**Transparencias/Slides**: en esta sección iré subiendo las transparencias de clase conforme las vaya preparando. Las primeras transparencias están hechas en el formato [`ioslides`](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html){target="_blank"}. Para el resto, seguramente, usaré otro formato: [`xaringan`](https://bookdown.org/yihui/rmarkdown/xaringan.html){target="_blank"}.
+
+Todas las transparencias están hechas con R, de hecho, una de las cosas que has de aprender durante el curso es a hacer transparencias desde R. Concretamente, habrá un trabajo en equipo (3 personas), donde entre otras cosas, tendréis que hacer unas transparencias para presentar vuestro proyecto. Tendréis que hacer las transparencias con R, usando el formato `ioslides`. 
+</div>
+
+<br><br>
+
+## Slides
+
+-------------------
+
+
+- [Slides-00: Presentación](./slides/slides_00_presentacion-curso.html){target="_blank"}
+
+- [Slides-01: Tema 1](./slides/slides_01_intro_v3.html){target="_blank"}
+
+- [Slides-02: Primeros pasos](./slides/slides_02_primeros-pasos.html){target="_blank"}
+
+- [Slides-03: R base](./slides/slides_03_R-base-01.html){target="_blank"}
+
+- [Slides-04: Importar y exportar datos](./slides/slides_04_cargar-datos.html){target="_blank"}
+
+- [Slides-05: Data munging](./slides/slides_05_data-munging.html){target="_blank"}
+
+- [Slides-06(A): ggplot2 (primeras ideas)](./slides/slides_06_ggplot2_A.html){target="_blank"}
+
+- [Slides-06(B): ggplot2 (más elementos)](./slides/slides_06_ggplot2_B.html){target="_blank"}
+
+- [Slides-06(C): ggplot2 (distintos tipos de gráficos)](./slides/slides_06_ggplot2_C.html){target="_blank"}
+
+- [Slides-07: Rmarkdown (primeras ideas)](./slides/slides_07_rmarkdown.html){target="_blank"}
+
+
+<br><br>
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
