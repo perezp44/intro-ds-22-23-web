@@ -1,4 +1,3 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 <!-- badges: start -->
@@ -11,9 +10,7 @@
 
 ------------------------------------------------------------------------
 
-
 <img src="imagenes/mola-mazo.png" align="right" width="200" height="240"/>
-
 
 ## Wellcome
 
@@ -23,9 +20,8 @@ La **página web** del curso está aquí: <https://perezp44.github.io/intro-ds-2
 
 <br>
 
-Además, el curso tiene un repo asociado para usarlo como [foro](https://github.com/perezp44/intro-ds-22-23-web-companion/discussions).
+Además, el repo tiene activadas las [Discussions](https://github.com/perezp44/intro-ds-22-23-web/discussions) para que nos sirvan como foro.
 
 <br>
 
 -- Pedro J. Pérez
-
