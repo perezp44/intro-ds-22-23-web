@@ -1,0 +1,61 @@
+---
+output:
+  html_document:
+    #css: !expr here::here("assets", "styles_pjp.css") 
+    css: assets/styles_pjp.css
+    #theme: cerulean  #o flatly(gris)  united (naranja) spacelab(azulito) o yeti o faltly o sandstone
+    #highlight: kate 
+    self_contained: yes
+    number_sections: no
+    #includes:
+       #in_header: google-analytics.html
+    toc: true
+    toc_float: true
+    #code_folding: show
+    #self_contained: TRUE
+---
+
+
+
+```{r klippy, echo = FALSE}
+klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/klippy")
+```
+
+<br>
+
+
+
+<br>
+
+# Curso 2022-2023
+
+<br>
+
+<div class = "blue">
+**Trabajos**: los ¿38? estudiantes del **curso 2022-2023**, como parte de la evaluación continua, tuvieron que presentar dos trabajos, uno individual y otro en equipo. Podrás verlos en los siguientes enlaces:
+</div>
+
+
+
+<br><br>
+
+## Trabajos en equipo
+
+Disponibles a finales de Diciembre
+
+
+
+<br><br>
+
+## Trabajos individuales
+
+Disponibles a finales de Diciembre
+
+
+<br><br>
+
+
+------------------
+
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

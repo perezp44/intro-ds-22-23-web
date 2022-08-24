@@ -11,39 +11,54 @@ output:
     toc_float: yes
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
---------------------------------------------
+------------------------------------------------------------------------
 
-Como sabéis, a lo largo del curso os mandaré algunas tareas/ejercicios que formarán parte de la **evaluación continua**. Algunas de estas tareas serán para resolver en casa y otras se resolverán en el aula.
-
-
-<br>
-
-### 1. ¿Cómo entregar los ejercicios que formen parte de la evaluación continua?
-
-Los ejercicios/tareas que hagamos **en clase o en casa** y que formen parte de la **evaluación continua** se entregarán a través de un `uploader`. Simplemente habrá que depositar el archivo final en la siguiente dirección: <https://driveuploader.com/upload/x1Qx7fev79/>.
+Como sabéis, a lo largo del curso os mandaré tareas que formarán parte de la **evaluación continua**. Algunas de estas tareas serán para resolver en casa y otras se resolverán en el aula.
 
 
 <br>
 
-### 2. ¿Cuantos archivos habrá que entregar?
+### 1. ¿Cómo entregar las tareas?
 
-Generalmente resolveréis las tareas utilizando un Rproject, pero una vez hayáis resuelto el ejercicio, **tendréis que comprimir ese Rproject en un fichero .zip. Este fichero .zip será el que tengáis que subir al `uploader`**.
+Los ejercicios/tareas que hagamos **en clase o en casa** y que formen parte de la **evaluación continua** se entregarán a través de un `uploader`. Os lo explicaré el primer día de clase pero, únicamente tendréis que depositar el archivo con vuestra entrega en una dirección web que anunciaré por mail.
 
-Por lo tanto, hay que entregar un **único archivo**, un fichero comprimido o **fichero .zip**. 
+<br>
 
+### 2. ¿Cuantos archivos hay que entregar?
+
+Generalmente trabajamos con R a través de Rprojects. Los Rprojects se componen de varios archivos, pero cuando me entregues la tarea, habrás de subir al uploader solo **un único archivo**. Repito siempre tendrás que entregar un único archivo.
+
+<br>
+
+#### ¿Qué archivo he de entregar?
+
+Depende de lo que os pida:
+
+- A veces os pediré directamente que me entreguéis un único archivo, ya sea este un script de R (.R) o un fichero Rmd (.Rmd) o un fichero qmd (.qmd), 
+
+- pero otras veces os pediré que me entreguéis todo el Rproject, en ese caso, como los Rprojects son una carpeta con varios archivos, **tendréis que comprimir la carpeta del Rproject en un fichero .zip** que será el que subiréis al uploader. Repito, si en una práctica os pido que entreguéis todo el Rproject, lo tendréis que entregar comprimido en un único archivo `.zip`. 
 
 <br>
 
 ### 3. ¿Qué nombre he de poner a los archivos? (IMPORTANTE!!)
 
-El nombre del Rproject con el que trabajeis cada tarea debe  ser:  
+El nombre del fichero que subáis al `uploader` necesariamente ha de ser:
 
-`entrega_<nº de entrega>_<Primer apellido>_<Primer nombre>_<NPA>`
+`entrega_<nº de entrega con 2 digitos>_<Primer apellido>_<Primer nombre>_<NPA>` más la extensión del fichero. 
+
+La extensión del fichero puede ser:
+
+- `.R` si entregáis un script de R
+
+- `.Rmd` si entregáis un documento Rmd
+
+- `.qmd` si entregáis un documento quarto
+
+- `.zip` si entregáis todo el Rproject en un único archivo comprimido
 
 <br>
 
@@ -51,29 +66,25 @@ El nombre del Rproject con el que trabajeis cada tarea debe  ser:
 
 Se entiende mejor con un ejemplo, así que, imagina que una persona cuyo nombre fuera María Antonia y sus apellidos fueran: Nuñez-Balboa Pérez. Fíjate que su primer nombre tiene tildes y su primer apellido es compuesto y tiene una eñe.
 
-Imagina que María Antonia tiene que entregar la tercera entrega, en ese caso, su Rproject debería llamarse: `entrega_03_Nunez_Maria_HB454545`. 
+Imagina que María Antonía tiene que entregar la tercera entrega, en ese caso, su fichero (además de la extensión) debería llamarse: `entrega_03_Nunez_Maria_HB45454`. Cuando María tenga que entregar la doceava entrega, su entrega se llamará: `entrega_12_Nunez_Maria_HB45454`.
 
-Cuando María tenga que entregar la doceava entrega, su Rproject se llamará: `entrega_12_Nunez_Maria_HB454545`.
+Fíjate que **en el nombre del fichero no puede haber tildes, ni eñes, ni espacios en blanco, ni caracteres especiales ... y debe haber exactamente 4 guiones bajos `_`**.
 
+Fíjate además que **el número de tarea tiene 2 dígitos**: la tercera tarea es `tarea_03`, y no tarea_3
 
-Fíjate que **en el nombre del fichero no puede haber tildes, ni eñes, ni espacios en blanco, y debe haber exactamente 4 guiones bajos `_`**. 
-
-Fíjate además que **el número de tarea tiene 2 dígitos**: la tercera tarea es tarea_03 y no tarea_3
-    
 <br>
 
-### 4. ¿Cómo deberá llamarse el fichero .zip que hemos de entregar?
-
-Imagina que María tiene que entregar la quinta entrega. En ese caso, su Rproject debe llamarse `entrega_05_Nunez_Maria_HB454545`; por lo tanto cuando comprima el Rproject en un fichero .zip, este fichero, que es el que tienes que subir al upolader, se llamará `entrega_05_Nunez_Maria_HB454545.zip`.
 
 
+**Again**: Imagina que María tiene que entregar la quinta entrega. En ese caso, su Rproject debe llamarse `entrega_05_Nunez_Maria_HB45454`; por lo tanto cuando comprima el Rproject en un fichero .zip, este fichero, que es el que tienes que subir al upolader, se llamará `entrega_05_Nunez_Maria_HB45454.zip`. 
 
--------------------------
+Si sólo hubiese que entregar un script o documento `.R`, el fichero se llamará `entrega_05_Nunez_Maria_HB45454.R` y si solo hubiese que entregar un documento `.qmd`, este se llamará: `entrega_05_Nunez_Maria_HB45454.qmd`
 
+------------------------------------------------------------------------
 
 Los nombres de los ficheros no son sólo una manía, **SON IMPORTANTES!!!** y es la única manera de identificar correctamente vuestras entregas. Por favor, hazlo según las indicaciones.
 
--------------------------
+------------------------------------------------------------------------
 
 <br>
 
@@ -81,6 +92,13 @@ Los nombres de los ficheros no son sólo una manía, **SON IMPORTANTES!!!** y es
 
 Evidentemente, las tareas hay que entregarlas antes de su **fecha límite de entrega**. Las fechas límites de entrega serán, si no se anuncia expresamente otra cosa, los **jueves a las 23:59**.
 
-Ya sabes que la entrega se hace depositando tu fichero .zip en el [uploader](https://driveuploader.com/upload/x1Qx7fev79/), pero el uploader no estará siempre abierto: se abrirá el miércoles sobre las 14:00 horas. Si ya fuese miercoles (pasadas las 14:00) y resulta que vas a depositar tu trabajo pero el `uploader`estuviese cerrado tendrás que pinchar en el recuadro que hay en el uploader para solicitar su apertura.
+Ya sabes que la entrega se hace depositando tu fichero en un `uploader`. Os enviaré por mail los jueves por la tarde la dirección web del uploader.^[Lo siento, pero seguramente no podré enviarlo antes, pero piensa que solo es arrastar ysubir un fichero a una dirección web.]
+
+
+
+<br>
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
+
 
 

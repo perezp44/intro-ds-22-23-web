@@ -52,7 +52,7 @@ A pesar de que la guía docente presenta 5 temas, en el curso no trabajaremos es
 ------------------
 
 
-Como sabéis las clases esta previsto que sean **presenciales**, así que la dinámica de las clases será parecida a lo que estáis acostumbrados, digo parecida porque hay un protocolo covid que deberemos seguir.
+Como sabéis las clases esta previsto que sean **presenciales** y sin mascarilla. Perfecto, esto facilitará algo las cosas!!
 
 Las clases serán eminentemente **prácticas**: estaremos buena parte de las sesiones trabajando con el ordenador. A pesar de que el aula en la que se desarrollarán las clases tiene ordenadores, es **muy-muy-muy recomendable** acudir con tu **ordenador portátil**,
 
@@ -67,9 +67,9 @@ Nos veremos **un día a la semana**, los viernes. En esta misma web, en la secci
 
 ##### Sesiones
 
-El curso tiene **14 sesiones de 4 horas** (en realidad 3 horas cada sesión). La verdad es que no me gusta que las sesiones sean de 4 horas pero, dadas las actuales circunstancias, es posible que agrupar las clases en un solo día sea, quizás, la mejor opción.
+El curso tiene **15 sesiones de 4 horas** (en realidad 3 horas aprox. cada sesión) aunque al menos la última sesión estrá dedicada a la presentación de los trabajos en grupo.
 
-Las razones por las que, en circunstancias normales, prefiero dos clases a la semana son varias. Una de ellas consiste en que durante la clase hay que pensar bastante (estaremos aprendiendo un lenguaje) y hacer ejercicios y pruebas y acabaréis cansados, espero que contentos por haber aprendido, pero cansados. Otra razón consiste en que faltar un solo día puede ser importante para el seguimiento del curso. Por favor, **intentad no faltar a las clases y menos aún a las cuatro primeras**. En las primeras clases se explican cosas/ideas/conceptos que, no es que sean complicadas, de hecho, una vez se entienden son muy sencillas, pero que no son fáciles de entender por uno mismo sin ayuda. Insisto: **no faltéis a clase, pero menos aún a las primeras!!** 
+La verdad es que no me gusta que las sesiones sean de 4 horas pero los 3 cursos anteriores también ha sido así y las clases han ido bastante bien. Las razones por las que prefiero dos clases a la semana son varias. Una de ellas consiste en que durante la clase hay que pensar bastante (estaremos aprendiendo un lenguaje) y hacer ejercicios y pruebas y acabaréis cansados, espero que contentos por haber aprendido, pero cansados. Otra razón consiste en que faltar un solo día puede ser importante para el seguimiento del curso. Por favor, **intentad no faltar a las clases y menos aún a las 4/5 primeras**. En las primeras clases se explican cosas/ideas/conceptos que, no es que sean complicadas, de hecho, una vez se entienden son muy sencillas, pero que no son fáciles de entender por uno mismo sin ayuda. Insisto: **no faltéis a clase, pero menos aún a las primeras!!** 
 
 <br>
 
@@ -78,9 +78,10 @@ Las razones por las que, en circunstancias normales, prefiero dos clases a la se
 
 Ya dentro de clase, la dinámica será la siguiente: el profesor, yo, explicaré una idea/tópico, mostraré una aplicación de ella en el ordenador, para después plantearos un reto o cuestión para que trabajéis la idea/concepto y acabéis de entenderlo. Intentaré^[Digo intentaré porque también depende de vosotros.] repetir este esquema de explicación/aplicación de forma rápida; es decir que veamos cuantos más tópicos mejor. 
 
-Buena parte de las sesiones estaréis resolviendo problemas/cuestiones con el ordenador. Lo ideal es trabajar en parejas, se aprende mucho más y más rápido, pero este año, esto va a ser complicado^[Igual esto no es imposible del todo. Veremos si es posible suplir la proximidad física con alguna aplicación de mensajería.]. Lo normal es atascarse de vez en cuando mientras estás resolviendo una tarea, y muchas veces es tu compañero el que te saca del apuro. Yo tampoco voy a poder pasearme por las mesas para ver como lo estáis haciendo, así que esto limitará, en parte, el que yo pueda ayudaros. 
+Buena parte de las sesiones estaréis resolviendo problemas/cuestiones con el ordenador. Lo ideal es trabajar en parejas, se aprende mucho más y más rápido: lo normal es atascarse de vez en cuando mientras estás resolviendo una tarea, y muchas veces es tu compañero el que te saca del apuro.
 
-Esta situación provocada por el covid hará que las clases, al menos las primeras, tengan que ser más **pautadas y pausadas**: no cerraremos un tópico/tarea hasta que todos hayáis acabado, esto implica que iremos un poco más lentos y también implica que **no podéis despistaros** ya que si no seguís el ritmo se resentirá el aprendizaje de vuestros compañeros. Buff, que estrés!!! No, yo creo que al final las cosas saldrán bien y nos divertiremos y aprenderemos, **PERO** tenéis que tener muy claro que **no podéis venir a clase de espectadores** a ver que ocurre, tenéis que trabajar en clase y haber trabajado en casa, no os podéis quedar atrás. Si te vas quedando atrás, en una o dos clases no entenderás nada, y no porque las cosas que veamos sean difíciles, no, sino que hay que ir paso a paso y, a veces, entenderlas por tu cuenta sí que es complicado. 
+Por favor, insisto en que es una asignatura fácil de aprobar, **PERO** has de trabajar durante el curso, principalmente las primeras clases. Tenéis que tener muy claro que **no podéis venir a clase de espectadores** a ver que ocurre, tenéis que trabajar en clase y haber trabajado en casa, no os podéis quedar atrás. Si te vas quedando atrás, en una o dos clases no entenderás nada, y no porque las cosas que veamos sean difíciles, no, sino que hay que ir paso a paso y, a veces, entenderlas por tu cuenta sí que es complicado. El tener que trabajar semana a semana puede parecer un inconveniente pero es indispensable y al final hace que en los 3 años que se lleva impartiendo el curso hayan aprobado el 100% de estudiantes^[En realidad el primer año suspendió un estudiante que sólo vino 2 veces a clase]. Creo que al final las cosas saldrán bien y nos divertiremos y aprenderemos y aprobaréis, otra vez, todos.
+ 
 
 
 
@@ -91,13 +92,9 @@ Esta situación provocada por el covid hará que las clases, al menos las primer
 ------------------
 
 
-Mi idea/plan es **confiar en que os va a gustar la asignatura** y que vais a trabajar lo necesario, tanto en casa como en clase, con lo que las clases serán fáciles a pesar de las limitaciones impuestas por el covid.
+Mi idea/plan es **confiar en que os va a gustar la asignatura** y que vais a trabajar lo necesario, tanto en casa como en clase, de forma que podréis seguir sin demasiados problemas las clases. De vez en cuando os tendré que hacer pruebas en el aula que también formarán parte de la evaluación continua. 
 
-Como os he dicho, las clases son los viernes, antes de cada clase publicaré en esta web, en la sección [`Calendario`](03-calendario.html) el trabajo previo que tendréis que hacer. Si puedo, publicaré esos guiones no mas tarde de los lunes. 
-
-El plan consiste en que vosotros hacéis el trabajo previo antes de venir a clase, de forma que el viernes podéis seguir sin demasiados problemas las clases. De vez en cuando os tendré que hacer pruebas en el aula que también formarán parte de la evaluación continua. 
-
-Las pruebas saldrán bien, espero, lo que querrá decir que estáis aprendiendo, así que todos estaremos contentos y además cumpliremos las recomendaciones sanitarias así que no tendremos problemas con el covid. Ojala!!
+Las pruebas saldrán bien, espero, lo que querrá decir que estáis aprendiendo, así que todos estaremos contentos y motivados
 
 
 > Everyone has a plan until they get punched in the mouth --- Mike Tyson
@@ -125,11 +122,9 @@ Durante el curso utilizaremos diversos recursos: transparencias, ejemplos, ejerc
 ------------------
 
 
-Tal como figura en la [Guía Docente](./pdfs/guia-docente.pdf), el **40% de la nota provendrá de la evaluación continua** y el restante 60% lo aportará el examen final.
+Tal como figura en la [Guía Docente](./pdfs/guia-docente.pdf){target="_blank"}, el **40% de la nota provendrá de la evaluación continua** y el restante 60% lo aportará el examen final.
 
-Los detalles concretos acerca de la evaluación continua puedes consultarlos en [Aula Virtual`](https://aulavirtual.uv.es/course/view.php?id=29740){target="_blank"} 
-
-Aunque quizás fuese mejor, como han hecho en varios países, dejar la evaluación a un algoritmo. Lo puedes leer [aquí](https://www.enriquedans.com/2020/09/algoritmos-y-educacion-no-tan-rapido.html) y [aquí](https://www.eldiario.es/internacional/boris-johnson-da-marcha-modifica-sistema-usaba-algoritmo-calificar-estudiantes_1_6170221.html). Evidentemente lo de usar un algoritmo es una broma. Me gustaría pero ... aún no lo veo.
+Los detalles concretos acerca de la evaluación continua puedes consultarlos en [`Aula Virtual`](https://aulavirtual.uv.es/course/view.php?id=46811){target="_blank"}. Aunque quizás fuese mejor, como han hecho en varios países, dejar la evaluación a un algoritmo. Lo puedes leer [aquí](https://www.enriquedans.com/2020/09/algoritmos-y-educacion-no-tan-rapido.html){target="_blank"} y [aquí](https://www.eldiario.es/internacional/boris-johnson-da-marcha-modifica-sistema-usaba-algoritmo-calificar-estudiantes_1_6170221.html){target="_blank"}. Evidentemente lo de usar un algoritmo es una broma. Me gustaría pero ... aún no lo veo.
 
 
 <br><br>
@@ -140,13 +135,17 @@ Aunque quizás fuese mejor, como han hecho en varios países, dejar la evaluaci�
 ------------------
 
 
-En esta sección pretendo responder a posibles dudas/preguntas que creo que os pueden pasar por la cabeza antes de iniciar el curso. Yo también tengo dudas sobre cómo será el curso: esta va a ser la tercera vez que se imparte el curso en la UV, y la segunda (y espero que última) que se imparte bajo una situación de pandemia. Si tenéis dudas sobre el curso, hacédmelas llegar por mail o en clase.
+En esta sección pretendo responder a posibles dudas/preguntas que creo que os pueden pasar por la cabeza antes de iniciar el curso. Si tenéis dudas sobre el curso, hacédmelas llegar por mail o en clase: es mejor tener claro de qué va el curso para si os merece la pena continuar en él o es mejor darse de baja.
+
+
+
+Yo también tengo dudas sobre cómo será el curso: esta va a ser ya la cuarta vez que se imparte el curso en la UV pero cada año es diferente, se supone que vamos a volver a la normalidad tras la pandemia, pero por contra, este año parece que va a haber casi demasiados estudiantes, veremos!!
 
 <br>
 
 ##### Nunca he programado ¿podré seguir el curso?
 
-Por supuesto. Empezaremos con nivel cero, PERO, lo que si que tengo que deciros es que si tu nivel de conocimientos informáticos y/o de programación no es muy elevado (o nulo) haz el esfuerzo de no perderte las 3 primeras clases y tratar de ir entendiéndolo, para eso están las tutorías, **NO lo dejes para el final**, si no, se te hará bola.
+Por supuesto. Empezaremos con nivel cero, PERO, lo que si que tengo que deciros es que si tu nivel de conocimientos informáticos y/o de programación no es muy elevado (o nulo) haz el esfuerzo de no perderte las 4-5 primeras clases y tratar de ir entendiéndolo, para eso están las tutorías, **NO lo dejes para el final**, si no, se te hará bola.
 
 <br>
 
@@ -154,30 +153,42 @@ Por supuesto. Empezaremos con nivel cero, PERO, lo que si que tengo que deciros 
 
 Ya he dicho que el curso es una introducción a la Ciencia de Datos con R. Vas a aprender muchas cosas (espero), pero principalmente a utilizar R para hacer análisis de datos.
 
-Espero que al final del curso seáis capaces de entender código R, replicar los análisis que se publican en sitios como [R-bloggers](https://www.r-bloggers.com/) y ser capaces de hacer análisis de datos propios con R.
+Espero que al final del curso seáis capaces de entender código R, replicar los análisis que se publican en sitios como [Rweekly](https://rweekly.org/){target="_blank"} y ser capaces de hacer análisis de datos propios con R.
 
-[Aquí](https://perezp44.github.io/intro-ds-20-21-web/07-trabajos.html) tienes los **proyectos que presentaron los estudiantes el curso pasado**. Salieron muy bien!!!
+[Aquí](https://perezp44.github.io/intro-ds-22-23-web/07-trabajos_2021-22.html){target="_blank"} tienes los **proyectos que presentaron los estudiantes el curso pasado**. Salieron muy bien!!!
 
 
 <br>
 
 ##### ¿Será fácil aprobar?
 
-Sí. Creo que te resultará fácil aprobar; de hecho, el año pasado aprobaron todos los que siguieron el curso: todos eran capaces de importar y arreglar datos, mostrar resultados en tablas y gráficos y presentar informes en Rmarkdown. También es verdad que hubo 4-5 estudiantes que, por diversas razones, decidieron abandonar el curso en la tercera semana y se matricularon en otra optativa. De verdad que creo que os gustará y aprenderéis pero ... has de trabajar, sobre todo al principio. 
+Sí. Creo que te resultará fácil aprobar; de hecho, el año pasado aprobaron todos los que siguieron el curso: todos eran capaces de importar y arreglar datos, mostrar resultados en tablas y gráficos y presentar informes en Rmarkdown. También es verdad que cada año hay 4-5 estudiantes que, por diversas razones, deciden abandonar el curso en la tercera semana para matricularse de otra optativa. 
 
-Si, por lo que sea, crees que la asignatura no es para ti^[Insisto, creo que por muy bajo que sea tu nivel de partida, con un interés razonable aprovecharás sin problemas el curso. Eso sí, hay que trabajar cada semana, sobre todo las primeras semanas.], lo mejor sería darse de baja: este año creo que en secretaría serán mas estrictos con la fechas de cambio de matricula.
+De verdad que **creo que os gustará y aprenderéis pero ... HAS de TRABAJAR, sobre todo al principio**. Asi que recalco:
+
+
+
+<div class = "blue">
+Si, por lo que sea, crees que la asignatura no es para ti^[Insisto, creo que por muy bajo que sea tu nivel de partida, con un interés razonable aprovecharás sin problemas el curso. Eso sí, hay que trabajar cada semana, sobre todo las primeras semanas.], lo mejor sería darse de baja. Recuerda que **hay que venir a clase y trabajar todas las semanas**.
+ 
+</div>
+
+
+
 
 <br>
 
 ##### ¿Acabaremos el temario?
 
-No lo sé. Depende de vosotros, de mi y de la evolución de la situación sanitaria. El curso tiene **14 sesiones de 4 horas** (en realidad 3 horas cada sesión), de forma que deberían ser suficientes para impartir el contenido de 5 temas, pero resulta que los temas, dependiendo de la profundidad con la que los veamos, pueden hacerse muy extensos. Además, la situación sanitaria actual va a condicionar el formato y prácticas docentes dentro del aula, seguramente ralentizándolas; así que ya veremos hasta donde llegamos. 
+No lo sé, pero casí seguro que no. El curso tiene **15 sesiones de 4 horas** (en realidad 3 horas cada sesión), de forma que deberían ser suficientes para impartir el contenido de 5 temas, pero resulta que los temas, dependiendo de la profundidad con la que los veamos, pueden hacerse muy extensos.  
 
 <br>
 
 ##### ¿Me servirá lo que aprenda en mi (futuro) trabajo?
 
 Pues no lo sé, depende, pero cada vez es más frecuente que las empresas intenten hacer sus análisis y gestión de datos con R. El año pasado al menos dos estudiantes, que yo sepa, utilizaron R en las empresas en las que estaban haciendo sus prácticas curriculares y otros dos ahora mismo estarán cursando un máster de Análisis de Datos, así que seguro que ahora están usando R.
+
+Pasado año y medio de la finalización de cada cuirso académico mandó un mail a los estudiantes preguntándoles si les ha sido de utilidad lo aprendido durante el curso. Suelen contestar al mail el 50% de los estudiantes y de sus respuestas puedo, más o menos inferir, que al menos a un 20% de los estudiantes les ha resultado útil ya sea en la elaboración del TFG, en las practicas de empresas, en futuros estudios o en labores profesionales.
 
 
 <br><br>

@@ -1,6 +1,6 @@
-name: "Curso R"
+name: "Curso introducción a la Ciencía de datos con R"
 navbar:
-  title: "Programación y manejo datos con R (2021-22)"
+  title: "Programación y manejo datos con R (2022-23)"
   type: inverse
   left:
     - icon: fa-home
@@ -16,7 +16,7 @@ navbar:
       href: 03-calendario.html
       icon: fa-calendar-alt
     - text: "Tutoriales"
-      icon: fa-book
+      #icon: fa-book
       href: 04-tutoriales.html
     - text: "Slides"
       href: 05-slides.html
@@ -25,7 +25,17 @@ navbar:
       href: 06-mas-cosas.html
     - text: "Trabajos"
       icon: fa-user-graduate
-      href: 07-trabajos.html
+      menu: 
+        - text: "Curso 2022-23"
+          href: 07-trabajos_2022-23.html
+        - text: "Curso 2021-22"
+          href: 07-trabajos_2021-22.html     
+        - text: "Curso 2020-21"
+          href: 07-trabajos_2020-21.html               
+        - text: "Curso 2019-20"
+          href: 07-trabajos_2019-20.html                
+          
+      
 output_dir: "docs"
 output:
   html_document:

@@ -33,14 +33,14 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 
 ------------------------------
 
-En cada sesión/clase vamos a usar un Rproject con ejemplos y alguna cosa más: son los **guiones de clase**
+En cada sesión/clase vamos a usar un Rproject con ejemplos y alguna cosa más, son los **guiones de clase**. La mayoría de ejemplos/casos que trabajaremos durante el curso estarán alojados en los guiones de clase, otros provendrán de los propios tutoriales o slides.
 
 
-Para descargaros el Rproject con el guión de cada sesión tienes que ejecutar en RStudio las siguientes instrucciones:
+Para descargaros el Rproject con el guión (o materiales) de cada sesión tienes que ejecutar en RStudio las siguientes instrucciones:
 
 ```{r, eval = FALSE}
-file_to_download <- "curso_R_2022.zip" 
-url <- paste0("https://github.com/perezp44/intro-ds-21-22-web/raw/master/guiones-de-clase/", file_to_download)
+file_to_download <- "clase_01.zip" 
+url <- paste0("https://github.com/perezp44/intro-ds-22-23-web/raw/master/guiones-de-clase/", file_to_download)
 download.file(url, destfile = file_to_download)
 unzip(zipfile = file_to_download)
 file.remove(file_to_download)
@@ -48,8 +48,6 @@ file.remove(file_to_download)
 
 No hace falta que lo hagas ahora, mejor si te esperas al primer día de clase, os lo explico un poco más y lo hacemos todos juntos.
 
-
-La mayoría de ejemplos/casos que trabajaremos durante el curso estarán alojados en los guiones de clase, otros provendrán de los propios tutoriales o slides.
 
 
 <br>
@@ -66,18 +64,22 @@ Durante el curso, sobre todo las primeras semanas, os mandaré tareas, algunas p
 
 <br>
 
-### **Otros recursos**
+### **Guía de Instalación**
 
 -------------------
 
 
 - [Guía de Instalación de R y RStudio](./mas-recursos/01_instrucciones-instalacion.html){target="_blank"}
 
-- [Listado de paquetes a instalar](./mas-recursos/pkgs_a_instalar_sfpie_2022.R)
+
+
+<br>
+
+### **Otros recursos**
+
+-------------------
 
 - [Descargar ficheros de Google Drive](./mas-recursos/05_bajar-google-drive.html){target="_blank"}. Este fichero es solo para mi. Para usarlo en el aula.
-
-
 
 
 <br><br>

@@ -21,9 +21,9 @@ output:
 
 
 <div class = "blue">
-**Transparencias/Slides**: en esta sección iré subiendo las transparencias de clase conforme las vaya preparando. Las primeras transparencias están hechas en el formato [`ioslides`](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html){target="_blank"}. Para el resto, seguramente, usaré otro formato: [`xaringan`](https://bookdown.org/yihui/rmarkdown/xaringan.html){target="_blank"}.
+**Transparencias/Slides**: en esta sección iré subiendo las transparencias de clase conforme las vaya preparando. Las primeras transparencias están hechas en el formato [`ioslides`](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html){target="_blank"}. Para el resto uso el formato [`xaringan`](https://bookdown.org/yihui/rmarkdown/xaringan.html){target="_blank"}.
 
-Todas las transparencias están hechas con R, de hecho, una de las cosas que has de aprender durante el curso es a hacer transparencias desde R. Concretamente, habrá un trabajo en equipo (3 personas), donde entre otras cosas, tendréis que hacer unas transparencias para presentar vuestro proyecto. Tendréis que hacer las transparencias con R, usando el formato `ioslides`. 
+Todas las transparencias están hechas con R, de hecho, una de las cosas que has de aprender durante el curso es a hacer transparencias desde R. Concretamente, habrá un trabajo en equipo (3 personas), donde entre otras cosas, tendréis que hacer unas transparencias para presentar vuestro proyecto. Tendréis que hacer las transparencias con R, usando el formato `ioslides` o quizás el nuevo formato [`revealjs`](https://quarto.org/docs/presentations/revealjs/){target="_blank"}.
 </div>
 
 <br><br>

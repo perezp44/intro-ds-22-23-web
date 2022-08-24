@@ -15,124 +15,153 @@ output:
     #self_contained: TRUE
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
---------------------------------------------
+------------------------------------------------------------------------
 
+En el curso vamos a utilizar **2 programas:** **`R`** y **`RStudio`**, así que tenéis que instalarlos en vuestro ordenador. Además de R y RStudio usaremos algunos paquetes.
 
-En el curso vamos a utilizar **2 programas: R y RStudio**, así que tenéis que instalarlos en vuestro ordenador. Además de R y RStudio usaremos algunos paquetes. Hablaré de los paquetes más adelante.
+Voy a dividir la instalación en 2 partes:
 
-Primero instalaremos R, luego RStudio y por último los paquetes.
+-   En la **primera parte** instalaremos primero R y después RStudio.
 
-
-## 1. R y RStudio
-
-Es importante **entender la diferencia entre R y RStudio**: R es un entorno/programa para hacer análisis estadísticos y también es un lenguaje de programación; mientras que RStudio es un programa que sirve para poder usar R de manera más cómoda y eficiente.
-
-Para entender la diferencia entre ellos es útil esta analogía: si fueran un coche, R sería el motor y RStudio sería el volante y los pedales; es decir, R es el motor que hará los cálculos que le ordenemos a través de RStudio. Desde RStudio le enviaremos nuestras ordenes a R.
-
-
-## 1.1 Instrucciones de instalación
-
-Primero tienes que instalar R y después RStudio. Lo normal es dejar todas las opciones de instalación por defecto, vamos, no cambiar nada. Lógicamente es mejor instalarse las ultimas versiones. Ahora mismo la última versión de R es la 4.1.1, y la última versión de RStudio es la 1.4.1717.
-
+-   En la **segunda parte** instalaremos algunos paquetes y chequearemos que todo funciona.
 
 <br>
 
-### **Instalación de R**
+------------------------------------------------------------------------
 
-Para instalar R sólo has de descargar, como con cualquier programa, el fichero de instalación: 
+<br>
 
-  - si tu sistema operativo es Windows ve a:  <https://cran.r-project.org/bin/windows/base/R-4.1.1-win.exe>
-   
-  - si tienes un Mac ve a:   <https://cran.r-project.org/bin/macosx/base/R-4.1.1.pkg>
+## 1. Primera parte 
 
-Una vez descargado el fichero, **instala R en tu ordenador**.  
-  
-    
+En esta primera parte **instalaremos R y RStudio**. Es importante **entender la diferencia entre R y RStudio**: R es un entorno/programa para hacer análisis estadísticos y también es un lenguaje de programación; mientras que RStudio es un programa que sirve para poder usar R de manera más cómoda y eficiente.
+
+Para entender la diferencia entre ellos es útil esta analogía: si fueran un coche, R sería el motor y RStudio sería el volante y los pedales; es decir, R es el motor que hará los cálculos que le ordenemos a través de RStudio. Desde RStudio le enviaremos nuestras ordenes a R.
+
+Primero tienes que instalar R y después RStudio. Lo normal es **dejar todas las opciones de instalación por defecto**, vamos, no cambiar nada.
+
+Lógicamente es mejor instalarse las ultimas versiones. Ahora mismo la **última versión de R es la 4.2.0**, y la última versión de RStudio es la 2022.02.2-485.
+
+<br>
+
+### 1.1 **Instalación de R**
+
+Para instalar R sólo has de descargar, como con cualquier programa, el fichero de instalación:
+
+-   si tu sistema operativo es Windows ve a: <https://cran.r-project.org/bin/windows/base/R-4.2.0-win.exe>
+
+-   si tienes un Mac ve a: <https://cran.r-project.org/bin/macosx/base/R-4.2.0.pkg>
+
+Una vez descargado el fichero, **instala R en tu ordenador**.
+
 Sólo hay que descargar un fichero e instalarlo, pero si prefieres ver un vídeo de 1:30, puedes hacerlo [aquí](https://jjallaire.shinyapps.io/learnr-tutorial-00-setup/#section-install-r)
 
 <br>
 
-### **Instalación de RStudio**
+### 1.2 **Instalación de RStudio**
 
 Para instalar RStudio sólo has de descargar el fichero de instalación:
 
-  - si tu sistema operativo es Windows ve a: <https://download1.rstudio.org/desktop/windows/RStudio-1.4.1717.exe>
-   
-  - si tienes un Mac ve a   <https://download1.rstudio.org/desktop/macos/RStudio-1.4.1717.dmg>
+-   si tu sistema operativo es Windows ve a: <https://download1.rstudio.org/desktop/windows/RStudio-2022.02.2-485.exe>
 
-Una vez descargado el fichero, **instala RStudio en tu ordenador**.  
-  
+-   si tienes un Mac ve a: <https://download1.rstudio.org/desktop/macos/RStudio-2022.02.2-485.dmg>
 
-  Sólo hay que descargar un fichero e instalarlo, pero si prefieres ver un vídeo de 0:51, puedes hacerlo [aquí](https://jjallaire.shinyapps.io/learnr-tutorial-00-setup/#section-install-rstudio)
+Una vez descargado el fichero, **instala RStudio en tu ordenador**.
 
+Sólo hay que descargar un fichero e instalarlo, pero si prefieres ver un vídeo de 0:51, puedes hacerlo [aquí](https://jjallaire.shinyapps.io/learnr-tutorial-00-setup/#section-install-rstudio)
 
 <br>
 
-## 2. Paquetes
-
-Bueno, si todo ha ido bien ya tienes instalado R y RStudio en tu ordenador. Bien!!
-Con R y RStudio se pueden hacer análisis estadísticos completos e implementar muchas técnicas y modelos estadísticos, PERO podemos aumentar las funcionalidades de R si instalamos paquetes adicionales. Durante el curso usaremos y probaremos muchos paquetes y lógicamente antes tendremos que instalarlos.
-
-Si R y RStudio fuesen un teléfono móvil, los paquetes serían las aplicaciones que instalamos en el móvil. R y RStudio pueden hacer muchas cosas sin instalar paquetes adicionales pero si instalamos paquetes aumentan sus funcionalidades. 
-
-Al igual que para usar las aplicaciones de un móvil primero hay que instalarlas y luego abrirlas, para usar los paquetes de R primero hay que instalarlos con `install.packages("nombre-del-paquete")` y después, cada vez que los necesitemos para hacer un análisis hay que "abrirlos" con `library("nombre-del-paquete")`.
+------------------------------------------------------------------------
 
 <br>
 
-#### **Instalación de paquetes** 
+## 2. Segunda parte 
 
-  - Obviamente los paquetes los has de instalar después de haber hecho los 2 pasos anteriores; es decir, después de haber instalado primero R y luego RStudio. Son bastantes paquetes, así que tardará un ratito, entre 10 y 15 minutos, según la potencia de tu ordenador y red. Tardará un rato, pero mientras se instala puedes seguir trabajando en tu ordenador.
+Bueno, si todo ha ido bien ya tienes instalado R y RStudio en tu ordenador. Bien!! Ahora instalaremos algunos paquetes y chequearemos que todo funciona.
 
-  - Para instalar los paquetes que usaremos en el curso tienes que pinchar [aquí](https://perezp44.github.io/intro-ds-21-22-web/mas-recursos/02_paquetes-a-instalar.R) o  y se te abrirá una ventana diciendo que se va a abrir un fichero con `RStudio`. Acepta. Se abrirá RStudio y el fichero, entonces, pincha con el botón derecho del ratón y se abrirá un  menú contextual. Selecciona la opción **"Select All"**.
+Con R y RStudio se pueden hacer análisis estadísticos completos e implementar muchas técnicas y modelos estadísticos, PERO **podemos aumentar las funcionalidades de R si instalamos paquetes adicionales**. Durante el curso usaremos y probaremos muchos paquetes y lógicamente antes tendremos que instalarlos.
 
+Si R y RStudio fuesen un teléfono móvil, los paquetes serían las aplicaciones que instalamos en el móvil: R y RStudio pueden hacer muchas cosas sin instalar paquetes adicionales pero si instalamos paquetes aumentan sus funcionalidades.
 
-```{r echo = FALSE, comment = "",  out.width = '75%', fig.align = 'center', fig.cap = "Pincha en Select All"}
+Al igual que para usar las aplicaciones de un móvil, primero hay que instalarlas y luego abrirlas, para usar los paquetes de R primero hay que instalarlos con `install.packages("nombre-del-paquete")` y después, cada vez que los necesitemos para hacer un análisis hay que "abrirlos" con `library("nombre-del-paquete")`. Lo veremos en clase.
+
+<br>
+
+### 2.1 **Instalación de paquetes**
+
+-   Obviamente los paquetes los has de instalar después de haber hecho los 2 pasos anteriores; es decir, después de haber instalado primero R y luego RStudio. Tardará un rato, pero mientras se instala puedes seguir trabajando en tu ordenador.
+
+-   Para instalar los paquetes que usaremos en el curso tienes que pinchar [aquí](https://perezp44.github.io/intro-ds-22-23-web/mas-recursos/02_paquetes-a-instalar.R). Pueden pasar 2 cosas:
+
+    1)  que se abra una ventana diciendo que se va a abrir un fichero en `RStudio`, en ese caso Acepta.
+
+    2)  que se te descargue un fichero llamado `pkgs_a_instalar_sfpie_2022.R`; en ese caso, localiza el fichero en tu ordenador y pinchando 2 veces en él se abrirá en `RStudio`.
+
+-   En cualquiera de los 2 casos acabarás teniendo un fichero abierto dentro del programa RStudio. Perfecto. Ahora tienes que pinchar con el botón derecho del ratón y se abrirá un menú contextual. Selecciona la opción **"Select All"**.
+
+```{r echo = FALSE, comment = "",  out.width = '75%', fig.align = 'center'}
 knitr::include_graphics(here::here("imagenes", "00-instrucciones_01.png"))
 ```
 
-  - Una vez seleccionado todo el texto con "Select All", sólo tienes que pinchar en el icono **"Run"**. Abajo tienes una imagen para ver donde está el icono.
+-   Una vez seleccionado todo el texto con "Select All", sólo tienes que pinchar en el icono **"Run"**. Abajo tienes una imagen para ver donde está el icono.
 
-```{r echo = FALSE, comment = "",  out.width = '55%', fig.align='center', fig.cap = "Pincha en Run"}
+```{r echo = FALSE, comment = "",  out.width = '55%', fig.align='center'}
 knitr::include_graphics(here::here("imagenes", "00-instrucciones_02.png"))
 ```
 
+<br>
 
--------------------
+-   Cuando hayas pinchado en **"Run"** la instalación de paquetes se iniciará. tardará un ratito. No demasiado, ¿unos 10-15 minutos? No cierres Rstudio durante este proceso. Puedes trabajar en otros programas de tu ordenador.
 
-Suerte con la instalación!! Seguro que lo has hecho bien!!
+------------------------------------------------------------------------
 
-<br><br>
+Suerte con la instalación!! Seguro que lo has hecho bien, pero si por lo que sea no se te han instalado los paquetes no te preocupes lo veremos en clase.
 
-------------------------
+<br>
 
-## 3. Comprobación
+------------------------------------------------------------------------
 
-De todas formas, para **comprobar que todo está correcto**, haz lo siguiente:
+<br>
 
-- primero cierra RStudio,  
+### 2.2 Comprobación
 
-- luego pincha [aquí](https://perezp44.github.io/intro-ds-21-22-web/mas-recursos/03_comprobar-instalacion.Rmd){target="_blank"}. Se abrirá una ventana diciendo que se va a abrir RStudio. Acepta. Se abrirá RStudio y un archivo. Tienes que pinchar en el icono que hay arriba: es azul i pone Knitr, abajo puede ver una foto del icono. No se verá exactamente igual, pero pincha en ese icono.
+De todas formas, para aquellos que hayan podido instalar los paquetes, pueden hacer lo siguiente para **comprobar que todo está correcto**:
 
+-   primero cierra RStudio,
+
+-   luego pincha [aquí](https://perezp44.github.io/intro-ds-22-23-web/mas-recursos/03_comprobar-instalacion.Rmd){target="_blank"}.
+
+-   Como antes, pueden pasar 2 cosas:
+
+    1)  que se abra una ventana diciendo que se va a abrir un fichero en `RStudio`, en ese caso Acepta.
+
+    2)  que se te descargue un fichero llamado `03_comprobar-instalacion.Rmd`; en ese caso, localiza el fichero en tu ordenador y pinchando 2 veces en él se abrirá en `RStudio`.
+
+-   En cualquiera de los 2 casos acabarás con un fichero abierto en RStudio. Ahora lo que tienes que hacer pinchar en el icono que hay arriba: es un icono azul y pone **"Knitr"**. Abajo puedes ver una imagen donde se ve el icono al que me refiero. No se verá exactamente igual, pero pincha en ese icono.
 
 ```{r, echo = FALSE}
 knitr::include_graphics(here::here("imagenes", "tt_02_img_10_Rmd-4.png") ) 
 ```
 
--------------------
+<br>
+
+------------------------------------------------------------------------
 
 <br>
 
-## 4. Más cosas
+### 2.3 Más cosas
 
+Esta parte no hace falta que la hagáis, salvo que os animéis. 😃️
 
+PD1: Como nos cuentan [aquí](https://rstats.wtf/set-up-an-r-dev-environment.html), a veces tendremos que instalar paquetes "from source". Para poder hacerlo tendremos que tener en nuestro ordenador las herramientas necesarias. Para ver si tu entorno está preparado para ello ejecuta en RStudio la siguiente instrucción: `devtools::has_devel()` y R nos mostrará en un mensaje si nuestro sistema "is ready to build packages". Igual aún no sabes hacerlo, ya lo veremos en clase. Para dejar totalmente preparado tu ordenador tendrías que:
 
-PD1: Como nos cuentan [aquí](https://rstats.wtf/set-up-an-r-dev-environment.html), a veces tendremos que instalar paquetes "from source". Para poder hacerlo tendremos que tener en nuestro ordenador las herramientas necesarias. Para ver si tu entorno está preparado para ello ejecuta en RStudio la siguiente instrucción: `devtools::has_devel()` y R nos mostrará en un mensaje si nuestro sistema "is ready to build packages". Igual aún no sabes hacerlo, ya lo veremos en clase.
-Si tú sistema operativo es Windows, tendrás que tener instalado [`Rtools`](https://cran.r-project.org/bin/windows/Rtools/). Si tienes un Mac, tendrás que instalar the Xcode Command Line Tools. Lo normal es que lo tengas ya instalado, si no fuese el caso, [aquí](https://whattheyforgot.org/set-up-an-r-dev-environment.html#fnref1) te explican como hacerlo.
+-   Si tú sistema operativo es Windows, tendrás que tener instalado [`Rtools`](https://cran.r-project.org/bin/windows/Rtools/). [Aquí](https://cran.r-project.org/bin/windows/Rtools/rtools42/files/rtools42-5168-5107.exe) puedes descargar la versión de Rtools adecuada para R 4.2, que es la versión que utilizaremos en el curso.
+
+-   Si tienes un Mac, tendrás que instalar the Xcode Command Line Tools. Lo normal es que lo tengas ya instalado, si no fuese el caso, [aquí](https://whattheyforgot.org/set-up-an-r-dev-environment.html#fnref1) te explican como hacerlo.
 
 <br>
 
@@ -146,6 +175,11 @@ PD3: Si usas Linux, el proceso de instalación dependerá de la distribución co
 
 PD4: [Aquí](https://www.jimhester.com/post/2020-08-20-best-os-for-r/) tienes un post con ventajas y dsventajas de los 3 principales sistemas operativos cuando usas R. No hace falta que lo leas.
 
+<br>
+
+PD5: [Aquí](https://developer.r-project.org/Blog/public/2021/12/07/upcoming-changes-in-r-4.2-on-windows/) anuncian cambios para R 4.2 en Windows
+
 <br><br><br>
 
-<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
+::: {.tocify-extend-page data-unique="tocify-extend-page" style="height: 0;"}
+:::

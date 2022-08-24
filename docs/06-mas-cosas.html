@@ -399,7 +399,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Programación y manejo datos con R (2021-22)</a>
+      <a class="navbar-brand" href="index.html">Programación y manejo datos con R (2022-23)</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -433,11 +433,7 @@ div.tocify {
   </a>
 </li>
 <li>
-  <a href="04-tutoriales.html">
-    <span class="fa fa-book"></span>
-     
-    Tutoriales
-  </a>
+  <a href="04-tutoriales.html">Tutoriales</a>
 </li>
 <li>
   <a href="05-slides.html">Slides</a>
@@ -449,12 +445,28 @@ div.tocify {
     MáS
   </a>
 </li>
-<li>
-  <a href="07-trabajos.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-user-graduate"></span>
      
     Trabajos
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="07-trabajos_2022-23.html">Curso 2022-23</a>
+    </li>
+    <li>
+      <a href="07-trabajos_2021-22.html">Curso 2021-22</a>
+    </li>
+    <li>
+      <a href="07-trabajos_2020-21.html">Curso 2020-21</a>
+    </li>
+    <li>
+      <a href="07-trabajos_2019-20.html">Curso 2019-20</a>
+    </li>
+  </ul>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -481,19 +493,19 @@ div.tocify {
 <h3><strong>Guiones de clase</strong></h3>
 <hr />
 <p>En cada sesión/clase vamos a usar un Rproject con ejemplos y alguna
-cosa más: son los <strong>guiones de clase</strong></p>
-<p>Para descargaros el Rproject con el guión de cada sesión tienes que
-ejecutar en RStudio las siguientes instrucciones:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>file_to_download <span class="ot">&lt;-</span> <span class="st">&quot;curso_R_2022.zip&quot;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;https://github.com/perezp44/intro-ds-21-22-web/raw/master/guiones-de-clase/&quot;</span>, file_to_download)</span>
+cosa más, son los <strong>guiones de clase</strong>. La mayoría de
+ejemplos/casos que trabajaremos durante el curso estarán alojados en los
+guiones de clase, otros provendrán de los propios tutoriales o
+slides.</p>
+<p>Para descargaros el Rproject con el guión (o materiales) de cada
+sesión tienes que ejecutar en RStudio las siguientes instrucciones:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>file_to_download <span class="ot">&lt;-</span> <span class="st">&quot;clase_01.zip&quot;</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;https://github.com/perezp44/intro-ds-22-23-web/raw/master/guiones-de-clase/&quot;</span>, file_to_download)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="at">destfile =</span> file_to_download)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(<span class="at">zipfile =</span> file_to_download)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">file.remove</span>(file_to_download)</span></code></pre></div>
 <p>No hace falta que lo hagas ahora, mejor si te esperas al primer día
 de clase, os lo explico un poco más y lo hacemos todos juntos.</p>
-<p>La mayoría de ejemplos/casos que trabajaremos durante el curso
-estarán alojados en los guiones de clase, otros provendrán de los
-propios tutoriales o slides.</p>
 <p><br></p>
 </div>
 <div id="entrega-de-las-tareas" class="section level3">
@@ -510,17 +522,22 @@ continua</a></li>
 </ul>
 <p><br></p>
 </div>
+<div id="guía-de-instalación" class="section level3">
+<h3><strong>Guía de Instalación</strong></h3>
+<hr />
+<ul>
+<li><a href="./mas-recursos/01_instrucciones-instalacion.html"
+target="_blank">Guía de Instalación de R y RStudio</a></li>
+</ul>
+<p><br></p>
+</div>
 <div id="otros-recursos" class="section level3">
 <h3><strong>Otros recursos</strong></h3>
 <hr />
 <ul>
-<li><p><a href="./mas-recursos/01_instrucciones-instalacion.html"
-target="_blank">Guía de Instalación de R y RStudio</a></p></li>
-<li><p><a href="./mas-recursos/pkgs_a_instalar_sfpie_2022.R">Listado de
-paquetes a instalar</a></p></li>
-<li><p><a href="./mas-recursos/05_bajar-google-drive.html"
+<li><a href="./mas-recursos/05_bajar-google-drive.html"
 target="_blank">Descargar ficheros de Google Drive</a>. Este fichero es
-solo para mi. Para usarlo en el aula.</p></li>
+solo para mi. Para usarlo en el aula.</li>
 </ul>
 <p><br><br></p>
 <div class="tocify-extend-page" data-unique="tocify-extend-page"
@@ -531,7 +548,7 @@ style="height: 0;">
 
 <footer class="footer">
   
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.  <div class="text-muted"><strong> Web</strong> creada por Pedro J. Pérez. &copy;  2021. If you find any bug please report them to <a href="mailto:pedro.j.perez@uv.es"> pedro.j.perez@uv.es</a>.</div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.  <div class="text-muted"><strong> Web</strong> creada por Pedro J. Pérez. &copy;  2022. If you find any bug please report them to <a href="mailto:pedro.j.perez@uv.es"> pedro.j.perez@uv.es</a>.</div>
   
 </footer>
 
