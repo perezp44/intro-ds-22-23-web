@@ -41,6 +41,8 @@ Iré actualizando este apartado conforme pasen las semanas. Intentaré ajustar y
 
 ##### **`Homework`** (para hacer antes de ir a clase) 
 
+- Lo primero que has de hacer es leer el mail que os he mandado. En él os hablo de un cuestionario. No te olvides de contestarlo antes del martes 13 de septiembre a las 23:59.
+
 - Lee la sección  [`Guía del curso`](01-guia-del-curso.html) de la página web del curso.
   
 - Prepara tu ordenador; es decir, instálate R, RStudio y los paquetes. [Aquí](./mas-recursos/01_instrucciones-instalacion.html){target="_blank"} tienes una guía para la instalación. Si tienes algún problema con la instalación contacta conmigo por email.
