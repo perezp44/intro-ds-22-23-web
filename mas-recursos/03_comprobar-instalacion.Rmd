@@ -1,7 +1,5 @@
 ---
 title: "Comprobación Instalación"
-author: "Tú y Programación y manejo de datos ...."
-date: "`r Sys.Date()`"  
 output: html_document
 ---
 

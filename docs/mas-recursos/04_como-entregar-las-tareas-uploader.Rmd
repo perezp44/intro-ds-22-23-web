@@ -1,7 +1,8 @@
 ---
 title: "Entrega de los trabajos que formen parte de la evaluación continua"
 author: "Pedro J. Pérez"
-date: "`r Sys.Date()`"  
+#date: "`r Sys.Date()`"
+date: "1 de septiembre, 2022"
 output:
   html_document: 
     css: assets/styles_pjp.css
@@ -24,13 +25,13 @@ Como sabéis, a lo largo del curso os mandaré tareas que formarán parte de la 
 
 ### 1. ¿Cómo entregar las tareas?
 
-Los ejercicios/tareas que hagamos **en clase o en casa** y que formen parte de la **evaluación continua** se entregarán a través de un `uploader`. Os lo explicaré el primer día de clase pero, únicamente tendréis que depositar el archivo con vuestra entrega en una dirección web que anunciaré por mail.
+Los ejercicios/tareas que hagamos **en clase o en casa** y que formen parte de la **evaluación continua** se entregarán a través de un `uploader`. Os lo explicaré el primer día de clase pero, únicamente **tendréis que depositar el archivo con vuestra entrega en una dirección web que anunciaré por mail**.
 
 <br>
 
 ### 2. ¿Cuantos archivos hay que entregar?
 
-Generalmente trabajamos con R a través de Rprojects. Los Rprojects se componen de varios archivos, pero cuando me entregues la tarea, habrás de subir al uploader solo **un único archivo**. Repito siempre tendrás que entregar un único archivo.
+Generalmente trabajamos con R a través de Rprojects. Los Rprojects se componen de varios archivos, pero cuando me entregues la tarea, habrás de subir al uploader solo **un único archivo**. Repito siempre **tendrás que entregar un único archivo**.
 
 <br>
 
@@ -88,11 +89,11 @@ Los nombres de los ficheros no son sólo una manía, **SON IMPORTANTES!!!** y es
 
 <br>
 
-### 5. Fecha límite de entrega
+### 4. Fecha límite de entrega
 
 Evidentemente, las tareas hay que entregarlas antes de su **fecha límite de entrega**. Las fechas límites de entrega serán, si no se anuncia expresamente otra cosa, los **jueves a las 23:59**.
 
-Ya sabes que la entrega se hace depositando tu fichero en un `uploader`. Os enviaré por mail los jueves por la tarde la dirección web del uploader.^[Lo siento, pero seguramente no podré enviarlo antes, pero piensa que solo es arrastar ysubir un fichero a una dirección web.]
+Ya sabes que la entrega se hace depositando tu fichero en un `uploader`. Os enviaré por mail los jueves por la tarde la dirección web del uploader.^[Lo siento, pero seguramente no podré enviarlo antes, pero piensa que solo es arrastar y subir un fichero a una dirección web.]
 
 
 
