@@ -1,4 +1,5 @@
 #- paquetes de R a instalar ----------------------------
+#- el repositorio oficial de paquetes de R se llama CRAN
 #- la forma típica  de instalar paquetes de CRAN es:
 install.packages("remotes") 
 install.packages("devtools")
@@ -15,7 +16,7 @@ install.packages("janitor")
 
 
 #- tb se puede poner un vector de pkgs en install.packages()
-install.packages(c("ggthemes", "jtools", "tidyverse")) 
+install.packages(c("ggthemes", "jtools", "tidyverse", "gt")) 
 install.packages(c("corrplot", "essurvey", "sjlabelled", "sjPlot", "skimr", "summarytools", "visdat"))
 install.packages(c("rprojroot", "huxtable"))
 install.packages(c("plotly", "spotifyr", "tidytext", "tm", "wordcloud2"))
@@ -24,11 +25,11 @@ install.packages(c("cowplot", "tabulizer"))
 install.packages(c("apaTables", "formattable", "kableExtra", "modelsummary", "rpivotTable", "stargazer", "xlsx"))
 
 
-#- si un paquete no está en CRAN, hay que hacer:
+#- si queremos instalar un paquete de Github
+#- Github es otro repositorio de paquetes de R
 remotes::install_github("perezp44/pjpv2020.01")
-devtools::install_github("perezp44/pjpv.curso.R.2022")
+remotes::install_github("perezp44/pjpv.curso.R.2022")
 remotes::install_github("sctyner/memer")
-remotes::install_github("rstudio/gt")
 
 #- Además hay paquetes como pacman, o librarian o pak que facilitan el instalar paquetes
 #- PERO los usaremos más adelante

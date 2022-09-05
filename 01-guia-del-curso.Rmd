@@ -21,7 +21,7 @@ output:
 
 
 <div class = "blue">
-**Guía del curso**: en esta sección os cuento un poco de la filosofía/enfoque del curso; principalmente cómo será la forma de trabajar en clase y en casa^[Tenéis también que tener claro que lo que voy a escribir aquí puede estar sujeto a cambios, ¿qué porqué pueden haber cambios? pues por muchas razones, una de ellas es evolución de la pandemia, otra es que aún no os conozco.]. También diré algo sobre la evaluación. 
+**Guía del curso**: en esta sección os cuento un poco de la filosofía/enfoque del curso; principalmente cómo será la forma de trabajar en clase y en casa. También diré algo sobre la evaluación. 
 </div>
 
 
@@ -188,7 +188,7 @@ No lo sé, pero casí seguro que no. El curso tiene **15 sesiones de 4 horas** (
 
 Pues no lo sé, depende, pero cada vez es más frecuente que las empresas intenten hacer sus análisis y gestión de datos con R. El año pasado al menos dos estudiantes, que yo sepa, utilizaron R en las empresas en las que estaban haciendo sus prácticas curriculares y otros dos ahora mismo estarán cursando un máster de Análisis de Datos, así que seguro que ahora están usando R.
 
-Pasado año y medio de la finalización de cada cuirso académico mandó un mail a los estudiantes preguntándoles si les ha sido de utilidad lo aprendido durante el curso. Suelen contestar al mail el 50% de los estudiantes y de sus respuestas puedo, más o menos inferir, que al menos a un 20% de los estudiantes les ha resultado útil ya sea en la elaboración del TFG, en las practicas de empresas, en futuros estudios o en labores profesionales.
+Pasado año y medio de la finalización de cada curso académico mando un mail a los estudiantes preguntándoles si les ha sido de utilidad lo aprendido durante el curso. Suelen contestar al mail el 50% de los estudiantes y de sus respuestas puedo, más o menos inferir, que al menos a un 20% de los estudiantes les ha resultado útil ya sea en la elaboración del TFG, en las practicas de empresas, en futuros estudios o en labores profesionales.
 
 
 <br><br>
