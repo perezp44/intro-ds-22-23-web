@@ -1,6 +1,6 @@
 ---
 title: "Prefacio"
-author: "Pedro J. Pérez (pedro.j.perez@uv.es). Universitat de València <br> <br> Web del curso: <https://perezp44.github.io/intro-ds-20-21-web/>"
+author: "Pedro J. Pérez (pedro.j.perez@uv.es). Universitat de València <br> <br> Web del curso: <https://perezp44.github.io/intro-ds-22-23-web/>"
 date: "Septiembre de 2019 (actualizado el `r format(Sys.time(), '%d-%m-%Y')`)"
 output:
   html_document:
@@ -65,7 +65,7 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 Este libro sirve de acompañamiento al curso “Programación y manejo de datos en la era del Big Data” que se empezó a impartir el curso 2019-2020 en el Grado de Economía de la Universitat de València. ^[También son ganas a estas alturas de ponerse a escribir un libro cuando el gurú de las tecnología y la innovación Enrique Dans dice [aquí](
 https://www.enriquedans.com/2019/02/el-obsoleto-y-danino-libro-de-texto.html) y [aquí](https://www.enriquedans.com/2019/08/el-proximo-gran-error-en-educacion.html) que los libros no sólo se han quedado obsoletos, sino que pueden ser dañinos en el proceso de aprendizaje. En mi descargo decir que técnicamente esto que ves en realidad no es un libro, es una pagina web con formato libro, y llena de referencias y materiales. Además, el título del curso incorpora " ... en la era del ...", algo que es criticado [aquí](https://books.google.es/books/about/La_era_de_Casandra.html?id=4fEhEAAAQBAJ&printsec=frontcover&source=kp_read_button&redir_esc=y#v=onepage&q&f=false). Otra vez en mi descargo decir que su función es meramente retorica, vamos, para llamar un poco la atención]
 
-Está edición es para el curso 2021-22. Se escribe, otra vez, con un poco con prisa, así que veremos como sale!! En esta primera frase ya he querido dejar claro cual será el estilo del libro: se sacrificará el estilo, e incluso a veces la corrección ortográfica para conseguir más claridad. 
+Está edición es para el curso 2022-23. Se escribe, otra vez, con un poco con prisa, así que veremos como sale!! En esta primera frase ya he querido dejar claro cual será el estilo del libro: se sacrificará el estilo, e incluso a veces la corrección ortográfica para conseguir más claridad. 
 
 
 Llama la atención el título del curso. Es un título muy largo, poco estándar, vamos, un poco raro. El curso en realidad debería llamarse “Una introducción a la Ciencia de Datos para Economía” pero preferí que en el título apareciese en primer lugar la palabra "programación". La razón es que quiero que los estudiantes que se matriculen sepan que vamos a pasar buena parte del curso dándole ordenes al ordenador por escrito; es decir, programando. 
@@ -154,3 +154,4 @@ Los cuatro primeros temas constituyen la parte fundamental de la asignatura que 
 
 - Tema 5: Otros tipos de datos  
 
+<br><br>

@@ -1,6 +1,6 @@
 ---
 title: "Documentos reproducibles con **Rmarkdown**"
-author: "Pedro J. Pérez (pedro.j.perez@uv.es). Universitat de València <br> <br> Web del curso: <https://perezp44.github.io/intro-ds-21-22-web/>"
+author: "Pedro J. Pérez (pedro.j.perez@uv.es). Universitat de València <br> <br> Web del curso: <https://perezp44.github.io/intro-ds-22-23-web/>"
 date: "Noviembre de 2017 (actualizado el `r format(Sys.time(), '%d-%m-%Y')`)"
 output:
   html_document:
@@ -619,13 +619,16 @@ klippy::klippy()  #- remotes::install_github("rlesur/klippy")
 
 ## Aún más cosas (III)
 
-- Puedes cambiar algunos aspectos de tu documento html. Puedes verlo [aquí](https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style.)
+- Con CSS se puede personalizar completamente el aspecto de los documentos html que se generan con Rmarkdown. Aunque no sepas CSS tienes una gran variedad de formatos predefinidos. Puedes ver un listado [aquí](https://www.datadreaming.org/post/r-markdown-theme-gallery/),  [aquí](https://github.com/gadenbuie/cleanrmd) o [aquí](https://github.com/juba/rmdformats). 
 
-- Con CSS se puede personalizar completamente el aspecto de los documentos html que se generan con Rmarkdown. Aunque no sepas CSS tienes una gran variedad de formatos predefinidos. Puedes ver un listado [aquí](https://www.datadreaming.org/post/r-markdown-theme-gallery/),  [aquí](https://github.com/gadenbuie/cleanrmd)o [aquí](https://github.com/juba/rmdformats).
+- Incorporando algunas opciones al YAML, se pueden cambiar algunos aspectos de tu documento html. Puedes verlo [aquí](https://bookdown.org/yihui/rmarkdown/html-document.html#appearance-and-style.)
 
 - El paquete [bslib](https://rstudio.github.io/bslib/) facilita el tuneado de los html.
 
-- El paquete [thematic](https://rstudio.github.io/thematic/) puede hacer que los gráficos reflejen el theme de RStudio que estas usando: sólo hay que hacer `thematic_on()`
+- El paquete [thematic](https://rstudio.github.io/thematic/) puede hacer que los gráficos reflejen el theme de RStudio que estas usando: sólo hay que hacer `thematic_on()`.
+
+- Se pueden hacer tabs si despues de un título pones `{.tabset .tabset-fade .tabset-pills}`
+
 
 - El paquete [checkdown](https://agricolamz.github.io/checkdown/) permite crear campos y casillas de verificación. Por ejemplo: 
 
@@ -638,7 +641,11 @@ klippy::klippy()  #- remotes::install_github("rlesur/klippy")
 checkdown::check_question(answer =  9, right = "Acertaste!!!", wrong = "no way")
 ```
 
-- Puedes incluir páginas web con `knitr::include_url()` , shiny's con `knitr::include_app ()`  e imágenes con `knitr::include_graphics()` 
+<br>
+
+- Puedes incluir páginas web con `knitr::include_url()` , shiny's con `knitr::include_app()`  e imágenes con `knitr::include_graphics()` 
+
+- Se pueden incluir vídeos con `vembedr::embed_url()`
 
 
 - El paquete [fontawesome](https://github.com/rstudio/fontawesome) permite incluir iconos de [**Font Awesome**](https://fontawesome.com/) en documentos RMarkdown. Por ejemplo con `` ` fontawesome::fa("r-project", fill = "steelblue")` ``   podemos insertar el icono de `r fontawesome::fa("r-project", fill = "steelblue")` 

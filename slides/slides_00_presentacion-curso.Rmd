@@ -2,7 +2,7 @@
 title: "Presentación <br>"
 subtitle: "Programación y manejo de datos en la era del Big Data<br><br>"
 author: "Pedro J. Pérez     [pedro.j.perez@uv.es]"
-date: "2021"
+date: "Septiembre, 2022"
 output: ioslides_presentation
 ---
 
@@ -16,22 +16,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
 
-
-## ¿Qué haremos hoy? {.build}
-
-- Hablar un poco de **nosotros** y del curso.
-
-- Hablar un poco más del **curso**: Objetivo, contenidos y estructura
-
---
-
-- Primeras ideas del **Tema 1**.
-
-- **Instalación** de R, RStudio y paquetes.
-
-- Primeros **ejemplos**.
-
-- **Worflow** y más ejemplos.
 
 # 1. Tenemos que conocernos
 
@@ -73,7 +57,7 @@ En realidad, ya me habéis contestado a estas preguntas en el cuestionario previ
 
 > - ... aunque debería ser algo como "Introducción a la ciencia de datos".
 
-> - o más extenso:   "Introducción a la ciencia de datos con R para economistas"
+> - o más extenso:   **Introducción a la ciencia de datos con R para economistas**
 
 > - ¿Os hubieseis apuntado con el segundo título?
 
@@ -96,7 +80,7 @@ En realidad, ya me habéis contestado a estas preguntas en el cuestionario previ
 
 > - Asignatura **optativa**. Cuarto curso del Grado de Economía.
 
-> - El título del curso es "Programación y Manejo de datos en la era del Big Data", pero ... debería llamarse **"Introducción a la Ciencia de datos con R"**.
+> - El título del curso es "Programación y Manejo de datos en la era del Big Data", pero ... debería llamarse **Introducción a la Ciencia de datos con "**.
 
 > - **Objetivo general:** iniciaros en la **Ciencia de Datos**. 
 
@@ -136,15 +120,19 @@ En realidad, ya me habéis contestado a estas preguntas en el cuestionario previ
 
 - **Mandaré tareas** para el viernes siguiente!!
 
-- Tutorías/Ayuda (pedro.j.perez@uv.es)
+- Tutorías/Ayuda (pedro.j.perez@uv.es), pero dudas puntuales sobre las tareas, mejor en [el Foro](https://github.com/perezp44/intro-ds-22-23-web-companion/discussions)
 
 
-## Bibliografía 
+- Es **necesario** tener un ordenador con R y RStudio instalados, tanto en casa con en el aula. 
+
+
+
+## Bibliografía (oficial)
 
 
 - Grolemund, G., Wickham, H. (2019): [R para Ciencia de Datos](https://es.r4ds.hadley.nz/) 
     
-- Grolemund, G., Wickham, H. (2016) [R for Data Science](https://es.r4ds.hadley.nz/)   
+- Grolemund, G., Wickham, H. (2016) [R for Data Science](https://es.r4ds.hadley.nz/). Mejor aún la [segunda edición](https://r4ds.hadley.nz/) aún en fase de escritura.
     
 - Peng, R. D. (2016): [Exploratory Data Analysis with R](https://bookdown.org/rdpeng/exdata/)   
     
@@ -154,34 +142,31 @@ En realidad, ya me habéis contestado a estas preguntas en el cuestionario previ
 
 ## Materiales {.smaller}
 
-Teneis toda la información en la [página web del curso](https://perezp44.github.io/intro-ds-21-22-web/)
+- Tenéis toda la información en la [página web del curso](https://perezp44.github.io/intro-ds-22-23-web/)
 
 <br>
 
-- **Materiales:** tutoriales, ejemplos y casos.
+- Usaremos **tutoriales**, slides, ejemplos y casos.
 
 <br>
 
-- Hay muchiiiisimos materiales **out there**.
+- Por supuesto, hay muchiiiiiiisimos materiales **out there**.
 
   - Cursos completos.
 
   - Bookdowns y similares.
 
-
   - MOOCs: [Data Science: R Basics](https://www.edx.org/es/course/data-science-r-basics-2), [A Crash Course in Data Science](https://www.coursera.org/learn/data-science-course), [The R Programming Environment](https://www.coursera.org/learn/r-programming-environment).
 
   - Blogs: [R-weekly](https://rweekly.org/), [R-bloggers](https://www.r-bloggers.com/)
   
-  - Igual nos apuntamos al proyecto [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday)
 
 
 
 ## Evaluación 
 
-- 40% evaluación continua, 60% examen.
 
-- **Evaluación continua**: 
+- **Evaluación continua** (40%): 
 
   - en el aula
   
@@ -194,9 +179,11 @@ Teneis toda la información en la [página web del curso](https://perezp44.githu
 <br>
 
 
-- **Examen final**: si es posible, en el aula con el ordenador.
+- **Examen final** (60%): si es posible, en el aula con el ordenador.
 
+<br>
 
+Los detalles podéis verlos en [Aula Virtual](https://aulavirtual.uv.es/course/view.php?id=46811)
 
 # Resumiendo ...
 
@@ -216,53 +203,24 @@ Teneis toda la información en la [página web del curso](https://perezp44.githu
 
 - Al final, se trata de que mejoréis vuestras habilidades prácticas para hacer análisis de datos.
 
-- Para "aprender" estas habilidades se han de practicar.
+- Para "aprender" estas habilidades se han de **practicar**.
 
-- El trabajo en clase y fuera de clase es muy importante!!
+- **El trabajo en clase y fuera de clase es muy importante!!**
 
 
 - Espero que aprendáis y que os guste ... en realidad, espero que NOS divirtamos!!
 
 
-# Infraestructura y materiales para el curso
+# Para comenzar el curso, hoy haremos: 
 
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
 
 
-## Infraestructura para el curso {.smaller}
-
-- Es necesario tener un ordenador con R y RStudio instalados, tanto en casa con en el aula. 
-
-<br>
-
-- Tenéis que crearos una cuenta en [Github](https://github.com/). Os servirá, entre otras cosas, para acceder a otros servicios que usaremos.  
-
-<br>
-
-- Durante el curso usaremos esta etherpad: <https://etherpad.wikimedia.org/p/curso_intro_DS_UV>
-
-<br>
 
 
-- Más detalles en la página web del curso: <https://perezp44.github.io/intro-ds-21-22-web/>
+## Para comenzar el curso, hoy haremos: 
 
-## Materiales para el curso {.smaller}
-
-- Utilizaremos libros y casos disponibles en internet.
-
-<br>
-
-- Aun así, he preparado un conjunto de **tutoriales**, **ejemplos** y **casos** que podrás descargar en varios sitios:
-
-
-  - Los tutoriales y las transparencias de clase se pueden acceder desde la web del curso.
-
-
-  - Los ejemplos y casos los puedes descargar en ....
-
-
-
-## Para comenzar el curso haremos: 
+> - Hacer un tour guiado por la [web del curso](https://perezp44.github.io/intro-ds-22-23-web/)
 
 > - Introducir las **principales ideas del Tema 1**: Big Data, Ciencia de datos, Machine Learning, Investigación reproducible, Software Libre, R ...
 
@@ -273,7 +231,7 @@ Teneis toda la información en la [página web del curso](https://perezp44.githu
 > - Hacer **varios ejemplos** para que os hagáis una idea más clara de lo que haremos durante buena parte del curso.
 
 
-> - Hablar de la **forma de trabajar** con R (ó workflow): scripts, Rprojects, .Rmd
+> - Hablar de la **forma de trabajar** con R (ó workflow): scripts, Rprojects, .Rmd ... y los nuevos .qmd
 
 # Pues vamos a comenzar el curso!!!
 

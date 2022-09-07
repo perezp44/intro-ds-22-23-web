@@ -1,6 +1,6 @@
 ---
 title: "Iniciación a R-base"
-author: "Pedro J. Pérez (pedro.j.perez@uv.es). Universitat de València <br> <br> Web del curso: <https://perezp44.github.io/intro-ds-21-22-web/>"
+author: "Pedro J. Pérez (pedro.j.perez@uv.es). Universitat de València <br> <br> Web del curso: <https://perezp44.github.io/intro-ds-22-23-web/>"
 date: "Agosto de 2019 (actualizado el `r format(Sys.time(), '%d-%m-%Y')`)"
 output:
   html_document:
@@ -2001,7 +2001,7 @@ function(x) x + 1
 2 |> (\(x) head(iris, x = n))()
 ```
 
-Aunque en [este tweet](https://twitter.com/matthiasgomolka/status/1404821668695007237) se dice que si puedes llevar el objeto de la izquierda aun argumento distinto del primero, si los anteriores argumentos tienen puesto el nombre, ya que "The pipe pipes into the first unnamed argument, I guess."
+Aunque en [este tweet](https://twitter.com/matthiasgomolka/status/1404821668695007237) se dice que si puedes llevar el objeto de la izquierda a un argumento distinto del primero, si los anteriores argumentos tienen puesto el nombre, ya que "The pipe pipes into the first unnamed argument, I guess."
 
 
 

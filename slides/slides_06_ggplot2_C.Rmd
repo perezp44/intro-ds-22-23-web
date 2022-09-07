@@ -106,7 +106,7 @@ class: inverse, center, middle
   
 #### e-mail: [pedro.j.perez@uv.es](mailto:pedro.j.perez@uv.es)
   
-#### Web del curso: [https://perezp44.github.io/intro-ds-20-21-web](https://perezp44.github.io/intro-ds-21-22-web)
+#### Web del curso: [https://perezp44.github.io/intro-ds-22-23-web](https://perezp44.github.io/intro-ds-22-23-web)
 
 ```{r echo = FALSE}
 xaringanExtra::style_share_again(share_buttons = c("twitter", "linkedin", "pocket") )

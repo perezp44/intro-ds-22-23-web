@@ -1,6 +1,6 @@
 ---
 title: "R, RStudio y forma de trabajar"
-author: "Pedro J. Pérez (pedro.j.perez@uv.es). Universitat de València <br> <br> Web del curso: <https://perezp44.github.io/intro-ds-21-22-web/>"
+author: "Pedro J. Pérez (pedro.j.perez@uv.es). Universitat de València <br> <br> Web del curso: <https://perezp44.github.io/intro-ds-22-23-web/>"
 date: "Septiembre de 2019 (actualizado el `r format(Sys.time(), '%d-%m-%Y')`)"
 output:
   html_document:
@@ -157,7 +157,7 @@ Al final, en mi ordenador, la ventana con las opciones de `R General` queda como
 knitr::include_graphics(here::here("imagenes", "tt_02_img_07_RStudio-opciones-2.png") ) 
 ```
 
-En tu ordenador debe quedar todo igual excepto la caja de texto. El texto de la caja le dice a RStudio donde se guardarán los archivos que vayamos generando; es decir, indica el directorio de trabajo por defecto.  Como mi sistema operaivo es Linux y habitualmente trabajo en el escritorio de mi PC, en la imagen de abajo pone "~/Escritorio", si mi sistema operativo fuese Windowns pondría algo como "C:/Users/perezp/Desktop". Te recomiendo trabajar sobre el escritorio o Desktop, pero puedes seleccionar la carpeta en la que más cómoda trabajes^[Siempre que esa carpeta no esté muy abajo en la lista de directorios para que la ruta hacía ese directorio no sea demasiado larga para Windows].
+En tu ordenador debe quedar todo igual excepto la caja de texto. El texto de la caja le dice a RStudio donde se guardarán los archivos que vayamos generando; es decir, indica el directorio de trabajo por defecto.  Como mi sistema operaivo es Linux y habitualmente trabajo en el escritorio de mi PC, en la imagen de abajo pone "~/Escritorio", si mi sistema operativo fuese Windows pondría algo como "C:/Users/perezp/Desktop". Te recomiendo trabajar sobre el escritorio o Desktop, pero puedes seleccionar la carpeta en la que más cómoda trabajes^[Siempre que esa carpeta no esté muy abajo en la lista de directorios para que la ruta hacía ese directorio no sea demasiado larga para Windows].
 
 
 
@@ -311,7 +311,7 @@ Como queremos que nuestros análisis sean reproducibles, habitualmente trabajare
 
 Vamos a mirar con un poco más de detalle **los 4 paneles de RStudio**. Como puedes ver en la imagen de abajo, generalmente, a la izquierda encontramos la consola y el editor de scripts. Ya sabemos que desde estos dos paneles podemos dar instrucciones a R para que las ejecute.
 
-Veamos un poco los 2 paneles de la derecha. Podemos pensar que son paneles auxiliares, nos ayudarán en determinadas tareas. Estos dos paneles de la derecha  tienen cada uno varias pestañas. Por ejemplo, el panel que está en la posición arriba-derecha tiene cuatro pestañas: `Environment` y 3 más^[Igual en vuestro ordenador tenéis más (o menos) pestañas, eso dependerá de la versión de RStudio que tengáis instalada. Yo ahora mismo tengo cuatro, pero igual la próxima versión de Rstudio puede tener 5 pestañas]. En seguida veremos que al interactuar con R iremos creando objetos (por ejemplo un vector o una matriz o una tabla de datos). Estos objetos estarán guardados en la memoria del ordenador pero los "veremos", aparecerán en la pestaña `Environment`. En la pestaña `History` tendremos un listado con las instrucciones de R que hayamos ejecutado previamente en nuestra actual sesión de R (por ejemplo `2 + 2`). Otro ejemplo: a veces en nuestro análisis con R haremos un gráfico o varios, podremos ver el gráfico en la pestaña `Plots` en el panel situado abajo-derecha.
+Veamos un poco los 2 paneles de la derecha. Podemos pensar que son paneles auxiliares, nos ayudarán en determinadas tareas. Estos dos paneles de la derecha  tienen cada uno varias pestañas. Por ejemplo, el panel que está en la posición arriba-derecha tiene cuatro pestañas: `Environment` y 3 más^[Igual en vuestro ordenador tenéis más (o menos) pestañas, eso dependerá de la versión de RStudio que tengáis instalada. Yo ahora mismo tengo cuatro, pero igual la próxima versión de Rstudio puede tener 5 pestañas]. Enseguida veremos que al interactuar con R iremos creando objetos (por ejemplo un vector o una matriz o una tabla de datos). Estos objetos estarán guardados en la memoria del ordenador pero los "veremos", aparecerán en la pestaña `Environment`. En la pestaña `History` tendremos un listado con las instrucciones de R que hayamos ejecutado previamente en nuestra actual sesión de R (por ejemplo `2 + 2`). Otro ejemplo: a veces en nuestro análisis con R haremos un gráfico o varios, podremos ver el gráfico en la pestaña `Plots` en el panel situado abajo-derecha.
 
 
 ```{r, echo = FALSE}
@@ -331,7 +331,7 @@ Ya hemos dejado claro que vamos a usar RStudio para interactuar con R. Ok, pero 
 
 Cuando hagas un análisis estadístico complejo, por ejemplo para tu TFG, o para el trabajo final de este curso, lo normal es que para realizar el proyecto no sea suficiente con un único script; lo habitual es que cada proyecto necesite de varios inputs (datos, imágenes, scripts etc...). En estos casos, utilizaremos un **Rproject** para cada proyecto. 
 
-En seguida veremos como podemos crear un Rproject, y explicaremos sus ventajas, pero de momento puedes pensar que un Rproject no es más que una carpeta dedicada en exclusiva a tu proyecto, una carpeta creada para almacenar todo lo relacionado con tu proyecto.
+Enseguida veremos como podemos crear un Rproject, y explicaremos sus ventajas, pero de momento puedes pensar que un Rproject no es más que una carpeta dedicada en exclusiva a tu proyecto, una carpeta creada para almacenar todo lo relacionado con tu proyecto.
 
 ¿Por qué utilizaremos **Rprojects**? Las razones son varias, pero como casi siempre quien mejor lo explica es [Jenny Bryan](https://twitter.com/jennybryan?lang=es), por ejemplo [aquí](https://whattheyforgot.org/project-oriented-workflow.html).
 
@@ -364,7 +364,7 @@ Como dice Jenny:
 
 <br>
 
-Para acabar esta sección, no puedo resistirme a citar otra vez a Jennyfer Bryan:
+Para acabar esta sección, señalaré que los nombres de los ficheros son importantes. Para ver algunos consejos sobre como poner nombre a tus archivos puedes ir [aquí](https://slides.djnavarro.net/project-structure/#1). No puedo resistirme a citar otra vez a Jennyfer Bryan:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">File organization and naming are powerful weapons against chaos by <a href="https://twitter.com/JennyBryan?ref_src=twsrc%5Etfw">@JennyBryan</a> <a href="https://twitter.com/hashtag/Mozfest?src=hash&amp;ref_src=twsrc%5Etfw">#Mozfest</a> <a href="https://twitter.com/hashtag/MozCookie?src=hash&amp;ref_src=twsrc%5Etfw">#MozCookie</a> <a href="https://twitter.com/hashtag/FortuneCookie?src=hash&amp;ref_src=twsrc%5Etfw">#FortuneCookie</a> <a href="https://t.co/W08ugLLrSa">pic.twitter.com/W08ugLLrSa</a></p>&mdash; David Guarch 🖖 🎗️ (@DGuarch) <a href="https://twitter.com/DGuarch/status/663049353007931392?ref_src=twsrc%5Etfw">November 7, 2015</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
@@ -540,3 +540,4 @@ Para finalizar un consejo: estamos empezando, así que PATIENCE!!! cuesta un poc
 tweetrmd::tweet_embed("https://twitter.com/allison_horst/status/1213275783675822080",  align = "center", dnt = TRUE, plain = TRUE, maxwidth = 700)
 ```
 
+<br><br>

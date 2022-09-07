@@ -103,7 +103,7 @@ class: inverse, center, middle
   
 #### e-mail: [pedro.j.perez@uv.es](mailto:pedro.j.perez@uv.es)
   
-#### Web del curso: [https://perezp44.github.io/intro-ds-20-21-web](https://perezp44.github.io/intro-ds-21-22-web)
+#### Web del curso: [https://perezp44.github.io/intro-ds-22-23-web](https://perezp44.github.io/intro-ds-22-23-web)
 
 
 ```{r echo = FALSE}
@@ -386,7 +386,7 @@ R sirve para hacer análisis estadísticos con datos, y los datos tienen que est
 
 --
 
-- Las que **más utilizaremos** en el curso son los* **data.frames**, y en segundo lugar las listas. 
+- Las que **más utilizaremos** en el curso son los **data.frames**, y en segundo lugar las listas. 
 
 - Si, **pero** en realidad estas 2 estructuras (data.frames y listas) son en realidad agrupaciones de vectores; es decir, **la estructura básica, la más importante en R son los vectores**. 
 

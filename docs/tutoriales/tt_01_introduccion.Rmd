@@ -1,6 +1,6 @@
 ---
 title: "Tema 1: Ciencia de datos y la era del Big Data"
-author: "Pedro J. Pérez (pedro.j.perez@uv.es). Universitat de València <br> <br> Web del curso: <https://perezp44.github.io/intro-ds-21-22-web/>"
+author: "Pedro J. Pérez (pedro.j.perez@uv.es). Universitat de València <br> <br> Web del curso: <https://perezp44.github.io/intro-ds-22-23-web/>"
 date: "Agosto de 2019 (actualizado el `r format(Sys.time(), '%d-%m-%Y')`)"
 output:
   html_document:
@@ -442,7 +442,7 @@ El software libre es de vital importancia en el desarrollo de la investigación 
 De hecho, actualmente, al menos en el campo de la ciencia de datos, el software libre, o es ya mayoritario, o va camino de serlo. Es verdad que muchas empresas aún basan sus análisis de datos en programas como Excel, SPSS, Stata o SAS, pero la tendencia está cambiando y es de esperar que se acelere en un futuro próximo. Como ejemplo de esta idea puedes ver está publicación: [Big Data y open source](https://hipertextual.com/presentado-por/bbva/big-data-y-open-source).
 
 
-Para aquellos que creen que el software comercial da más garantías, pueden leerse [este post](https://notstatschat.rbind.io/2019/02/18/absolutely-no-warranty/).
+En [este post](https://www.enriquedans.com/2021/09/el-open-source-como-base-de-la-competitividad-europea.html) se plantea que el "open source" puede ser clave para la competitividad en la UE. Para aquellos que creen que el software comercial da más garantías, pueden leerse [este post](https://notstatschat.rbind.io/2019/02/18/absolutely-no-warranty/).
 
 
 Seguramente entre las empresas pequeñas y medianas Excel continúa siendo el software de referencia para sus análisis cuantitativos. Sí, Excel es un fantástico software, lo sé, pero no sirve para todo. Un ejemplo de esto [aquí](https://www.sciencemag.org/news/2016/08/one-five-genetics-papers-contains-errors-thanks-microsoft-excel), o [aquí](https://www.johndcook.com/blog/2019/09/07/excel-r-bom/). [Este post](https://appsilon.com/excel-is-obsolete-here-are-the-top-2-alternatives-from-r-and-python/?utm_campaign=News&utm_medium=Community&utm_source=DataCamp.com) explica porque **Excel está obsoleto**. En los comentarios al post le atizan un poco. Un [hilo de Twitter](https://twitter.com/alexandreafonso/status/1313187531782082562) con errores graves provocados por el mal uso^[Aunque seguramente, estos errores por mal uso de Excel se vieron favorecidos, cuando no provocados, por el mal diseño de Excel como herramienta para manejar datos]. En un tono más positivo, [este post](https://outsiderdata.netlify.com/post/why-i-migrated-from-excel-to-r/) explica porque abandonar Excel y migrar a R. 
