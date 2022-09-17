@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>03-calendario_OLD_OLD.knit</title>
+
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-56N7LCJP4Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-56N7LCJP4Y');
+</script>
+<link rel="icon" type="image/x-icon" href="https://perezp44.github.io/intro-ds-21-22-web/favicon.ico" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { font-weight: bold; } /* Alert */
+code span.an { font-style: italic; } /* Annotation */
+code span.cf { font-weight: bold; } /* ControlFlow */
+code span.co { font-style: italic; } /* Comment */
+code span.cv { font-style: italic; } /* CommentVar */
+code span.do { font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.er { font-weight: bold; } /* Error */
+code span.in { font-style: italic; } /* Information */
+code span.kw { font-weight: bold; } /* Keyword */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.wa { font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<link rel="stylesheet" href="assets/styles_pjp.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Programación y manejo datos con R (2022-23)</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="01-guia-del-curso.html">
+    <span class="fa fa-graduation-cap"></span>
+     
+    Guía del curso
+  </a>
+</li>
+<li>
+  <a href="02-logistica.html">
+    <span class="fa fa-laptop"></span>
+     
+    Logística
+  </a>
+</li>
+<li>
+  <a href="03-calendario.html">
+    <span class="fa fa-calendar-alt"></span>
+     
+    Calendario
+  </a>
+</li>
+<li>
+  <a href="04-tutoriales.html">Tutoriales</a>
+</li>
+<li>
+  <a href="05-slides.html">Slides</a>
+</li>
+<li>
+  <a href="06-mas-cosas.html">
+    <span class="fa fa-download"></span>
+     
+    MáS
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-user-graduate"></span>
+     
+    Trabajos
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="07-trabajos_2022-23.html">Curso 2022-23</a>
+    </li>
+    <li>
+      <a href="07-trabajos_2021-22.html">Curso 2021-22</a>
+    </li>
+    <li>
+      <a href="07-trabajos_2020-21.html">Curso 2020-21</a>
+    </li>
+    <li>
+      <a href="07-trabajos_2019-20.html">Curso 2019-20</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><br></p>
+<div class="blue">
+<p><strong>Calendario de clases y HOMEWORK</strong>: Aquí os dejaré las
+<strong>tareas previas a cada clase</strong>. Tenéis que tener muy claro
+que no podéis venir a clase de espectadores, habrá que trabajar en clase
+y sobre todo haber trabajado en casa; es decir, cada semana, antes de
+venir a clase <strong>hay que hacer las tareas previas</strong>. Tenemos
+14 sesiones de clase. Intenta faltar lo menos posible y asiste, sí o sí,
+a las 5 primeras sesiones.<br />
+Iré actualizándo este apartado conforme pasen las semanas. Intentaré
+ajustar y acertar lo más posible con la programación de las clases pero
+… , como sabéis, en una clase siempre puede haber
+incidentes/sorpresas.</p>
+</div>
+<p><br></p>
+<div class="blue">
+<center>
+RECUERDA que, antes de venir a clase, <strong>TENÉIS que hacer las
+tareas previas asignadas</strong>.
+</center>
+</div>
+<hr />
+<p><br></p>
+<div id="ª-clase-17-sept" class="section level2">
+<h2>1ª clase (17-sept)</h2>
+<p><br></p>
+<div id="homework-para-hacer-antes-de-ir-a-clase"
+class="section level5">
+<h5><strong><code>Homework</code></strong> (para hacer antes de ir a
+clase)</h5>
+<ul>
+<li><p>Lee la sección <a
+href="01-guia-del-curso.html"><code>Guía del curso</code></a> de la
+página web del curso.</p></li>
+<li><p>Créate una cuenta en <a href="https://github.com/"
+target="_blank">Github</a>. Mejor si usas tu cuenta de correo de Gmail.
+La usaremos para acceder a varios servicios web.</p></li>
+<li><p>Prepara tu ordenador; es decir, instálate R, RStudio y los
+paquetes. <a href="./mas-recursos/01_instrucciones-instalacion.html"
+target="_blank">Aquí</a> tienes una guía para la instalación. Si tienes
+algún problema con la instalación contacta conmigo por email.</p></li>
+<li><p>Lee el primer turorial: <a
+href="./tutoriales/tt_01_introduccion.html"
+target="_blank"><code>Tutorial 01: Introducción</code></a>. Es solo
+leer, no hay que estudiar nada; además se lee fácil. Se trata
+simplemente de poner en contexto el curso y hablar un poco sobre qué es
+esto de la “era del Big Data”, la ciencia de datos etc …</p></li>
+<li><p>Si quieres, puedes echarle un vistazo a las 2 primeras
+transparencias: <a href="./slides/slides_00_presentacion-curso.html"
+target="_blank">aquí</a> y <a href="./slides/slides_01_intro_v3.html"
+target="_blank">aquí</a>.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="qué-haremos-en-la-primera-clase" class="section level5">
+<h5>¿Qué haremos en la primera clase?</h5>
+<ul>
+<li><p>Lo primero presentar el curso</p></li>
+<li><p>Hablar de la evaluación y forma de trabajo en el curso.</p></li>
+<li><p>Hablar un poco de algunas de las ideas del Tema 1</p></li>
+<li><p>¿Cómo trabajaremos con R? Workflow</p></li>
+<li><p>Ejemplos iniciales</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="cosas-que-has-de-medio-entendersaber-hacer-después-de-la-clase"
+class="section level5">
+<h5>Cosas que has de (medio) entender/saber hacer después de la
+clase</h5>
+<p>Muchas veces para (medio) entender/saber hacer estas cosas tendrás
+que asistir a tutorías o estudiar o preguntar a un compañero, o ….</p>
+<ul>
+<li><p>¿Qué es la ciencia de datos?</p></li>
+<li><p>¿Qué es R y RStudio? ¿Y los paquetes?</p></li>
+<li><p>¿Qué son los ficheros .R? ¿Y los .Rmd? ¿Y los Rprojects?</p></li>
+<li><p>Saber interactuar con R a través de Rprojects</p></li>
+</ul>
+<p><br></p>
+<p>Too much for the first class? Igual sí. Al final veremos lo que
+podamos.</p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-24-sept" class="section level2">
+<h2>2ª clase (24-sept)</h2>
+<p><br></p>
+<div id="homework-para-hacer-antes-de-ir-a-clase-1"
+class="section level5">
+<h5><strong><code>Homework</code></strong> (para hacer antes de ir a
+clase)</h5>
+<ul>
+<li><p>Leer el e-mail que os he mandado a vuestro correo de la UV y
+hacer (si quieres) las 2 tareas extra-oficiales que allí os cuento.
+Además, en el mail hay una tercera tarea, está tercera tarea sí es
+oficial, hay que hacerla.</p></li>
+<li><p>Leer el <a href="./tutoriales/tt_02_primeros-pasos-con-R.html"
+target="_blank">tutorial nº 2</a>, es sólo leer. En el tutorial aparece
+una pequeña explicación de las ventajas de usar Rprojects y hace
+hincapié en el concepto de <strong>rutas relativas</strong>. Trata de
+entenderlo, lógicamente, pero si tienes dudas/problemas no pasa nada, lo
+trabajaremos en profundidad cuando empecemos el tutorial nº 04, supongo
+que en la tercera sesión/viernes del curso.</p></li>
+<li><p>Configurar RStudio. Para ello tienes que seguir las instrucciones
+que figuran en el tutorial nº 2, concretamente <a
+href="https://perezp44.github.io/intro-ds-21-22-web/tutoriales/tt_02_primeros-pasos-con-R.html#Configurando_RStudio">aquí</a>.
+Es importante que tengamos todos la misma configuración, ya explicaré la
+razón en clase. Esto es importante hacerlo bien!!</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="qué-haremos-en-la-segunda-clase" class="section level5">
+<h5>¿Qué haremos en la segunda clase?</h5>
+<ul>
+<li><p>Estaremos un buen rato con el ejemplo “ej_000_ejemplo-inicial.R”;
+es un análisis muy simple, pero ejemplifica bien lo que haremos durante
+el curso.</p></li>
+<li><p>Utilizaremos el fichero “ej_000_ejemplo-inicial.Rmd” para crear
+una primera capa para entender los ficheros .Rmd</p></li>
+<li><p>Ver todo los que podamos de R-base, para ello utilizaremos las <a
+href="./slides/slides_03_R-base-01.html" target="_blank">Slides-03: R
+base</a>. Es muy importante entender algunos conceptos como asignación,
+tipos de datos, estructuras de datos, funciones …</p></li>
+<li><p>Jugar con algunos ejemplos</p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-01-oct" class="section level2">
+<h2>3ª clase (01-oct)</h2>
+<p><br></p>
+<div id="homework-para-hacer-antes-de-ir-a-clase-2"
+class="section level5">
+<h5><strong><code>Homework</code></strong> (para hacer antes de ir a
+clase)</h5>
+<ul>
+<li><p>Leer el e-mail que os he mandado a vuestro correo de la UV. Allí
+están los detalles de la segunda entrega, que esta vez <strong>sí forma
+parte de la evaluación continua</strong>, así que, en realidad es la
+<code>entrega_01</code>. Hay que entregarla antes del jueves a las
+23:59.</p></li>
+<li><p>La principal tarea que tenéis que hacer está semana es repasar un
+poco lo que hemos visto y ver si te vas sintiendo cómodo en
+R/RStudio.</p></li>
+<li><p>Leer el <strong>primer apartado</strong> del <a
+href="./tutoriales/tt_03_R-base.html" target="_blank">Tutorial 03: R
+base</a>.</p></li>
+<li><p>Leer e intentar ejecutar el código de las <a
+href="./slides/slides_03_R-base-01.html" target="_blank">Slides-03: R
+base</a>.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="qué-haremos-en-la-tercera-clase" class="section level5">
+<h5>¿Qué haremos en la tercera clase?</h5>
+<ul>
+<li><p>Corregir la primera entrega.</p></li>
+<li><p>“Acabar” con el tema de R-base. Para ello utilizaremos las <a
+href="./slides/slides_03_R-base-01.html" target="_blank">Slides-03: R
+base</a>.</p></li>
+<li><p>Empezar a importar/exportar datos. Para ello usaremos las <a
+href="./slides/slides_04_cargar-datos.html" target="_blank">Slides-04:
+Importar y exportar datos</a>.</p></li>
+<li><p>Espero que tengamos tiempo para jugar con algunos
+ejemplos</p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-08-oct" class="section level2">
+<h2>4ª clase (08-oct)</h2>
+<p><br></p>
+<div id="homework-para-hacer-antes-de-ir-a-clase-3"
+class="section level5">
+<h5><strong><code>Homework</code></strong> (para hacer antes de ir a
+clase)</h5>
+<ul>
+<li><p>Esta semana no hay tarea para entregar pero si que tenéis tarea
+de leer, repasar y practicar, pensar en los trabajos etc… vamos, ir
+metiéndoos en el universo R.</p></li>
+<li><p>La principal tarea que tenéis que hacer está semana, otra vez, es
+repasar un poco lo que hemos visto; en concreto, leer e intentar
+ejecutar el código de las <a href="./slides/slides_04_cargar-datos"
+target="_blank">Slides-04: Importar y exportar datos</a>.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="qué-haremos-en-la-cuarta-clase" class="section level5">
+<h5>¿Qué haremos en la cuarta clase?</h5>
+<ul>
+<li><p>Acabar las <a href="./slides/slides_04_cargar-datos"
+target="_blank">Slides-04: Importar y exportar datos</a>.</p></li>
+<li><p>Empezar una de las partes principales del curso: manejo de datos
+con R à la tidyverse. Presentaremos ideas/conceptos como “the pipe” y
+“tidy data” y empezaremos a usar 2 paquetes del tidyverse: tidyr y
+dplyr, el principal paquete para manipular datos. Para ello utilizaremos
+las <a href="./slides/slides_05_data-munging" target="_blank">Slides-05:
+Data munging</a>.</p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-15-oct" class="section level2">
+<h2>5ª clase (15-oct)</h2>
+<ul>
+<li><p>Leer el e-mail que os he mandado a vuestro correo de la UV. Esta
+vez sí hay entrega, la cuarta. El viernes hicimos la tercera en
+clase.</p></li>
+<li><p>Lee todo lo que puedas del <a
+href="./tutoriales/tt_05_data-munging.html" target="_blank">Tutorial 05:
+Data munging</a>.</p></li>
+<li><p>Leer e intentar ejecutar el código de las <a
+href="./slides/slides_05_data-munging" target="_blank">Slides-05: Data
+munging</a>.</p></li>
+</ul>
+<p><br></p>
+<div id="qué-haremos-en-clase" class="section level5">
+<h5>¿Qué haremos en clase?</h5>
+<ul>
+<li><p>“Corregir” la <code>entrega_04</code>. Se trata de no repetir
+errores y aprender de ellos. Aunque igual lo hacéis genial y no hay ni
+un solo error. 🥇 ✅</p></li>
+<li><p>Meternos de lleno con el <code>tidyverse</code>, concretamente
+con su principal paquete <code>dplyr</code>. Necesito que os leáis el
+tutorial 05 y las slides 05, please!!!!!</p></li>
+<li><p>No creo que lleguemos, pero igual empezamos a hablar de ggplot2 y
+hacer nuestro primer super-gráfico. 📊 📉</p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-22-oct" class="section level2">
+<h2>6ª clase (22-oct)</h2>
+<p><br></p>
+<ul>
+<li><p>Hay que hacer la <code>entrega_05</code>. ya la empezamos en
+clase, ahora se trata de acabarla. Esfuérzate e intenta aprender con
+ella el funcionamiento/sintaxis de <code>dplyr</code>.</p></li>
+<li><p>Repasa el <a href="./tutoriales/tt_05_data-munging.html"
+target="_blank"><code>Tutorial 05: Data munging</code></a>.</p></li>
+<li><p>Lee los 2 primeros apartados del <a
+href="./tutoriales/tt_06_ggplot2.html"
+target="_blank"><code>Tutorial 06: ggplot2</code></a>.</p></li>
+<li><p>Instalaros estos 3 paquetes: <code>robservable</code>,
+<code>wikifacts</code> y <code>coronavirus</code>. Los dos primeros
+paquetes están en CRAN, así que podéis instalarlos con
+<code>install.packages("nombre_del_pkg")</code>; el último instaladlo
+con <code>remotes::install_github("RamiKrispin/coronavirus")</code>.
+Acordaros de que, para evitar problemas, es mejor instalar los paquetes
+desde una sesión limpia de R.</p></li>
+</ul>
+<p><br></p>
+<div id="qué-haremos-en-clase-1" class="section level5">
+<h5>¿Qué haremos en clase?</h5>
+<ul>
+<li><p>Corregir la <code>entrega_05</code>.</p></li>
+<li><p>Acabar el <code>tutorial 05</code>. No queda mucho: fusionar
+tablas, algunos consejos y practicar un poco más; para ello empezaremos
+(en parejas) la <code>entrega_06</code>.</p></li>
+<li><p>Haremos un ejemplo ya realista: manejaremos datos sobre
+coronavirus y lo visualizaremos con el package <a
+href="%60https://github.com/juba/robservable">robservable</a></p></li>
+<li><p>Igual os hablo un poquito de <a
+href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a> y
+hacemos algunas queries (espero).</p></li>
+<li><p>Empezar con las ideas básicas de ggplot2 y está vez sí, hacer
+nuestro primer super-gráfico.</p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-29-nov" class="section level2">
+<h2>7ª clase (29-nov)</h2>
+<p><br></p>
+<div id="homework-para-hacer-antes-de-ir-a-clase-4"
+class="section level5">
+<h5><strong><code>Homework</code></strong> (para hacer antes de ir a
+clase)</h5>
+<ul>
+<li><p>Acabar la <code>entrega_06</code>. En la última pregunta tenéis
+que hacer vuestro primer super-gráfico.</p></li>
+<li><p>Lee todo lo que puedas del <a
+href="./tutoriales/tt_06_ggplot2.html"
+target="_blank"><code>Tutorial 06: ggplot2</code></a>.</p></li>
+<li><p>Pégale un vistazo a las <a href="./slides/ss_06_ggplot2_B.html"
+target="_blank"><code>Slides-06(A): ggplot2 (primeras ideas)</code></a>,
+y si puedes, también a las <a href="./slides/ss_06_ggplot2_B.html"
+target="_blank"><code>Slides-06(B): ggplot2 (más elementos)</code></a>.</p></li>
+<li><p>Instalaros estos 3 paquetes: <a
+href="https://github.com/calligross/ggthemeassist">ggThemeAssist</a>, <a
+href="https://dreamrs.github.io/esquisse/index.html">esquisse</a> y <a
+href="https://github.com/MattCowgill/ggannotate">ggannotate</a>. Los dos
+primeros paquetes están en CRAN, así que podéis instalarlos con
+<code>install.packages("nombre_del_pkg")</code>. Igual ya los tenéis
+instalados. Podéis probarlo con <code>library()</code>. El tercer
+paquete no está en CRAN, podéis instalarlo con
+<code>remotes::install_github("mattcowgill/ggannotate")</code>.
+Acordaros de que, para evitar problemas, siempre es mejor instalar los
+paquetes desde una sesión limpia de R.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="qué-haremos-en-clase-2" class="section level5">
+<h5>¿Qué haremos en clase?</h5>
+<ul>
+<li><p>Corregir la <code>entrega_06</code>.</p></li>
+<li><p>Seguir con ggplot2: recordar las ideas básicas con <a
+href="./slides/ss_06_ggplot2_B.html"
+target="_blank"><code>Slides-06(A): ggplot2 (primeras ideas)</code></a>
+e introducir más elementos de los gráficos ggplot: <a
+href="./slides/ss_06_ggplot2_B.html"
+target="_blank"><code>Slides-06(B): ggplot2 (más elementos)</code></a>.</p></li>
+<li><p>Como la clase estará totalmente dedicada a <code>ggplot2</code>,
+supongo que haremos algunos ejemplos en los que se cargarán datos, se
+arreglarán, para finalmente hacer un gráfico chulo. No lo entenderemos
+del todo, pero casi-casi.</p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-05-nov" class="section level2">
+<h2>8ª clase (05-nov)</h2>
+<p><br></p>
+<div id="homework-para-hacer-antes-de-ir-a-clase-5"
+class="section level5">
+<h5><strong><code>Homework</code></strong> (para hacer antes de ir a
+clase)</h5>
+<ul>
+<li><p>Evidentemente, entregar a tiempo la
+<code>entrega_08</code></p></li>
+<li><p>Leer el tutorial sobre <code>ggplot2</code>.</p></li>
+<li><p>No estaría mal que empezáseis a pensar/perfilar vuestro trabajo
+en grupo</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="qué-haremos-en-clase-3" class="section level5">
+<h5>¿Qué haremos en clase?</h5>
+<ul>
+<li><p>Corregir la <code>entrega_08</code></p></li>
+<li><p>Continuar y acabar con el tutorial 06 sobre
+<code>ggplot2</code></p></li>
+<li><p>Ejemplos relacionados con visualización</p></li>
+<li><p>Empezar con <strong>Rmarkdown</strong>. Veremos las ideas básicas
+para poder hacer informes reproducibles con Rmarkdown</p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-12-nov" class="section level2">
+<h2>9ª clase (12-nov)</h2>
+<div id="homework-para-hacer-antes-de-ir-a-clase-6"
+class="section level5">
+<h5><strong><code>Homework</code></strong> (para hacer antes de ir a
+clase)</h5>
+<ul>
+<li><p>Esta semana, como sabéis, tenéis que hacer la
+<code>entrega_09</code> para hacerla tendréis que repasar/estudiar
+<code>ggplot2</code>.</p></li>
+<li><p>Tenéis que instalaros unos paquetes relacionados con Rmarkdown.
+Lo haremos con el paquete pacman. Para ello solo tenéis que correr las
+siguientes instrucciones:
+<code>pacman::p_install(bslib, thematic, shiny, rmdformats, flexdashboard, posterdown, vitae, tinytex)</code>
+y
+<code>pacman::p_install_gh(c("rstudio/pagedown", "yihui/rolldown"))</code>.
+Ya sabéis, desde sesión limpia de R. Una vez instalados los paquetes,
+corred la siguiente instrucción <code>tinytex::install_tinytex()</code>
+para instalaros una distrubución ligera de Latex.</p></li>
+<li><p>Tenéis que empezar a pensar en los trabajos: el individual, pero
+sobre todo el <strong>trabajo en equipo</strong>.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="qué-haremos-en-clase-4" class="section level5">
+<h5>¿Qué haremos en clase?</h5>
+<ul>
+<li><p>Corregir la entrega_09.</p></li>
+<li><p>“Empezar” con <strong>Rmarkdown</strong>. Veremos las ideas
+básicas (y no tan básicas) para poder hacer informes reproducibles con
+Rmarkdown</p></li>
+<li><p>Os proporcionaré unas plantillas que puedan serviros para hacer
+vuestros trabajos.</p></li>
+<li><p>Subiremos nuestros primeros “trabajos” a Github.</p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-19-nov" class="section level2">
+<h2>10ª clase (19-nov)</h2>
+<p><br></p>
+<div id="homework-para-hacer-antes-de-ir-a-clase-7"
+class="section level5">
+<h5><strong><code>Homework</code></strong> (para hacer antes de ir a
+clase)</h5>
+<ul>
+<li><p>Enviarme, en un documento .html, generado a través de un .Rmd, un
+bosquejo de vuestro trabajo en grupo. Es importante que lo vayáis
+perfilando … y haciendo.</p></li>
+<li><p>Seguramente los tengáis ya instalados, pero por si acaso,
+instalaros los siguientes paquetes:
+<code>pacman::p_load(freqtables, janitor, sjmisc, flextable, formattable, flextable, kableExtra, gt, DT, reactable, stargazer, modelsummary, gtsummary, sjPlot, rpivotTable, webshot)</code></p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="qué-haremos-en-clase-5" class="section level5">
+<h5>¿Qué haremos en clase?</h5>
+<ul>
+<li><p>Hablar de vuestros proyectos de trabajos</p></li>
+<li><p>Seguir con RMD. Para ello probaremos otros
+formatos/plantillas.</p></li>
+<li><p>Subiremos, esta vez sí, el bosquejo de vuestros trabajos a
+Github.</p></li>
+<li><p>Tendremos una charla de un estudiante de hace dos años (Antonio
+Segovia). Antonio nos hablará sobre posibilidades de iniciación y
+perspectivas laborales en el mundo de la Ciencia de Datos.</p></li>
+<li><p>Veremos como crear tablas para documentos Rmd. Usaremos el
+<code>tutorial 09</code></p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-26-nov" class="section level2">
+<h2>11ª clase (26-nov)</h2>
+<p><br></p>
+<div id="homework-para-hacer-antes-de-ir-a-clase-8"
+class="section level5">
+<h5><strong><code>Homework</code></strong> (para hacer antes de ir a
+clase)</h5>
+<ul>
+<li><p>Como sabéis ya no hay homework, buenio, sí, el homework es tratar
+de asentar lo que hemos visto durante el curso, para eso tenéis que ir
+haciendo los trabajos en grupo. Ánimo con ellos</p></li>
+<li><p>Seguramente los tengáis ya instalados, pero por si acaso,
+instalaros los siguientes paquetes:</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(knitr, here, tidyverse, patchwork, ggrepel)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(sf, rnaturalearth, rnaturalearthdata, ggspatial, mapview, leafem, leaflet)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tmap, tidygeocoder, tmaptools)</span></code></pre></div>
+<p><br></p>
+</div>
+<div id="qué-haremos-en-clase-6" class="section level5">
+<h5>¿Qué haremos en clase?</h5>
+<ul>
+<li><p>Hablar (otra vez) de vuestros trabajos.</p></li>
+<li><p>Seguir con el tema de las tablas. para ello usaremos el
+<code>Tutorial 08: Tablas con Rmarkdown</code> y el
+<code>ej_222_tablas-con-gt.R</code></p></li>
+<li><p>Empezar con mapas: a ver si le damos un buen bocado al
+<code>Tutorial 09: Introducción a GIS con R</code>.</p></li>
+<li><p>Ejemplos de mapas: <code>ej_102_eurostat-easy.R</code> y
+<code>ej_223_mapa_crec-pob-muni.R</code>.</p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-03-dic" class="section level2">
+<h2>12ª clase (03-dic)</h2>
+<p><br></p>
+<div id="homework-para-hacer-antes-de-ir-a-clase-9"
+class="section level5">
+<h5><strong><code>Homework</code></strong> (para hacer antes de ir a
+clase)</h5>
+<ul>
+<li>Seguir aprendiendo R y currando en vuestros trabajos. 🔨 💪 🎈</li>
+</ul>
+<p><br></p>
+</div>
+<div id="qué-haremos-en-clase-7" class="section level5">
+<h5>¿Qué haremos en clase?</h5>
+<ul>
+<li><p>Veremos … según lo que veamos en la clase 11.</p></li>
+<li><p>Después del descanso, sobre las 17:45, tendremos charla de <a
+href="https://mediadoresdeseguroscv.com/equipo-actuarios-union-alcoyana-galardonados-iv-premio-actuarial-scor-espana-portugal/">Jorge
+Segura</a>, actuario jefe de Unión Alcoyana Seguros.</p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="ª-clase-10-dic" class="section level2">
+<h2>13ª clase (10-dic)</h2>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+<div id="ª-clase-17-dic" class="section level2">
+<h2>14ª clase (17-dic)</h2>
+<p><br></p>
+<div id="homework-para-hacer-antes-de-ir-a-clase-10"
+class="section level5">
+<h5><strong><code>Homework</code></strong> (para hacer antes de ir a
+clase)</h5>
+<ul>
+<li><p>Acabar y dejar chulos-chulos los trabajos en equipo. No os
+olvidéis de subir la última versión a Github</p></li>
+<li><p>Mandar a tu profesor la ultima versión del trabajo en
+equipo.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="qué-haremos-en-clase-8" class="section level5">
+<h5>¿Qué haremos en clase?</h5>
+<ul>
+<li><p>Yo, relajarme y escuchar.</p></li>
+<li><p>Vosotros, 👩‍🎓, sorprenderme con vuestras fantásticas
+presentaciones. Bueno, no pasa nada si alguna sale tan solo regular. El
+🙌 👏 👏 lo vais a tener igual.</p></li>
+<li><p>Ánimo con los trabajos y presentación!!!</p></li>
+</ul>
+<p><br></p>
+<hr />
+<p><br></p>
+</div>
+</div>
+<div id="examen-final" class="section level2">
+<h2>Examen final</h2>
+<ul>
+<li>El examen final será el <strong>10 de enero</strong> (de 2022) a las
+<strong>15:30 en el aula S308</strong>.</li>
+</ul>
+<p><br><br></p>
+<div class="tocify-extend-page" data-unique="tocify-extend-page"
+style="height: 0;">
+
+</div>
+</div>
+
+<footer class="footer">
+  
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.  <div class="text-muted"><strong> Web</strong> creada por Pedro J. Pérez. &copy;  2022. If you find any bug please report them to <a href="mailto:pedro.j.perez@uv.es"> pedro.j.perez@uv.es</a>.</div>
+  
+</footer>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -59,7 +59,7 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 
 El objetivo de esta sección es proporcionar una breve primera introducción a R y RStudio para personas que no han tenido contacto previo con estos programas y explicitar la forma que tendremos de interactuar con ellos; es decir, la forma de trabajar con ellos (**workflow**).
 
-El curso es una introducción a la Ciencia de Datos: haremos diversos análisis con datos y para ello utilizaremos R. R será el programa que hará los cálculos, gráficos, informes, pero interactuaremos con R, le daremos las ordenes a R, a través de otro programa: RStudio. Así que tendremos que instalar los 2 programas. Por ello, en la [web del curso](https://perezp44.github.io/intro-ds-21-22-web/) tienes un fichero donde se explica como hacerlo: concretamente [aquí](https://perezp44.github.io/intro-ds-20-21-web/mas-recursos/Instrucciones_instalacion-a.html).
+El curso es una introducción a la Ciencia de Datos: haremos diversos análisis con datos y para ello utilizaremos R. R será el programa que hará los cálculos, gráficos, informes, pero interactuaremos con R, le daremos las ordenes a R, a través de otro programa: RStudio. Así que tendremos que instalar los 2 programas. Por ello, en la [web del curso](https://perezp44.github.io/intro-ds-22-23-web/) tienes un fichero donde se explica como hacerlo: concretamente [aquí](https://perezp44.github.io/intro-ds-22-23-web/mas-recursos/01_instrucciones-instalacion.html).
 
 [Aquí](https://www.dataquest.io/blog/tutorial-getting-started-with-r-and-rstudio/) tienes un articulo que explica, con mucho detalle, como empezar a trabajar con R: instalación, configuración, paquetes, etc...
 
@@ -105,14 +105,7 @@ Ya hemos dicho que R (junto con sus paquetes) puede implementar una gran varieda
 
 Obviamente, para usar R y sus paquetes tenemos que instalarlo primero. Para ello "solo" tienes que ir a [CRAN](https://cran.r-project.org/) y descargar la distribución de R adecuada para tu sistema operativo. Obviamente mejor la última versión. En el momento de re-escribir estas notas la última versión es `R-4.1.1` llamada  "Kick Things" released on 2021/08/10. 
 
-
-
-
-
-No te va a a hacer falta pero por si acaso, [aquí](https://jjallaire.shinyapps.io/learnr-tutorial-00-setup/#section-install-r) tienes un vídeo de 1:30 donde se explica de manera sencilla como instalar R, y [aquí](https://github.com/pachamaltese/tutoriales/blob/master/2019-04-24-instalar-r.md) tienes una explicación muy detallada del proceso de instalación.
-
-
-Como recomiendan [aquí](https://teachdatascience.com/cloud/) el primer día de clase usaremos R a través de la plataforma [RStudio Cloud](https://rstudio.cloud/). Demoraremos los potenciales problemas que puedan surgir en la instalación de R  al segundo o tercer día de clase^[De esto esta vez no estoy seguro porque en Agosto de 2020 RStudio Cloud comenzará a ser de pago. Veremos como queda la versión gratuita].
+No te va a a hacer falta pero por si acaso, [aquí](https://jjallaire.shinyapps.io/learnr-tutorial-00-setup/#section-install-r) tienes un vídeo de 1:30 donde se explica de manera sencilla como instalar R.
 
 
 
