@@ -177,7 +177,7 @@ I have been using Python for 15 years and have been a matplotlib core developer 
 
 -   [Listado sencillo](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages)
 
--   [Listado completo de CRAN agrupado por temática](https://www.rdocumentation.org/taskviews#Bayesian)
+-   [Listado completo de CRAN agrupado por temática](https://cran.r-project.org/web/views/)
 
 -   [AWESOME list de pkgs](https://github.com/qinwf/awesome-R)
 
