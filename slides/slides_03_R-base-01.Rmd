@@ -265,7 +265,7 @@ typeof(dd)
 ```{r, eval = FALSE}
 2 < 4    # MENOR que: esta expresión chequea si 2 es MENOR que cuatro. Como es cierto, nos devuelve un TRUE
 
-2 > 4    # MAYOR que: esta expresión chequea si 2 es MAYOR que cuatro. Como es cierto, nos devuelve un TRUE
+2 > 4    # MAYOR que: esta expresión chequea si 2 es MAYOR que cuatro. Como es falso, nos devuelve un FALSE
 
 5 >= 7   # MAYOR o IGUAL que.
 8 <= 8   # MENOR o IGUAL que.
@@ -301,7 +301,7 @@ paste(aa, bb)
 
 paste(aa, bb, sep = " ... ")
 
-# Prueba tú mismo que hace la función paste0()
+# Prueba tú mismo qué hace la función paste0()
 ```
 
 
@@ -341,7 +341,7 @@ FALSE | FALSE
 
 
 ```{r, eval = FALSE}
-(4 > 3) & (3 < 2)  #- AND: como solo se cumple la primera condición, nos devuelve TRUE
+(4 > 3) & (3 < 2)  #- AND: como solo se cumple la primera condición, nos devuelve FALSE
 
 (1==2) | (2 >3)   #- OR: Como no se cumple ninguna de las 2 condiciones nos devuelve FALSE
 
