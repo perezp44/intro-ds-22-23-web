@@ -121,8 +121,6 @@ Too much for the first class? Igual sí. Al final veremos lo que podamos.
 
 
 
-
-
 <br>
 
 -----------------------
@@ -131,7 +129,36 @@ Too much for the first class? Igual sí. Al final veremos lo que podamos.
 
 ## 3ª clase (30-sept)
 
+
+##### **`Homework`** (para hacer antes de ir a clase) 
+
+- Esta semana no hay entrega
+
+- La principal tarea que tenéis que hacer esta semana es aseguraros de que tenéis los paquetes instalados. Para ello tenéis que aseguraros de poder correr sin problemas los ficheros  podéis correr los ficheros `ej_000_ejemplo-inicial.R`  y `ej_000_ejemplo-inicial.Rmd`.
+
+- Repasar un poco lo que hemos visto y ver si te vas sintiendo cómoda en R/RStudio. 
+
+-  Leer el **primer apartado** del [Tutorial 03: R base](./tutoriales/tt_03_R-base.html){target="_blank"}.
+
+- En clase trabajamos con las `slides_03`, se trata de acabar de leerlas e intentar ejecutar el código de las [Slides-03: R base](./slides/slides_03_R-base-01.html){target="_blank"}.
+
+
 <br>
+
+##### ¿Qué haremos en la tercera clase?
+
+
+- "Acabar" con el tema de R-base. Para ello acabaremos las [Slides-03: R base](./slides/slides_03_R-base-01.html){target="_blank"}. Incidiremos mucho en entender como funciona una función y en aprender a buscar información y ayuda sobre el uso de paquetes y funciones.
+
+
+- Ver si en esta sesión podemos ya dar la primera capa para entender el funcionamiento de los **ficheros Rmarkdown (.Rmd)**
+
+- Empezar a importar/exportar datos. Para ello usaremos las [Slides-04: Importar y exportar datos](./slides/slides_04_cargar-datos.html){target="_blank"}.
+
+
+- Espero que tengamos tiempo para jugar con algunos ejemplos
+  
+
 
 
 <br>
