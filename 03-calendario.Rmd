@@ -169,7 +169,28 @@ Too much for the first class? Igual sí. Al final veremos lo que podamos.
 
 ## 4ª clase (07-oct)
 
+
+##### **`Homework`** (para hacer antes de ir a clase) 
+
+- Leer el e-mail que os he mandado a vuestro correo de la UV. Es largito. Allí están los detalles de la segunda entrega, que esta vez **sí forma parte de la evaluación continua**, así que, en realidad es la `entrega_01`. Como siempre, hay que entregarla antes del jueves a las 23:59.
+
+- Otra vez, la principal tarea es estudiar, bueno no estudiar, sino practicar todo lo que puedas con R las cosas que vamos viendo, vamos repasar un poco, sin matarse, pero un poco sí, lo que vamos viendo. Casi prefiero dediquéis tiempo a ver análisis chulos hechos con R que os gusten.
+
+- Leer e intentar ejecutar el código de las [Slides-04: Importar y exportar datos](./slides/slides_04_cargar-datos.html){target="_blank"}. Hasta donde llegues. Hay cosas que ya son (un poco) complicadas, no te mates con ellas, ya las trataré de explicar yo, además algunos de los ejemplos están puestos solamente como extensiones, generalmente estos trozos más complicados se identifican porque les pongo varios 🌶, o pongo que es un bonus.
+
+
 <br>
+
+##### ¿Qué haremos en la tercera clase?
+
+- Corregir la primera entrega, la `entrega_01`
+
+- "Acabar" con el tema de importar/exportar datos. Para ello usaremos las [Slides-04: Importar y exportar datos](./slides/slides_04_cargar-datos.html){target="_blank"}.
+
+
+- Empezar (espero) una de las partes principales del curso: manejo de datos con R à la tidyverse. Presentaremos ideas/conceptos como “the pipe” y “tidy data” y empezaremos a usar 2 de los principales paquetes del tidyverse: `tidyr` y `dplyr`, el principal paquete para manipular datos. Para ello utilizaremos las [Slides-05: Data munging](./slides/slides_05_data-munging){target="_blank"}. 
+  
+  
 
 
 <br>
