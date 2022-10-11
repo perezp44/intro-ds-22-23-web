@@ -201,6 +201,26 @@ Too much for the first class? Igual sí. Al final veremos lo que podamos.
 
 ## 5ª clase (14-oct)
 
+##### **`Homework`** (para hacer antes de ir a clase) 
+
+
+- Realizar la `entrega_03`. Se trata de seguir practicando la importación de datos y sobre todo aprender a usar las funciones `pivot_wider()` y `pivot_longer`.
+
+- Lee todo lo que puedas del [Tutorial 05: Data munging](./tutoriales/tt_05_data-munging.html){target="_blank"}. 
+
+- Leer e intentar ejecutar el código de las [Slides-05: Data munging](./slides/slides_05_data-munging){target="_blank"}.
+
+
+<br>
+
+##### ¿Qué haremos en clase?
+
+- "Corregir" la `entrega_03`. 
+
+- Meternos de lleno con el `tidyverse`, concretamente con su principal paquete `dplyr`. Necesito que os leáis el tutorial 05 y las slides 05, please!!!!! Sin matarse, sin tratar de entenderlo todo, ni de mirar las referencias, pero sí leyendo todo lo que puedas. Tratar de entender todo a la primera a veces es complicado, pero generalemente son cosas que se acaban entendiendo fácil cuando las ves 2-3 veces.
+
+- No creo que lleguemos, difícil, pero igual empezamos a hablar de ggplot2 y hacer nuestro primer super-gráfico. 📊 📉
+  
 
 <br>
 
@@ -332,7 +352,9 @@ Too much for the first class? Igual sí. Al final veremos lo que podamos.
 
 ## Examen final 🏁
 
-- El examen final será el lunes **16 de enero** (de 20223). No patiu, estaréis todos ya aprobados. Espero!!
+- El examen final será el lunes **16 de enero** (de 2023). No patiu, estaréis todos ya aprobados. Espero!!
+
+- El examen será por la tarde, seguramente empezará a las 15:30, en el aula 315.
 
 
 
