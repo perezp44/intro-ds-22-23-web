@@ -15,15 +15,11 @@ output:
     #self_contained: TRUE
 ---
 
-
-
 ```{r klippy, echo = FALSE}
 klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/klippy")
 ```
 
 <br>
-
-
 
 <br>
 
@@ -31,31 +27,84 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 
 <br>
 
-<div class = "blue">
+::: blue
 **Trabajos**: los ¿38? estudiantes del **curso 2022-2023**, como parte de la evaluación continua, tuvieron que presentar dos trabajos, uno individual y otro en equipo. Podrás verlos en los siguientes enlaces:
-</div>
-
-
+:::
 
 <br><br>
 
 ## Trabajos en equipo
 
-Disponibles a finales de Diciembre
+**(Disponibles a finales de Diciembre)**
 
+<br>
+
+-   **Alejandro Hortelano Martín**, **Victor Gallego Urrea** y **José María Pérez Marco** presentaron el trabajo [Big Data en la Fórmula 1a](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos F1 (día 23)
+
+<br>
+
+-   **Helena Albors**, **Noelia Teruel** y **Carla Morgado** presentaron el trabajo [INCLUSIÓN FEMENINA, POR PERÍODOS Y SECTORES](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos Banco Mundial, ... (día 23)
+
+
+<br>
+
+- **Carlos Garcia Ponce**, **Vera Monteagudo Serrano** y **Zayas Youssouf** presentaron el trabajo [SALARIO MINIMO](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos INE (día 16)
+
+
+<br>
+
+- **Raphaëlle Bastien**, **Kaikai Qiu** y **Yi Zhang** presentaron el trabajo [Los impactos de las tres crisis (crisis de petróleo, la Gran Recesión y crisis del covid-19) sobre Europa, en especial, sobre España](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos Eurostat (día 23)
+
+
+<br>
+
+- **Adeline Baillfard**, y **Lena Bärwinkel** presentaron el trabajo [Análisis de lso intercambios Erasmus](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos Erasmus (día ??)
+
+
+
+<br>
+
+- **Josep Gómez Corral**, **Ferran Alemany Parets** y **Rubén Rodríguez Giménez** presentaron el trabajo [Energías renovables o transporte en España](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos ?? (día 23)
+
+
+<br>
+
+- **Paula Martínez**, **Sonia Monleón** y **Leire Montón** presentaron el trabajo [Evolución del mercado laboral en España](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos INE (día 16)
+
+
+<br>
+
+- **Naira Carruccio Villada**, **Alex Monzó Santana** y **Luis Antonio Perez Padauy** presentaron el trabajo [La evolución del gasto en educación de España frente a sus vecinos europeos](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos INE, Banco Mundial (día 16)
+
+
+<br>
+
+- **Alberto Cabrera Pérez**, **Alegría Pintado Barceló** y **Sandra March Arazola** presentaron el trabajo [La desigual desescalada de precios en los sectores](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos Eurostat, INE (día ??)
+
+
+<br>
+
+- **Ignacio Manuel Muñoz Ayala**, **María Mena Esteban** y **Miguel Herrero Fuertes** presentaron el trabajo [Evolución de la Covid 19 por comunidades autónomas](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos INE (día 23)
+
+
+<br>
+
+- **Juliet Allegra**, **Kaur Suhkman** y **Juan David Ríos** presentaron el trabajo [Comparativa servicios de streaming vs. cines](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos ?? (día 16 xq falta 1)
+
+<br>
+
+- **Javier Ruiz Puchol**, **Emilio Gomez-Meana Torres** y **Victor Muñoz Barrasa** presentaron el trabajo [No he recibido vuestro mail!!!](https://.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com//trabajo_BigData_equipo){target="_blank"}. Datos ?? (día 16 xq falta 1)
 
 
 <br><br>
 
 ## Trabajos individuales
 
-Disponibles a finales de Diciembre
-
+**(Disponibles en Enero)**
 
 <br><br>
 
+------------------------------------------------------------------------
 
-------------------
-
-
-<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
+::: {.tocify-extend-page data-unique="tocify-extend-page" style="height: 0;"}
+:::
