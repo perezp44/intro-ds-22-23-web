@@ -35,14 +35,22 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 
 ## Trabajos en equipo
 
-<br>
-**Naira Carruccio Villada**, **Alex Monzó Santana** y **Luis Antonio Pérez Padauy**
-presentaron el trabajo [La evolución del gasto en educación en España y su relación con las pruebas PISA (https://AlexMS77.github.io/trabajo_BigData_equipo/){target="_blank"
-}.
-El repo del trabajo está 
-[aquí](https://github.com/AlexMS77/trabajo_BigData_equipo){target="_blank"}.
+<br> 
+
+**Naira Carruccio Villada**, **Alex Monzó Santana** y **Luis Antonio Pérez Padauy** presentaron el trabajo [La evolución del gasto en educación en España y su relación con las pruebas PISA](https://AlexMS77.github.io/trabajo_BigData_equipo/){target="\_blank" }. El repo del trabajo está [aquí](https://github.com/AlexMS77/trabajo_BigData_equipo){target="_blank"}.
 
 <br>
+
+**Helena Albors**, **Noelia Teruel** y **Carla Morgado**
+presentaron el trabajo [El papel de la mujer en la educación y en el trabajo](https://carlam01.github.io/trabajo_BigData_equipo/){target="_blank"}.
+El repo del trabajo está [aquí](https://github.com/carlam01/trabajo_BigData_equipo){target="_blank"}.  
+
+<br>
+
+**Paula Martinez Serrano**, **Sonia Monleon Fernandez** y **Leire Monton Pastor**
+presentaron el trabajo [Evolución del mercado laboral en España](https://github.com/soniamf/trabajo_equipo){target="_blank"}.
+El repo del trabajo está [aquí](https://github.com/soniamf/trabajo_equipo){target="_blank"}.
+
 
 
 <br><br>
@@ -52,8 +60,6 @@ El repo del trabajo está
 **(Disponibles en Enero)**
 
 <br><br>
-
-
 
 ------------------------------------------------------------------------
 
