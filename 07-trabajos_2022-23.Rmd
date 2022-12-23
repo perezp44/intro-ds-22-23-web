@@ -35,21 +35,56 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 
 ## Trabajos en equipo
 
-<br> 
+<br>
 
-**Naira Carruccio Villada**, **Alex Monzó Santana** y **Luis Antonio Pérez Padauy** presentaron el trabajo [La evolución del gasto en educación en España y su relación con las pruebas PISA](https://AlexMS77.github.io/trabajo_BigData_equipo/){target="\_blank" }. El repo del trabajo está [aquí](https://github.com/AlexMS77/trabajo_BigData_equipo){target="_blank"}.
+**Naira Carruccio Villada**, **Alex Monzó Santana** y **Luis Antonio Pérez Padauy** presentaron el trabajo [La evolución del gasto en educación en España y su relación con las pruebas PISA](https://AlexMS77.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/AlexMS77/trabajo_BigData_equipo){target="_blank"}.
 
 <br>
 
-**Helena Albors**, **Noelia Teruel** y **Carla Morgado**
-presentaron el trabajo [El papel de la mujer en la educación y en el trabajo](https://carlam01.github.io/trabajo_BigData_equipo/){target="_blank"}.
-El repo del trabajo está [aquí](https://github.com/carlam01/trabajo_BigData_equipo){target="_blank"}.  
+**Helena Albors**, **Noelia Teruel** y **Carla Morgado** presentaron el trabajo [El papel de la mujer en la educación y en el trabajo](https://carlam01.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/carlam01/trabajo_BigData_equipo){target="_blank"}.
+
 
 <br>
 
-**Paula Martinez Serrano**, **Sonia Monleon Fernandez** y **Leire Monton Pastor**
-presentaron el trabajo [Evolución del mercado laboral en España](https://github.com/soniamf/trabajo_equipo){target="_blank"}.
-El repo del trabajo está [aquí](https://github.com/soniamf/trabajo_equipo){target="_blank"}.
+**Paula Martínez Serrano**, **Sonia Monleón Fernández** y **Leire Montón Pastor**
+presentaron el trabajo [Evolución del mercado laboral en España](https://Soniamf.github.io/trabajo_bigData_equipo/){target="_blank"}.
+El repo del trabajo está [aquí](https://github.com/Soniamf/trabajo_bigData_equipo){target="_blank"}.  
+
+
+
+<br>
+
+**Alejandro Hortelano Martín**, **Victor Gallego\* y** José María Perez\*\* presentaron el trabajo [Big Data en la Formula 1](https://alexhortelano6.github.io/Big-Data-en-la-Formula-1/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/alexhortelano6/Big-Data-en-la-Formula-1){target="_blank"}.
+
+<br>
+
+**Josep Gómez Corral**, **Ferran Alemany Parets** y **Rubén Rodríguez Giménez**
+presentaron el trabajo [Infraestructuras ferroviarias en Europa: El problema de España.](https://roodrigueezzz.github.io/trabajo_BigData_equipo/){target="_blank"}.
+El repo del trabajo está [aquí](https://github.com/roodrigueezzz/trabajo_BigData_equipo){target="_blank"}.  
+
+<br>
+
+**yi zhang**, **raphaëlle bastien** y **kaikai qiu** presentaron el trabajo [Análisis económico sobre la crisis de la pandemia](https://yiz2001.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/yiz2001/trabajo_BigData_equipo){target="_blank"}.
+
+<br>
+
+**Ignacio Manuel Muñoz Ayala**, **María Mena Esteban** y **Miguel Herrero Fuertes**
+presentaron el trabajo [Inflación en tiempos de pandemia](https://ignacioman.github.io/trabajo_BigData_equipo/las_slides_estan.html){target="_blank"}. El repo del trabajo está [aquí](https://github.com/IgnacioMan/trabajo_BigData_equipo){target="_blank"}.  
+
+<br>
+
+**Carlos Garcia Ponce**, **Vera Monteagudo Serrano** y **Zayad**
+presentaron el trabajo [Estudio de las plataformas audiovisuales](https://Carlos596.github.io/trabajo_BigData_equipo/){target="_blank"}.
+El repo del trabajo está [aquí](https://github.com/Carlos596/trabajo_BigData_equipo){target="_blank"}.  
+
+<br>
+
+**Sukhman Kaur**, **Juliet Allegra** y **Juan David**
+presentaron el trabajo [Estudio de las plataformas 
+audiovisuales](https://kaursukhman.github.io/trabajo_BigData_equipo/){target="
+_blank"}.
+El repo del trabajo está 
+[aquí](https://github.com/kaursukhman/trabajo_BigData_equipo){target="_blank"}. 
 
 
 
