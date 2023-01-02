@@ -15,26 +15,21 @@ output:
     #self_contained: TRUE
 ---
 
-
-<div class = "blue">
-En esta sección pondré **cosas varias** como: 
-</div>
-
-
+::: blue
+En esta sección pondré **cosas varias** como:
+:::
 
 ```{r klippy, echo = FALSE}
 klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/klippy")
 ```
 
-
 <br>
 
 ### **Guiones de clase**
 
-------------------------------
+------------------------------------------------------------------------
 
 En cada sesión/clase vamos a usar un Rproject con ejemplos y alguna cosa más, son los **guiones de clase**. La mayoría de ejemplos/casos que trabajaremos durante el curso estarán alojados en los guiones de clase, otros provendrán de los propios tutoriales o slides.
-
 
 Para descargaros el Rproject con el guión (o materiales) de cada sesión tienes que ejecutar en RStudio las siguientes instrucciones:
 
@@ -48,40 +43,43 @@ file.remove(file_to_download)
 
 No hace falta que lo hagas ahora, mejor si te esperas al primer día de clase, os lo explico un poco más y lo hacemos todos juntos.
 
-
-
 <br>
 
 ### **Entrega de las tareas**
 
--------------------
-
+------------------------------------------------------------------------
 
 Durante el curso, sobre todo las primeras semanas, os mandaré tareas, algunas para resolver en el aula y otras para resolver en casa. Estas tareas, generalmente, formarán parte de la evaluación continua. Abajo tenéis las instrucciones para la entrega de las tareas:
 
-- [Intrucciones de entrega de las tareas de la evaluación continua](./mas-recursos/04_como-entregar-las-tareas-uploader.html){target="_blank"}
-
+-   [Intrucciones de entrega de las tareas de la evaluación continua](./mas-recursos/04_como-entregar-las-tareas-uploader.html){target="_blank"}
 
 <br>
 
 ### **Guía de Instalación**
 
--------------------
+------------------------------------------------------------------------
 
-
-- [Guía de Instalación de R y RStudio](./mas-recursos/01_instrucciones-instalacion.html){target="_blank"}
-
-
+-   [Guía de Instalación de R y RStudio](./mas-recursos/01_instrucciones-instalacion.html){target="_blank"}
 
 <br>
 
 ### **Otros recursos**
 
--------------------
+------------------------------------------------------------------------
 
-- [Descargar ficheros de Google Drive](./mas-recursos/05_bajar-google-drive.html){target="_blank"}. Este fichero es solo para mi. Para usarlo en el aula.
+-   [Descargar ficheros de Google Drive](./mas-recursos/05_bajar-google-drive.html){target="_blank"}. Este fichero es solo para mi. Para usarlo en el aula.
+
+<br>
+
+### **Instrucciones para el examen**
+
+--------------------------------------------------------------------------
+
+
+-   [Instrucciones](./mas-recursos/instrucciones_examen.html){target="_blank"}. 
 
 
 <br><br>
 
-<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
+::: {.tocify-extend-page data-unique="tocify-extend-page" style="height: 0;"}
+:::

@@ -43,56 +43,66 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 
 **Helena Albors**, **Noelia Teruel** y **Carla Morgado** presentaron el trabajo [El papel de la mujer en la educación y en el trabajo](https://carlam01.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/carlam01/trabajo_BigData_equipo){target="_blank"}.
 
-
 <br>
 
 **Paula Martínez Serrano**, **Sonia Monleón Fernández** y **Leire Montón Pastor**
-presentaron el trabajo [Evolución del mercado laboral en España](https://Soniamf.github.io/trabajo_bigData_equipo/){target="_blank"}.
-El repo del trabajo está [aquí](https://github.com/Soniamf/trabajo_bigData_equipo){target="_blank"}.  
-
-
+presentaron el trabajo [Evolución del mercado laboral en España](https://Soniamf.github.io/trabajo_bigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/Soniamf/trabajo_bigData_equipo){target="_blank"}.  
 
 <br>
 
-**Alejandro Hortelano Martín**, **Victor Gallego\* y** José María Perez\*\* presentaron el trabajo [Big Data en la Formula 1](https://alexhortelano6.github.io/Big-Data-en-la-Formula-1/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/alexhortelano6/Big-Data-en-la-Formula-1){target="_blank"}.
+**Alejandro Hortelano Martín** , **Víctor Gallego Urrea** y **José María Perez** presentaron el trabajo [Big Data en la Formula 1](https://alexhortelano6.github.io/Big-Data-en-la-Formula-1/) El repo del trabajo está [aquí](https://github.com/alexhortelano6/Big-Data-en-la-Formula-1.git){target="_blank"}.
 
 <br>
 
-**Josep Gómez Corral**, **Ferran Alemany Parets** y **Rubén Rodríguez Giménez**
-presentaron el trabajo [Infraestructuras ferroviarias en Europa: El problema de España.](https://roodrigueezzz.github.io/trabajo_BigData_equipo/){target="_blank"}.
+**Josep Gómez Corral**, **Ferran Alemany Parets** y **Rubén Rodríguez Giménez** presentaron el trabajo [Infraestructuras ferroviarias en Europa: El problema de España.](https://roodrigueezzz.github.io/trabajo_BigData_equipo/){target="_blank"}.
 El repo del trabajo está [aquí](https://github.com/roodrigueezzz/trabajo_BigData_equipo){target="_blank"}.  
 
 <br>
 
-**yi zhang**, **raphaëlle bastien** y **kaikai qiu** presentaron el trabajo [Análisis económico sobre la crisis de la pandemia](https://yiz2001.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/yiz2001/trabajo_BigData_equipo){target="_blank"}.
+**Yi Zhang**, **Raphaëlle Bastien** y **Kaikai Qiu** presentaron el trabajo [Análisis económico sobre la crisis de la pandemia](https://yiz2001.github.io/trabajo_Bigdata_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/yiz2001/trabajo_BigData_equipo){target="_blank"}.
 
 <br>
 
-**Ignacio Manuel Muñoz Ayala**, **María Mena Esteban** y **Miguel Herrero Fuertes**
-presentaron el trabajo [Inflación en tiempos de pandemia](https://ignacioman.github.io/trabajo_BigData_equipo/las_slides_estan.html){target="_blank"}. El repo del trabajo está [aquí](https://github.com/IgnacioMan/trabajo_BigData_equipo){target="_blank"}.  
+**Ignacio Manuel Muñoz Ayala**, **María Mena Esteban** y **Miguel Herrero Fuertes** presentaron el trabajo [Inflación en tiempos de pandemia](https://ignacioman.github.io/trabajo_BigData_equipo/las_slides_estan.html){target="_blank"}. El repo del trabajo está [aquí](https://github.com/IgnacioMan/trabajo_BigData_equipo){target="_blank"}.  
 
 <br>
 
-**Carlos Garcia Ponce**, **Vera Monteagudo Serrano** y **Zayad**
-presentaron el trabajo [Estudio de las plataformas audiovisuales](https://Carlos596.github.io/trabajo_BigData_equipo/){target="_blank"}.
-El repo del trabajo está [aquí](https://github.com/Carlos596/trabajo_BigData_equipo){target="_blank"}.  
+**Carlos Garcia Ponce** y **Vera Monteagudo Serrano** presentaron el trabajo [Estudio de las plataformas audiovisuales](https://Carlos596.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/Carlos596/trabajo_BigData_equipo){target="_blank"}.  
 
 <br>
 
-**Sukhman Kaur**, **Juliet Allegra** y **Juan David**
-presentaron el trabajo [Estudio de las plataformas 
-audiovisuales](https://kaursukhman.github.io/trabajo_BigData_equipo/){target="
-_blank"}.
-El repo del trabajo está 
-[aquí](https://github.com/kaursukhman/trabajo_BigData_equipo){target="_blank"}. 
+**Sukhman Kaur**, **Juliet Allegra** y **Juan David** presentaron el trabajo [Estudio de las plataformas 
+audiovisuales](https://kaursukhman.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/kaursukhman/trabajo_BigData_equipo){target="_blank"}. 
 
+
+<br>
+
+**Adeline Baillifard**, **Lena Baerwinkel** y **Luis Steven Vega** presentaron el trabajo [Las energías en Europa](https://Baillifa10.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/Baillifa10/trabajo_BigData_equipo){target="_blank"}.  
 
 
 <br><br>
 
 ## Trabajos individuales
 
-**(Disponibles en Enero)**
+<br>
+
+- **Josep Gómez Corral** presentó el trabajo [2005 y 2006. Las dos del Nano](https://gomezz01.github.io/trabajo_BigData/){target="_blank"}.
+El repo del trabajo está [aquí](https://github.com/gomezz01/trabajo_BigData){target="_blank"}.  
+
+- **Alejandro Hortelano Martín** presentó el trabajo [Levante UD en la temporada 18-19](https://alexhortelano6.github.io/Levante-UD-en-la-temporada-18-19/)
+El repo del trabajo está [aquí](https://github.com/alexhortelano6/Levante-UD-en-la-temporada-18-19){target="_blank"}. 
+
+- **Rubén Rodríguez Giménez** presentó el trabajo [Mercado de coches de segunda mano](https://roodrigueezzz.github.io/trabajo_BigData/){target="_blank"}.
+El repo del trabajo está [aquí](https://github.com/roodrigueezzz/trabajo_BigData){target="_blank"}. 
+
+**Alex Monzo Santana** presentó el trabajo [La mejor serie: The Walking Dead](https://AlexMS77.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/AlexMS77/trabajo_BigData/){target="_blank"}.
+
+
+**María Mena Estebán** presentó el trabajo [El desempleo y las carreras universitarias en España](https://mmena21.github.io/desempleo_y_carreras_universitarias/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/mmena21/desempleo_y_carreras_universitarias/){target="_blank"}.
+
+
+
+
 
 <br><br>
 
