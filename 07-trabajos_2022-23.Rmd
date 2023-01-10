@@ -94,13 +94,15 @@ El repo del trabajo está [aquí](https://github.com/gomezz01/trabajo_BigData){t
 
 - **Alex Monzo Santana** presentó el trabajo [La mejor serie: The Walking Dead](https://AlexMS77.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/AlexMS77/trabajo_BigData/){target="_blank"}.
 
-
 - **María Mena Estebán** presentó el trabajo [El desempleo y las carreras universitarias en España](https://mmena21.github.io/desempleo_y_carreras_universitarias/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/mmena21/desempleo_y_carreras_universitarias/){target="_blank"}.
 
 - **Luis Pérez** presentó el trabajo [Deuda Soberana Estadounidense](https://padauy.github.io/Trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/padauy/Trabajo_BigData){target="_blank"}.  
 
 - **Adeline Baillifard** presentó el trabajo [Las páginas web más visitadas](https://Baillifa10.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/Baillifa10/trabajo_BigData){target="_blank"}.  
 
+- **Sukhman Kaur** presentó el trabajo [Análisis y trayectoria económica de India](https://kaursukhman.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/kaursukhman/trabajo_BigData){target="_blank"}. 
+
+- **Kaikai Qiu** presentó el trabajo [La lotería de Navidad](https://alonsoqiu.github.io/my_trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/Alonsoqiu/my_trabajo_BigData){target="_blank"}.
 
 <br><br>
 
