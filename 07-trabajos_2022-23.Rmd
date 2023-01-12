@@ -104,6 +104,15 @@ El repo del trabajo está [aquí](https://github.com/gomezz01/trabajo_BigData){t
 
 - **Kaikai Qiu** presentó el trabajo [La lotería de Navidad](https://alonsoqiu.github.io/my_trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/Alonsoqiu/my_trabajo_BigData){target="_blank"}.
 
+- **Paula Martínez Serrano** presentó el trabajo [Violencia de género en España](https://paumars3.github.io/trabajo_individual/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/Paumars3/trabajo_individual){target="_blank"}. 
+
+- **Víctor Gallego Urrea** presentó el trabajo [Big Data en la Euroliga - ACB](https://vicgau01.github.io/Trabajo_individual_V-ctor_Gallego_NBAyEuroliga_en_BigData/){target="_blank"}.
+La repo del trabajo está [aquí](https://github.com/vicgau01/Trabajo_individual_V-ctor_Gallego_NBAyEuroliga_en_BigData){target="_blank"}. 
+
+- **Helena Albors** presentó el trabajo [Indicadores que afectan al nivel de desarrollo de los países](https://helenaalbors.github.io/my_trabajo_BigData/){target="_blank"}.
+El repo del trabajo está [aquí](https://github.com/helenaalbors/my_trabajo_BigData){target="_blank"}.  
+
+
 <br><br>
 
 ------------------------------------------------------------------------
