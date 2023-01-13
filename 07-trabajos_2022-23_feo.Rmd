@@ -115,12 +115,6 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 
 -   **Yi Zhang** presentó el trabajo [El Ramen mola](https://yiz2001.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/yiz2001/trabajo_BigData){target="_blank"}.
 
--   **Sonia Monleón Fernández** presento el trabajo [Inversión en protección medio ambiental](https://soniamf.github.io/trabajo_individual_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/soniamf/trabajo_individual_BigData){target="_blank"}.
-
--   **Vera Monteagudo** presentó el trabajo [La felicidad en relación a la renta](https://vemonse.github.io/BigData_trabajo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/vemonse/BigData_trabajo){target="_blank"}.
-
-- **Javier Ruiz Puchol** presentó el trabajo [Análisis de la Industria Musical: Spotify](https://jarupu.github.io/trabajo-Bigdata/). El repo del trabajo está [aquí](https://github.com/jarupu/Trabajo-Bigdata). 
-
 <br><br>
 
 ------------------------------------------------------------------------
