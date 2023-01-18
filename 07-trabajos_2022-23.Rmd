@@ -75,6 +75,15 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 
 -   **Adeline Baillifard**, **Lena Baerwinkel** y **Luis Steven Vega** presentaron el trabajo [Las energías en Europa](https://Baillifa10.github.io/trabajo_BigData_equipo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/Baillifa10/trabajo_BigData_equipo){target="_blank"}.
 
+<br>
+
+- **Sandra March Arazola**, **Alberto Cabrera Pérez** y **Alegría Pintado Barcelo**
+presentaron el trabajo [Incertidumbre por la escalada de precios](https://alcape4.github.io/trabajo_BigData_grupo/my_trabajo_BigData.html){target="_blank"}.
+El repo del trabajo está [aquí](https://github.com/alcape4/trabajo_BigData_grupo){target="_blank"}.  
+
+
+
+
 <br><br>
 
 ## Trabajos individuales
@@ -107,8 +116,6 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 
 -   **Carla Morgado** presentó el trabajo [La evolución de los sectores económicos](https://carlam01.github.io/trabajo_BigData/){target="_blank"}.El repo del trabajo está [aquí](https://github.com/carlam01/trabajo_BigData){target="_blank"}.
 
--   **Vera Monteagudo** presentó el trabajo [La felicidad en relación a la renta](https://vemonse.github.io/trabajo_BigDataa/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/vemonse/trabajo_BigDataa){target="_blank"}.
-
 -   **Juan Emilio Gómez-Meana Torres** presentó el trabajo [El potencial económico de Brasil](https://egomez22.github.io/Trabajo_individual_bigdata/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/egomez22/Trabajo_individual_bigdata){target="_blank"}.
 
 -   **Naira Carruccio Villada** presentó el trabajo [Análisis de la plataforma de Filmaffinity](https://carru8.github.io/trabajo_BigData/){target="_blank"}.El repo del trabajo está [aquí](https://github.com/carru8/trabajo_BigData){target="_blank"}.
@@ -119,7 +126,32 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 
 -   **Vera Monteagudo** presentó el trabajo [La felicidad en relación a la renta](https://vemonse.github.io/BigData_trabajo/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/vemonse/BigData_trabajo){target="_blank"}.
 
-- **Javier Ruiz Puchol** presentó el trabajo [Análisis de la Industria Musical: Spotify](https://jarupu.github.io/trabajo-Bigdata/). El repo del trabajo está [aquí](https://github.com/jarupu/Trabajo-Bigdata). 
+-   **Javier Ruiz Puchol** presentó el trabajo [Análisis de la Industria Musical: Spotify](https://jarupu.github.io/trabajo-Bigdata/). El repo del trabajo está [aquí](https://github.com/jarupu/Trabajo-Bigdata).
+
+-   **Raphaelle Bastien** presentó el trabajo [Análisis de la Industria Musical: Spotify](https://RaphaelleBastien.github.io/trabajo-Bigdata/). El repo del trabajo está [aquí](https://github.com/RaphaelleBastien/trabajo_BigData).
+
+-   **Alberto Cabrera Pérez** presentó el trabajo [Evolución de la esperanza de vida](https://alcape4.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/alcape4/trabajo_BigData){target="_blank"}.
+
+-   **Ignacio Manuel Muñoz Ayala** presentó el trabajo [Temporada 2020-2021 F1](https://ignacioman.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/ignacioman/trabajo_BigData).
+
+-   **Leire Montón** presentó el trabajo [Nombres de hombres y mujeres en España](https://leiremonton.github.io/trabajo_leire/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/leiremonton/trabajo_leire){target="_blank"}.
+
+-   **Victor Muñoz Barrasa** presentó el trabajo [Nombres de hombres y mujeres en España](https://victormunozz.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/victormunozz/trabajo_BigData){target="_blank"}.
+
+- Noelia Teruel Ortega presentó el trabajo [Rosalía y C. Tangana en Spotify](https://noeliateruel.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/noeliateruel/trabajo_BigData){target="_blank"}.
+
+- **Ignacio Manuel Muñoz Ayala** presentó el trabajo [Temporada 2020-2021 F1](https://ignacioman.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/IgnacioMan/trabajo_BigData){target="_blank"}.
+
+- **Leire Montón** presentó el trabajo [Nombres de hombres y mujeres en España](https://leiremonton.github.io/trabajo_leire/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/leiremonton/trabajo_leire){target="_blank"}.  
+
+- **Sandra March Arazola** presentó el trabajo [Debates de actualidad](https://marcharazola.github.io/Trabajo-individual-Big-Data/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/MarchArazola/Trabajo-individual-Big-Data){target="_blank"}.
+
+- **Alegría Pintado Barceló**
+presento el trabajo [Argumentos que defienden la existencia del salario mínimo](https://alegriapb.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está
+[aquí](https://github.com/AlegriaPB/trabajo_BigData){target="_blank"}.
+
+- **Victor** presentó el trabajo [Liga BBVA](https://victormunozz.github.io/trabajo_bigdata_individual/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/victormunozz/trabajo_bigdata_individual){target="_blank"}.
+
 
 <br><br>
 
