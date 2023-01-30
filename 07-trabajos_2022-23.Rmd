@@ -131,23 +131,23 @@ klippy::klippy(position = c("top", "right")) #- remotes::install_github("rlesur/
 
 -   **Leire Montón** presentó el trabajo [Nombres de hombres y mujeres en España](https://leiremonton.github.io/trabajo_leire/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/leiremonton/trabajo_leire){target="_blank"}.
 
--   **Victor Muñoz Barrasa** presentó el trabajo [Nombres de hombres y mujeres en España](https://victormunozz.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/victormunozz/trabajo_BigData){target="_blank"}.
-
--   Noelia Teruel Ortega presentó el trabajo [Rosalía y C. Tangana en Spotify](https://noeliateruel.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/noeliateruel/trabajo_BigData){target="_blank"}.
-
--   **Ignacio Manuel Muñoz Ayala** presentó el trabajo [Temporada 2020-2021 F1](https://ignacioman.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/IgnacioMan/trabajo_BigData){target="_blank"}.
-
--   **Leire Montón** presentó el trabajo [Nombres de hombres y mujeres en España](https://leiremonton.github.io/trabajo_leire/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/leiremonton/trabajo_leire){target="_blank"}.
+-   **Noelia Teruel Ortega** presentó el trabajo [Rosalía y C. Tangana en Spotify](https://noeliateruel.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/noeliateruel/trabajo_BigData){target="_blank"}.
 
 -   **Sandra March Arazola** presentó el trabajo [Debates de actualidad](https://marcharazola.github.io/Trabajo-individual-Big-Data/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/MarchArazola/Trabajo-individual-Big-Data){target="_blank"}.
 
 -   **Alegría Pintado Barceló** presento el trabajo [Argumentos que defienden la existencia del salario mínimo](https://alegriapb.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/AlegriaPB/trabajo_BigData){target="_blank"}.
 
--   **Victor Muñoz** presentó el trabajo [Liga BBVA](https://victormunozz.github.io/trabajo_bigdata_individual/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/victormunozz/trabajo_bigdata_individual){target="_blank"}.
+-   **Victor Muñoz Barrasa** presentó el trabajo [Liga BBVA](https://victormunozz.github.io/trabajo_bigdata_individual/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/victormunozz/trabajo_bigdata_individual){target="_blank"}.
 
-- **Miguel Herrero Fuertes** presentó el trabajo trabajo [Análisis del paro en España](https://miguelhf42.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí] (https://github.com/miguelhf42/trabajo_BigData) {target=" blank"} 
+-   **Miguel Herrero Fuertes** presentó el trabajo trabajo [Análisis del paro en España](https://miguelhf42.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/miguelhf42/trabajo_BigData){target="_blank"}
 
-- **Carlos García Ponce** presentó el trabajo  [Fútbol internacional](https://Carlos596.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/Carlos596/trabajo_BigData){target="_blank"}. 
+-   **Carlos García Ponce** presentó el trabajo [Fútbol internacional](https://Carlos596.github.io/trabajo_BigData/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/Carlos596/trabajo_BigData){target="_blank"}.
+
+-   **Juliet Allegra** presentó el trabajo [Best Selling Music Artists](https://julucape.github.io/Best-Selling-Music-Artists/posts/post-with-code/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/julucape/Best-Selling-Music-Artists){target="_blank"}.
+
+-   **Lena Baerwinkel** presentó el trabajo [La exploración de las series más populares de Netflix](https://lena-marie-999.github.io/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/LENA-MARIE-999/LENA-MARIE-999.github.io){target="_blank"}.
+
+-   **Juan Rios** presentó el trabajo [Comparación importantes métricas entre países europeos](https://juandavidriosm.github.io/Comparaci-n-importantes-m-tricas-entre-pa-ses-europeos/){target="_blank"}. El repo del trabajo está [aquí](https://github.com/juandavidriosm/Comparaci-n-importantes-m-tricas-entre-pa-ses-europeos){target="_blank"}.
 
 <br><br>
 
